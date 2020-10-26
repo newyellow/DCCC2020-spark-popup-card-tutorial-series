@@ -20,8 +20,15 @@ body {
   background-color: gray;
 
   float: left;
+  margin: auto;
   left: 400px;
   box-sizing: border-box;
+}
+
+#image-wrapper {
+  background-color: purple;
+  max-width: 1200px;
+  margin: auto;
 }
 
 #header-image {
@@ -29,10 +36,13 @@ body {
 
   background-size: cover;
   width: 100%;
-  min-height: 200px;
+  padding-top: 56%;
+  margin: 0px;
 }
 
 article#main {
+  max-width: 1200px;
+  margin: auto;
   padding: 30px;
   background-color: lightblue;
 }
