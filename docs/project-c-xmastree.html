@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>It's Now Winter -- Spark Pop-up Card Tutorial Series</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="menu.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+    <div id="main-menu">
+      <ul>
+        <li><a href="project-a-snowman.html">Project A - Snowman</a></li>
+        <li><a href="project-b-woodhouse.html">Project B - Wood house</a></li>
+        <li><a href="project-c-xmastree.html">Project C - Xmas Tree</a></li>
+      </ul>
+    </div>
+
+    <div id="main-section">
+      <div id="header-image">
+      </div>
+
+      <article id="main">
+        You can download all the assets here:
+
+        <a href="https://newyellow.github.io/DCCC2020-spark-popup-card-tutorial-series/download/Project">https://newyellow.github.io/DCCC2020-spark-popup-card-tutorial-series/download/Project</a> C - Xmas Tree.zip
+        <ul>
+         	<li>It is strongly recommend you do the Snowman Project tutorial before starting this one. The Snowman Project tutorial has very detailed basic operations which will not be covered in this tutorial.</li>
+        </ul>
+        <h2>Setup the tracking</h2>
+        For this step, you need to do the following:
+        <ol>
+         	<li>Create a new project</li>
+         	<li>Add fixedTargetTracker to the scene</li>
+         	<li>Import the images for the project</li>
+         	<li>Change the fixedTargetTracker image to floor-tracker-image</li>
+        </ol>
+        After you done, the project will look like this:
+
+        If you not familiar with these steps, please check Project A for more detailed step tutorials.
+        <h2>Setup the object</h2>
+        The scene setup for this project is a little different from the previous two. In Project A and B, the images are parallel aligned with the tracking image. But in this project, the tracking image is the floor, so the images needs to be perpendicularly stand on the tracking image.
+
+        And since you can't rotate the fixedTargetTracker in Spark AR Studio, the editing might be a bit funny. But you will get used to it!
+        <h3>Create a two sided plane</h3>
+        <ol>
+         	<li>Create a chair-side-A Material for the chair-side-A image, and put it on a Plane. Make sure you check on the Alpha Test. Since we are going to composite planes into a 3d object, we need to check this option on. (not really make them into a 3d model, just feels like).</li>
+        </ol>
+        As you rotate the plane, you might notice the back side of the plane is transparent. This is because the built-in plane is one-sided. So we need create another plane to make it as the back side. 2. Create another plane for back side. (or you can right click on the Plane, choose Duplicate) 3. Create another chair-side-B Material for the back side plane. Use the chair-side-B image as texture. 4. Set the back side plane's rotation to 0, 180, 0 5. It better to group these two planes. It's easier to move, rotate, scale them together if grouped. You can group them by create a Null Object and plane both planes under its hierachy. 6. Now you can rotate the object, and it feels like it's a two-sided plane.
+        <h3>Composite the chair</h3>
+        <ol>
+         	<li>Duplicate the chair-sided object, and place it on the other side.</li>
+         	<li>Create wood stick object, just like creating the two-sided chair side. Remember to group them.</li>
+         	<li>Duplicate the wood stick object, and placing them whatever you like. Then a 3d bench in completed!</li>
+         	<li>If you did remember to group them together, now you can move, rotate, and scale the whole bench in the same time.</li>
+         	<li>There's an additional chair-shadow texture you can use to mimic the real shadow. It would make the chair feels more realistic while viewing AR.</li>
+        </ol>
+        <h3>Placing the star</h3>
+        <ol>
+         	<li>Just like compositing the chair, make a 3d star with the two-sided place technique.</li>
+         	<li>Place the star on the tree. Well, we can't see where the tree is, but we know the relationship between the tracked image and the paper tree. So we can make a guess.</li>
+         	<li>Test the effect on the device. If the star's position is a bit off, adjust the position in the editor and try again. Repeat this step until it looks fine to you.</li>
+        </ol>
+        <h3>Make it snow</h3>
+        <ol>
+         	<li>Create a particle system for the snow effect. The steps are the same as Project A. Please check Project A for more detailed operation.</li>
+         	<li>Make the snow heavier by increasing the birthrate, lifespan values. This matters when the next step we create masks for the tree. The result is better if some snow are floating in front and in the back of the tree.</li>
+        </ol>
+        <h3>Make star glow</h3>
+        <ol>
+         	<li>You could also add another Particle System for the star with the glow-particle image, to create a sparking effect.</li>
+        </ol>
+        <h2>Creating the illusion</h2>
+        As we mentioned before, the virtual objects are always rendered in front of real-world image. So if we want to make it feels like the snow is really floating around the card (the paper tree), we can use the masking technique.
+        <h3>Create masks for the tree</h3>
+        <ol>
+         	<li>Create a tree-mask material with tree-mask image. Set Opacity to 1 and Alpha Test Cutoff to 0.</li>
+         	<li>Create a layer for the tree-mask object and place the order to the last.</li>
+         	<li>These steps are similar to Project B Window masking Trick. You could check more detailed steps there.</li>
+         	<li>Placing two tree-mask objects. Same technique as placing the star, test on the device and adjust to position in the editor, until the result is fine.</li>
+         	<li>The tree mask's position does not need to be perfectly fit, since it only covers snowflakes. The edge of the mask is not obvious.</li>
+        </ol>
+        <h2>Additional setups</h2>
+        There are some additional things we could work on to improve the effect. But since the techniques are already covered in the previous part of the series. I only list the things here but not offer every steps. If you would like to check the details, you could open the sample project.
+        <ul>
+         	<li>You can put your words on the card. And with a shadow texture, you can make an illusion like the text is really floating on the card.</li>
+         	<li>You can create animation when the tracking is on. Like, the chair grows up, the star pop out, and the text floating.</li>
+         	<li>There are separate snow textures for each part of the bench. This is for creating "snow slowly stacks up" animation on the bench.</li>
+         	<li>Animated glow plane aligned with the star. It will make the star looks like glowing.</li>
+        </ul>
+        And that's all, the project is finished!
+
+        If you have complete this project, you are ready for learning 3d modeling softwares! The feeling and the operations of creating a 3d model, is just like the compositing of the chair. So if you could complete this project, 3d tools are just a piece of cake to you.
+
+      </article>
+    </div>
+  </body>
+</html>

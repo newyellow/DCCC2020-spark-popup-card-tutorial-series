@@ -1,0 +1,38 @@
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#main-menu {
+  width: 400px;
+  min-height: 100vh;
+  background-color: blue;
+
+  float: left;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+#main-section {
+  width: calc(100% - 400px);
+  min-height: 100vh;
+  background-color: gray;
+
+  float: left;
+  left: 400px;
+  box-sizing: border-box;
+}
+
+#header-image {
+  background-color: green;
+
+  background-size: cover;
+  width: 100%;
+  min-height: 200px;
+}
+
+article#main {
+  padding: 30px;
+  background-color: lightblue;
+}
