@@ -1,7 +1,7 @@
 You can download all the assets here:
 
-<a href="https://newyellow.github.io/DCCC2020-spark-popup-card-tutorial-series/download/Project">https://newyellow.github.io/DCCC2020-spark-popup-card-tutorial-series/download/Project</a> C - Xmas Tree.zip
-<ul>
+<a href="http://newyellow.github.io/DCCC2020-spark-popup-card-tutorial-series/download/Project%20C%20-%20Xmas%20Tree.zip">Project C - Xmas Tree.zip</a>
+<ul class="warning">
  	<li>It is strongly recommend you do the Snowman Project tutorial before starting this one. The Snowman Project tutorial has very detailed basic operations which will not be covered in this tutorial.</li>
 </ul>
 <h2>Setup the tracking</h2>
@@ -12,9 +12,12 @@ For this step, you need to do the following:
  	<li>Import the images for the project</li>
  	<li>Change the fixedTargetTracker image to floor-tracker-image</li>
 </ol>
-After you done, the project will look like this:
-
+After you done, the project will look like this:<br />
+<br />
+<img src="imgs/project-c/c-step-01.png" />
+<br />
 If you not familiar with these steps, please check Project A for more detailed step tutorials.
+
 <h2>Setup the object</h2>
 The scene setup for this project is a little different from the previous two. In Project A and B, the images are parallel aligned with the tracking image. But in this project, the tracking image is the floor, so the images needs to be perpendicularly stand on the tracking image.
 
@@ -22,49 +25,83 @@ And since you can't rotate the fixedTargetTracker in Spark AR Studio, the editin
 <h3>Create a two sided plane</h3>
 <ol>
  	<li>Create a chair-side-A Material for the chair-side-A image, and put it on a Plane. Make sure you check on the Alpha Test. Since we are going to composite planes into a 3d object, we need to check this option on. (not really make them into a 3d model, just feels like).</li>
+  <img src="imgs/project-c/c-step-02.png" />
+  <li>As you rotate the plane, you might notice the back side of the plane is transparent. This is because the built-in plane is one-sided. So we need create another plane to make it as the back side.</li>
+  <img src="imgs/project-c/c-step-03.png" />
+  <li>Create another plane for back side. (or you can right click on the Plane, choose Duplicate)</li>
+  <img src="imgs/project-c/c-step-05.png" />
+  <li>Create another chair-side-B Material for the back side plane. Use the chair-side-B image as texture.</li>
+  <img src="imgs/project-c/c-step-06.png" />
+  <li>Set the back side plane's rotation to 0, 180, 0</li>
+  <img src="imgs/project-c/c-step-07.png" />
+  <li>5. It better to group these two planes. It's easier to move, rotate, scale them together if grouped. You can group them by create a Null Object and plane both planes under its hierachy.</li>
+  <img src="imgs/project-c/c-step-08.png" />
+  <li>6. Now you can rotate the object, and it feels like it's a two-sided plane.</li>
+  <img src="imgs/project-c/c-step-09.png" />
 </ol>
-As you rotate the plane, you might notice the back side of the plane is transparent. This is because the built-in plane is one-sided. So we need create another plane to make it as the back side. 2. Create another plane for back side. (or you can right click on the Plane, choose Duplicate) 3. Create another chair-side-B Material for the back side plane. Use the chair-side-B image as texture. 4. Set the back side plane's rotation to 0, 180, 0 5. It better to group these two planes. It's easier to move, rotate, scale them together if grouped. You can group them by create a Null Object and plane both planes under its hierachy. 6. Now you can rotate the object, and it feels like it's a two-sided plane.
 <h3>Composite the chair</h3>
 <ol>
  	<li>Duplicate the chair-sided object, and place it on the other side.</li>
+  <img src="imgs/project-c/c-step-11.png" />
  	<li>Create wood stick object, just like creating the two-sided chair side. Remember to group them.</li>
+  <img src="imgs/project-c/c-step-12.png" />
  	<li>Duplicate the wood stick object, and placing them whatever you like. Then a 3d bench in completed!</li>
- 	<li>If you did remember to group them together, now you can move, rotate, and scale the whole bench in the same time.</li>
+  <img src="imgs/project-c/c-step-13.png" />
+ 	<li>If you did group all the things together (include chair sides and wood sticks), now you can move, rotate, and scale the whole bench in the same time.</li>
+  <img src="imgs/project-c/c-step-14.png" />
+  <img src="imgs/project-c/c-step-16.png" />
  	<li>There's an additional chair-shadow texture you can use to mimic the real shadow. It would make the chair feels more realistic while viewing AR.</li>
+  <img src="imgs/project-c/c-step-17.png" />
 </ol>
 <h3>Placing the star</h3>
 <ol>
  	<li>Just like compositing the chair, make a 3d star with the two-sided place technique.</li>
+  <img src="imgs/project-c/c-step-18.png" />
  	<li>Place the star on the tree. Well, we can't see where the tree is, but we know the relationship between the tracked image and the paper tree. So we can make a guess.</li>
  	<li>Test the effect on the device. If the star's position is a bit off, adjust the position in the editor and try again. Repeat this step until it looks fine to you.</li>
+  <img src="imgs/project-c/c-preview-1.png" />
 </ol>
 <h3>Make it snow</h3>
 <ol>
- 	<li>Create a particle system for the snow effect. The steps are the same as Project A. Please check Project A for more detailed operation.</li>
+ 	<li>Create a particle system for the snow effect. The steps are the same as Project A's create particle part. Please check Project A for more detailed operation.</li>
  	<li>Make the snow heavier by increasing the birthrate, lifespan values. This matters when the next step we create masks for the tree. The result is better if some snow are floating in front and in the back of the tree.</li>
+  <img src="imgs/project-c/c-step-22.png" />
 </ol>
 <h3>Make star glow</h3>
 <ol>
  	<li>You could also add another Particle System for the star with the glow-particle image, to create a sparking effect.</li>
+  <img src="imgs/project-c/c-step-23.png" />
 </ol>
 <h2>Creating the illusion</h2>
 As we mentioned before, the virtual objects are always rendered in front of real-world image. So if we want to make it feels like the snow is really floating around the card (the paper tree), we can use the masking technique.
 <h3>Create masks for the tree</h3>
 <ol>
  	<li>Create a tree-mask material with tree-mask image. Set Opacity to 1 and Alpha Test Cutoff to 0.</li>
+  <img src="imgs/project-c/c-step-24.png" />
  	<li>Create a layer for the tree-mask object and place the order to the last.</li>
+  <img src="imgs/project-c/c-step-26.png" />
  	<li>These steps are similar to Project B Window masking Trick. You could check more detailed steps there.</li>
  	<li>Placing two tree-mask objects. Same technique as placing the star, test on the device and adjust to position in the editor, until the result is fine.</li>
+  <img src="imgs/project-c/c-step-25.png" />
  	<li>The tree mask's position does not need to be perfectly fit, since it only covers snowflakes. The edge of the mask is not obvious.</li>
+  <img src="imgs/project-c/c-step-27.png" />
+  <img src="imgs/project-c/c-preview-2.png" />
 </ol>
 <h2>Additional setups</h2>
 There are some additional things we could work on to improve the effect. But since the techniques are already covered in the previous part of the series. I only list the things here but not offer every steps. If you would like to check the details, you could open the sample project.
 <ul>
  	<li>You can put your words on the card. And with a shadow texture, you can make an illusion like the text is really floating on the card.</li>
+  <img src="imgs/project-c/c-step-28.png" />
  	<li>You can create animation when the tracking is on. Like, the chair grows up, the star pop out, and the text floating.</li>
+  <img src="imgs/project-c/c-step-29.png" />
  	<li>There are separate snow textures for each part of the bench. This is for creating "snow slowly stacks up" animation on the bench.</li>
+  <img src="imgs/project-c/c-step-30.png" />
  	<li>Animated glow plane aligned with the star. It will make the star looks like glowing.</li>
+  <img src="imgs/project-c/c-step-32.png" />
 </ul>
-And that's all, the project is finished!
+And that's all, the project is finished! Now the result should look like this:
+<div class="video-area">
+  <iframe width="640" height="480" src="https://www.youtube.com/embed/AsuSw531yxc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 If you have complete this project, you are ready for learning 3d modeling softwares! The feeling and the operations of creating a 3d model, is just like the compositing of the chair. So if you could complete this project, 3d tools are just a piece of cake to you.

@@ -45,7 +45,7 @@ body {
 article#main {
   max-width: 1200px;
   margin: auto;
-  padding: 30px;
+  padding: 60px;
   background-color: white;
 
   color: #333;
@@ -69,4 +69,13 @@ article#main .video-area {
 article h2 {
   margin-top: 60px;
   margin-bottom: 30px;
+}
+
+article h3 {
+  margin-top: 30px;
+}
+
+article .warning {
+  margin: 20px 0px;
+  color: darkred;
 }

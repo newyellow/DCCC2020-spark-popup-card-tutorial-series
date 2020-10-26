@@ -15,6 +15,7 @@
   <body>
     <div id="main-menu">
       <ul>
+        <li><a href="index.html">Intro Page</a></li>
         <li><a href="project-a-snowman.html">Project A - Snowman</a></li>
         <li><a href="project-b-woodhouse.html">Project B - Wood house</a></li>
         <li><a href="project-c-xmastree.html">Project C - Xmas Tree</a></li>
@@ -22,12 +23,15 @@
     </div>
 
     <div id="main-section">
-      <div id="header-image">
+
+      <div id="image-wrapper">
+          <div id="header-image" style="background-image: url(imgs/project-b/cover-b.jpg)">
+          </div>
       </div>
 
       <article id="main">
-        You can download all the assets here: <a href="https://newyellow.github.io/DCCC2020-spark-popup-card-tutorial-series/download/Project">https://newyellow.github.io/DCCC2020-spark-popup-card-tutorial-series/download/Project</a> B - Woodhouse.zip
-        <ul>
+        You can download all the assets here: <a href="http://newyellow.github.io/DCCC2020-spark-popup-card-tutorial-series/download/Project%20B%20-%20Wood%20house.zip">Project B - Woodhouse.zip</a>
+        <ul class="warning">
          	<li>It is strongly recommend you do the Snowman Project tutorial before starting this one. The Snowman Project tutorial has very detailed basic operations which will not be covered in this tutorial.</li>
         </ul>
         <h2>Setup the tracking</h2>
@@ -39,6 +43,7 @@
          	<li>Change the fixedTargetTracker image to the window texture</li>
         </ol>
         After you done, the project will look like this:
+        <img src="imgs/project-b/b-step-01.png" />
         <h2>Setting up the room</h2>
         <h3>Setup the wall</h3>
         For this project, we want to make a "see through window" experience, and make the user feel there's space inside. So we need to build a room space.
@@ -46,10 +51,17 @@
         In order to make the virtual room's size match the paper model, we can use a reference image to help us create the space.
         <ol>
          	<li>Add a Plane on the tracker, and set its material with the building-whole image.</li>
+          <img src="imgs/project-b/b-step-02.png" />
          	<li>Scale and move the reference image, make the window part match with the tracker image.</li>
+          <img src="imgs/project-b/b-step-05.png" />
          	<li>Now create walls behind the reference image. With the reference image, we can make the wall match the building image's size.</li>
+          <img src="imgs/project-b/b-step-06.png" />
+          <img src="imgs/project-b/b-step-07.png" />
          	<li>Add other furnitures into the scene, put them in the positions you like. The depth (position z) difference can create parallax effect.</li>
+          <img src="imgs/project-b/b-step-09.png" />
+          <img src="imgs/project-b/b-step-10.png" />
          	<li>There is also a shadow image for the sofa, and a window-light image to simulate the reflection on the window. Place the shadow image under the sofa. And place the window-light image a little behind the fixedTrackerImage object.</li>
+          <img src="imgs/project-b/b-step-11.png" />
         </ol>
         <h3>Setup the layers</h3>
         <h3>Animated fire</h3>
@@ -57,13 +69,22 @@
         <ol>
          	<li>Click Add Asset in the Assets panel.</li>
          	<li>Choose Animation Sequence. And a new asset will be created. Rename it to fire-animation.</li>
+          <img src="imgs/project-b/b-step-13.png" />
          	<li>Click the Choose File in the inspector. And select sequence images.</li>
+          <img src="imgs/project-b/b-step-14.png" />
+          <img src="imgs/project-b/b-step-15.png" />
          	<li>Now a texture sequence object fire-[1-3] is created.</li>
+          <img src="imgs/project-b/b-step-16.png" />
          	<li>Create a material and set the texture to fire-animation. Now you can see the fire is animating.</li>
+          <img src="imgs/project-b/b-step-17.png" />
          	<li>You can change the animation speed by changing the FPS value of fire-animation.</li>
+          <img src="imgs/project-b/b-step-18.png" />
         </ol>
-        Now the room is ready! And you can test it with your device. I would look like this:
-
+        Now the room is ready! And you can test it with your device. It would look like this:
+        <br />
+        <br />
+          <img src="imgs/project-b/b-preview-1.png" />
+          <br />
         Oops, the whole wall is transparent. What we want is a see through window experience. So we now need to setup the mask.
         <h2>Setting up the mask</h2>
         In augmented reality rendering, the virtual objects are always rendered in front of the camera image. This is because our device camera only captures 2d image from real world, which lacks to depth information. So, in order to make the virtual objects rendered behind the real-world image, we need masks.
@@ -72,26 +93,42 @@
         <h3>Setup walls mask</h3>
         <ol>
          	<li>Create a plane named mask-plane, and create a material named mask-mat.</li>
+          <img src="imgs/project-b/b-step-19.png" />
          	<li>Change the shader type to Flat, and set it Opacity to 0</li>
+          <img src="imgs/project-b/b-step-21.png" />
          	<li>Pick mask-plane, click Layer on the right, click Create New Layer</li>
+          <img src="imgs/project-b/b-step-22.png" />
          	<li>Now a new layer is created and assigned to the mask-plane.</li>
+          <img src="imgs/project-b/b-step-23.png" />
          	<li>Now switch to the Layer panel by click the Layer label. Drag the created layer and move it to the bottom. (order it to the last)</li>
-         	<li>You could rename the layer name to mask.</li>
+          <img src="imgs/project-b/b-step-24.png" />
+          <img src="imgs/project-b/b-step-26.png" />
+          <li>You could rename the layer name to mask.</li>
          	<li>Now switch back to Scene panel. Now you should see the mask-plane becomes transparent, and also make the images behind it disappear.</li>
+          <img src="imgs/project-b/b-step-27.png" />
          	<li>Duplicate mask-plane and put them beside the fixedTargetTracker. Make sure you leave a whole in the center, which is for the window.</li>
+          <img src="imgs/project-b/b-step-28.png" />
+          <img src="imgs/project-b/b-step-29.png" />
         </ol>
         <h3>Setup window mask</h3>
         <ol>
          	<li>The window mask is a little different. Instead of making the whole rectangle a mask, here we use an image to define the mask shape.</li>
          	<li>Create a new Material and rename it to window-mask-mat</li>
-         	<li>Check on Alpha, and set the texture to window-alpha</li>
-         	<li>Check on Alpha Test</li>
+          <img src="imgs/project-b/b-step-30.png" />
          	<li>Create a new Plane, and assign the material to the plane. Renamed it to window-mask-plane.</li>
+          <img src="imgs/project-b/b-step-32.png" />
          	<li>Scale the window-mask-plane to fit the fixedTargetTracker reference. The scale should be 3, 3, 1 to be perfectly fit.</li>
-         	<li>Set window-mask-plane's layer to mask.</li>
-         	<li>Now let setup the material (window-mask-mat) to make it a mask. Set Opacity to 1 and Cutoff (in the Alpha Test section) to 0.</li>
-         	<li>You can see the color change, and the window wall is now cover up the background.</li>
+          <li>Set window-mask-plane's layer to mask.</li>
+          <img src="imgs/project-b/b-step-33.png" />
+         	<li>Now let setup the material (window-mask-mat) to make it a mask.</li>
+          <li>Check on Alpha, and set the texture to window-alpha</li>
+          <li>Check on Alpha Test, and set Cutoff to 0</li>
+          <li>Set Opacity to 1</li>
+          <img src="imgs/project-b/b-step-34.png" />
+          <li>You can see the color change, and the window wall is now cover up the background.</li>
+          <img src="imgs/project-b/b-step-35.png" />
          	<li>Test with device. If the result is correct, it should look like this:</li>
+          <img src="imgs/project-b/b-preview-2.png" />
         </ol>
         <h2>Setting up the lights</h2>
         The fire is burning inside the house, so the light should also be flickering. Let's setup some light instead of using default lighting.
@@ -101,19 +138,31 @@
         <h3>Add custom light</h3>
         <ol>
          	<li>Delete the default directionalLight0 (this object is automatically created while you create the project)</li>
+          <img src="imgs/project-b/b-step-37.png" />
          	<li>Pick the ambientLight0 and set it Intensity value to 30</li>
          	<li>Add a Point Light object. And make sure it is under the fixedTargetTracker0 hierarchy.</li>
+          <img src="imgs/project-b/b-step-38.png" />
          	<li>Place the light in front of fireplace.</li>
+          <img src="imgs/project-b/b-step-39.png" />
          	<li>Set the light's intensity to 200 (you can set above 100 by key-in the value) and Range to 0.5</li>
+          <img src="imgs/project-b/b-step-40.png" />
         </ol>
         <h3>Animating the light intensity</h3>
         <ol>
          	<li>Click the arrow beside the Intensity value. The Patch Editor panel will showed up. Add a Transition patch and a Loop Animation patch. This part is similar to the Project A Animation section.</li>
-         	<li>The default Transition patch transforms 3 values (x, y, z). But the intensity value only requires 1. Click the Transition patch, and click the Vector3 box under the patch, and change the value to Number.</li>
-         	<li>Connect the inputs and the outputs. Play with the values to make the flickering you like.</li>
-         	<li>You can also animate the ambient light. The Loop Animation patch can be used for both Transition patch, if you want to sync the animation.</li>
+          <img src="imgs/project-b/b-step-41.png" />
+          <li>The default Transition patch transforms 3 values (x, y, z). But the intensity value only requires 1. Click the Transition patch, and click the Vector3 box under the patch, and change the value to Number.</li>
+          <img src="imgs/project-b/b-step-42.png" />
+          <img src="imgs/project-b/b-step-43.png" />
+          <li>Connect the inputs and the outputs. Play with the values to make the flickering you like.</li>
+          <img src="imgs/project-b/b-step-44.png" />
+          <li>You can also animate the ambient light. The Loop Animation patch can be used for both Transition patch, if you want to sync the animation.</li>
+          <img src="imgs/project-b/b-step-45.png" />
         </ol>
-        And now the project is done!
+        And the project is done! Now your project should look like this:
+        <div class="video-area">
+          <iframe width="640" height="480" src="https://www.youtube.com/embed/D3c6aZadGQI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
 
       </article>
     </div>
