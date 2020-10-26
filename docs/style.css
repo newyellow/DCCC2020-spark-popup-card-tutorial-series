@@ -18,7 +18,7 @@ body {
 #main-section {
   width: calc(100% - 400px);
   min-height: 100vh;
-  background-color: gray;
+  background-color: white;
 
   float: left;
   margin: auto;
