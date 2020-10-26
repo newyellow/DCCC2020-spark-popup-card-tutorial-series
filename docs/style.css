@@ -2,12 +2,13 @@
 body {
   margin: 0px;
   padding: 0px;
+  background: rgb(220,255,251);
+ background: linear-gradient(120deg, rgba(220,255,251,1) 0%, rgba(145,210,255,1) 32%, rgba(145,151,255,1) 100%);
 }
 
 #main-menu {
   width: 400px;
   min-height: 100vh;
-  background-color: blue;
 
   float: left;
   box-sizing: border-box;
@@ -35,8 +36,9 @@ body {
   background-color: green;
 
   background-size: cover;
+  background-position: center center;
   width: 100%;
-  padding-top: 56%;
+  padding-top: 40%;
   margin: 0px;
 }
 
@@ -44,5 +46,27 @@ article#main {
   max-width: 1200px;
   margin: auto;
   padding: 30px;
-  background-color: lightblue;
+  background-color: white;
+
+  color: #333;
+}
+
+article#main img {
+  display: block;
+  max-width: 75%;
+  margin: auto 0px;
+}
+
+article#main .video-area {
+  margin: 30px 0px;
+  padding: 30px 30px;
+  text-align: center;
+
+  overflow: hidden;
+
+}
+
+article h2 {
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
