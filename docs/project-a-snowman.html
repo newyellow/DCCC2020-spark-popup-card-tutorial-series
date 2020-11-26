@@ -31,169 +31,275 @@
       </div>
 
       <article id="main">
-        You can download all the assets here: <a href="http://newyellow.github.io/DCCC2020-spark-popup-card-tutorial-series/download/Project%20A%20-%20Snowman.zip">Project A - Snowman.zip</a>
-        <h2>Preparing a new project</h2>
+        <h2>
+          Project Description
+        </h2>
+        <p>
+          For this project, we are going to use Spark AR's Image Tracking feature to make an AR effect. When the camera detect the image we set, there will be some animation on the paper pop-up card.
+        </p>
+        <div class="video-area">
+          <iframe width="640" height="480" src="https://www.youtube.com/embed/0EZRWoaOwHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p>
+          This project is designed for people who is new to Spark AR. There will be screenshots for every step we made in case you miss any detail. By finishing this project, you will have a basic understanding about how to make an image tracking AR effect.
+        </p>
+
+        <h2>Assets for this Project</h2>
+        <p>
+        Please download the assets and the sample project here: <a href="http://newyellow.github.io/DCCC2020-spark-popup-card-tutorial-series/download/Project%20A%20-%20Snowman.zip">Project A - Snowman.zip</a>
+        </p>
+
+        <h2>Preparing the project</h2>
+        <h3>Create New Project</h3>
         <ol>
          	<li>Open the Spark AR Studio, and choose Create New → New Project</li>
-          <img src="imgs/project-a/a-step-0.png" />
+          <img src="imgs/project-a/create-new-project-01.jpg" />
          	<li>Select Target Tracking</li>
-          <img src="imgs/project-a/a-step-1.png" />
-         	<li>In the Assets panel, click the Add Asset → Import from computer, and select all the downloaded assets</li>
-          <img src="imgs/project-a/a-step-2.png" />
-          <img src="imgs/project-a/a-step-3.png" />
-         	<li>Now you will see the images are in some processing. Now you're good to go!</li>
-          <img src="imgs/project-a/a-step-4.png" />
+          <img src="imgs/project-a/create-new-project-02.jpg" />
+         	<li>Now the project is created, with Image Tracking feature enabled. There should be a fixedTargetTracker0 in the Scene panel.</li>
+          <img src="imgs/project-a/create-new-project-03.jpg" />
+         	<li>If you don't have a fixedTargetTracker0 in your Scene panel, you can also add it manually by right clicking the Scene panel, and choose Add → Fixed Target Tracker.</li>
+          <img src="imgs/project-a/create-new-project-04.jpg" />
         </ol>
-        <h2>Setup the Card Tracking</h2>
-        <h3>Setup target tracking image</h3>
+        <h3>Import assets from computer</h3>
         <ol>
-         	<li>In the Scene panel, you will see a fixedTargetTracker0 is already created, this is because we choose Target Tracking while creating a new project. If you don't have this in your Scene panel, you can also right click in the Scene panel, and choose Add → Fixed Target Tracker.</li>
-          <img src="imgs/project-a/a-step-5.png" />
-          <img src="imgs/project-a/a-step-6.png" />
-         	<li>Pick the fixedTargetTracker0, and you can see some options in the Properties panel on the right side.</li>
-         	<li>Click the small arrow beside the Texture, and pick the bg-tracking-target. If you don't see these options, it's because you haven't import the image assets.</li>
-          <img src="imgs/project-a/a-step-7.png" />
-         	<li>You will see the plane in the center became the picture you pick. Now the project can recognize the image.</li>
+          <li>In the Assets panel, click the Add Asset → Import from computer, and select all the downloaded assets</li>
+          <img src="imgs/project-a/import-from-computer-01.jpg" />
+          <img src="imgs/project-a/import-from-computer-02.jpg" />
+          <li>Now you will see images are all in the assets panel's textures folder.</li>
+          <img src="imgs/project-a/import-from-computer-03.jpg" />
         </ol>
+        <h2>Setup Image Tracking</h2>
+        <h3>Setup the tracking target image</h3>
+        <ol>
+         	<li>Pick the fixedTargetTracker0, and you can see some options in the Properties panel on the right side.</li>
+          <img src="imgs/project-a/setup-the-tracking-target-image-01.jpg" />
+         	<li>Click the small arrow beside the Texture, and pick the bg-tracking-target. If you don't see these options, it's because you haven't import the image assets.</li>
+          <img src="imgs/project-a/setup-the-tracking-target-image-02.jpg" />
+         	<li>You will see the plane in the center became the picture you pick. Now the project can recognize the image.</li>
+          <img src="imgs/project-a/setup-the-tracking-target-image-03.jpg" />
+        </ol>
+
         <h3>Test the tracking image</h3>
-        The tracking quality is different from your image design, so it's better to test your image tracking quality before really hands on your project.<br />
-        <br />
-        For more information about how to prepare your own image, please check the official guildeline: <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/world-effects/best-practice-for-target-tracking/">Best Practice for Target Tracking</a>.
+        <p>
+          Not every image is good for tracking. So it's better to test the image tracking quality before we really hands on the project.
+        </p>
         <ol>
          	<li>Right click on the fixedTargetTracker0, and choose Add → Plane</li>
-          <img src="imgs/project-a/a-step-8.png" />
-         	<li>Make sure the Plane is under the fixedTargetTracker0 hierarchy. If it's correctly under the hierarchy, the text position is a bit to the right, and there will be a small triangle beside the fixedTargetTracker0. If you don't see this, you can drag the Plane and put on to the fixedTargetTracker0.</li>
-          <img src="imgs/project-a/a-step-10.png" />
-         	<li>Now the basics of image tracking is ready, now we can test the tracking result. Since the image tracking can not be previewed in the simulator, we need to test the effect on our phone.</li>
-          <li>Click the Test on device button, and you can choose to upload the effect to Facebook or Instagram. Or you can install through a cable with the Spark AR Player. For more informations please check the official guide:<a href="https://sparkar.facebook.com/ar-studio/learn/tutorials/previewing-and-testing/">https://sparkar.facebook.com/ar-studio/learn/tutorials/previewing-and-testing/</a> and <a href="https://sparkar.facebook.com/ar-studio/learn/articles/mirroring/ar-player">https://sparkar.facebook.com/ar-studio/learn/articles/mirroring/ar-player</a></li>
-          <img src="imgs/project-a/a-step-11.png" />
-         	<li>Now you should able to see the rectangle on the background of the card. You can move around to see if the rectangle is sticked to the background.</li>
-          <img src="imgs/project-a/a-preview-1.png" />
-         	<li>If you see the rectangle, that means the tracking function is well setup. Now we can prepare the augmented content.</li>
+          <img src="imgs/project-a/test-the-tracker-image-01.jpg" />
+         	<li>Make sure the Plane is under the fixedTargetTracker0 hierarchy. If it's correctly under the hierarchy, the position of the object's name in the Scene panel will be a bit to the right, and there will be a small triangle beside the fixedTargetTracker0. If you don't see this, you can drag the Plane and put on to the fixedTargetTracker0.</li>
+          <img src="imgs/project-a/test-the-tracker-image-02.jpg" />
+         	<li>Now we can test the tracking result. Since the image tracking can not be previewed in the simulator, we need to test the effect on our phone.</li>
+          <li>Click the Test on device button, and you can choose to upload the effect to Facebook or Instagram. If you don't see Facebook or Instagram icon, click the small triangle beside the Send App label.</li>
+          <img src="imgs/project-a/test-the-tracker-image-04.jpg" />
+         	<li>After the uploading process is done, you can see a notification on your phone's Facebook/Instagram app.</li>
+          <img src="imgs/project-a/test-the-tracker-image-05.jpg" />
+          <img src="imgs/project-a/test-the-tracker-image-05-02.jpg" />
+         	<li>Tap the notification, and it will open the device's camera to let you test the effect. Aim your phone to the card, and you should able to see the rectangle on the background of the card. You can move around to see if the rectangle is stick to the background.</li>
+          <img src="imgs/project-a/test-the-tracker-image-06.gif" />
+          <li>If you do see the rectangle, that means the tracking function is working well. Now we can prepare the augmented content.</li>
         </ol>
-        <h2>Setup augmented content</h2>
+
+        <h3>*Test the effect with Spark AR Player App</h3>
+        <p>
+          If your internet is down, or you feel the result on your phone does not look the same as your Spark AR Studio on your computer. You could try the Spark AR Player app for previewing. You can install your AR effects into your phone through a cable with the Spark AR Player.</p>
+
+        <p>
+          For more informations please check the official guide: <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/tutorials/previewing-and-testing/">Previewing and Testing Effects</a> and <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/mirroring/ar-player">Mirroring Effects to AR Player</a>
+        </p>
+
+        <h3>*Best practice for the Tracker Image</h3>
+        <p>
+          The tracking quality is decided by the image design. So if you would like to design your own tracking image, you could check the official guideline: <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/world-effects/best-practice-for-target-tracking/">Best Practice for Target Tracking </a>
+        </p>
+
+        <h2>Materials in 3d</h2>
         <h3>Create material for each image</h3>
-        In 3d softwares, the image itself cannot be placed directly into the scene. You first need to define its "3d shape" (which usually called "mesh"), and then setup the "Material" for the shape, which can define how the shape looks (like color, reflectness of the surface ... etc).
+        <p>
+          In 3d softwares, the image itself cannot be placed directly into the scene. You first need to define its "shape" (which usually called "mesh"), and then define how the shape looks like through "Material". You can setup things like color, opacity, reflectness of the surface ... etc.
 
-        So if you want to put any images into a 3d scene, you first need to create a material, and setup the material with your image, then put this material onto a 3d object.
+        So if you want to put any images into a 3d scene, you first need to create a material, and pick the texture as the color image, then put this material onto a 3d object.
 
-        Don't worry about the 3d object. During these series of tutorial, we will only use Spark AR Studio's build-in Plane object (which is simply a rectangle).
-        <h3>Placing the person</h3>
-        <ol>
-         	<li>Create a material for the person image. Click Add Asset → Material in the Assets panel</li>
-          <img src="imgs/project-a/a-step-12.png" />
-         	<li>Then you can rename the material. And then click the arrow beside the Texture property, and choose the person image.</li>
-          <img src="imgs/project-a/a-step-13.png" />
-          <img src="imgs/project-a/a-step-14.png" />
-         	<li>Check on the Alpha Test option. Just do it for now, we will talk more about material settings in the next project.</li>
-          <img src="imgs/project-a/a-step-21.png" />
-         	<li>Now the material is ready. Next we create the shape. Right click on the fixedTargetTracker0, and choose Plane.</li>
-          <img src="imgs/project-a/a-step-15.png" />
-         	<li>Now the new Plane is created. But it may overlay with our previous created plane. Move it back a bit to separate two planes.</li>
-          <img src="imgs/project-a/a-step-18.png" />
-         	<li>You can double click the plane in the Scene panel to rename it. Here I rename it to person-plane.</li>
-          <img src="imgs/project-a/a-step-18.png" />
+        Don't worry about the 3d object. During these series of tutorial, we will only use the build-in Plane object (which is simply a rectangle).
+        </p>
 
-          <li>Pick the plane1 in the Scene, and click the "+" beside the Material section in the inspector, then you should be able to see the material name you just created.</li>
-          <img src="imgs/project-a/a-step-19.png" />
-         	<li>Now the plane becomes to the image you set. But the scale ratio is odd. This is because the material is always fill up the shape. So we need to adjust the plane's scale to make it looks right.</li>
-          <img src="imgs/project-a/a-step-20.png" />
-         	<li>You can pick the image in the Assets panel to see its width and height. For this person image, it's 512 x 1024.</li>
-          <img src="imgs/project-a/a-step-22.png" />
-         	<li>Then we adjust the person-plane's scale. You can calculate the ratio by you self, for 512 : 1024 is 1:2. So you set scale x to 1 and y to 2. But sometimes images' width are more complex. So I like to just key in their size (but divided by 1000, or the scale might be too large). I key in 0.512 and 1.024 for the scale x and y. The z scale won't matter (unless it's 0, it might cause errors if it's 0).</li>
-          <img src="imgs/project-a/a-step-25.png" />
-         	<li>Then you can adjust the size using the scale tool. If you scale the width and height in the same time, the ratio will keep correct.</li>
-          <img src="imgs/project-a/a-step-26.png" />
-         	<li>Now place the person beside the snowman. Although we can't see the snowman's position in the editor, but since we know the relationship between the background image and the snowman, we can make a guess in the editor.</li>
-          <img src="imgs/project-a/a-step-28.png" />
-         	<li>Then we preview the effect on our phone, to see if it's correctly placed. If not, we adjust again, and test on device again. Repeat this progress until the result looks right.</li>
-          <img src="imgs/project-a/a-preview-3.png" />
-          <img src="imgs/project-a/a-step-29.png" />
-          <img src="imgs/project-a/a-preview-4.png" />
+        <h3>Adding the girl into the scene</h3>
+          <ol>
+        <li>Create a material for the girl image. Click Add Asset → Material in the Assets panel</li>
+        <img src="imgs/project-a/adding-girl-into-scene-01.jpg" />
+        <li>Rename the material as girl-mat. Although this step is not necessary, but it's a good habit to name everything you created. Otherwise you may forget which material is for which object, and the Assets panel would be a mess.</li>
+        <img src="imgs/project-a/adding-girl-into-scene-02.jpg" />
+        <li>Pick the material we just created, and you should able to set its properties on the right panel. Click the arrow beside the Texture property, and choose the girl image.</li>
+        <img src="imgs/project-a/adding-girl-into-scene-03.jpg" />
+        <li>Check on the Alpha Test option. This will erase the transparent part of the image, or it might look odd due to layering issue. We will talk more about this settings in the next project</li>
+        <img src="imgs/project-a/adding-girl-into-scene-04.jpg" />
+        <li>Now the material is ready. Next we create the shape. Right click on the fixedTargetTracker0, and choose Plane.</li>
+        <img src="imgs/project-a/adding-girl-into-scene-05.jpg" />
+        <li>You can double click the plane in the Scene panel to rename it. Here I rename it to girl-plane.</li>
+        <img src="imgs/project-a/adding-girl-into-scene-06.jpg" />
+        <li>Now the girl-plane is overlay with our previous created plane0. Move it forward a bit to separate two planes.</li>
+        <img src="imgs/project-a/adding-girl-into-scene-07.jpg" />
+        <li>Pick the girl-plane in the Scene panel, and click the "+" beside the Material section on the right panel, then you should be able to see the material name you just created.</li>
+        <img src="imgs/project-a/adding-girl-into-scene-01.jpg" />
+        <li>Now the plane becomes to the image you set. But the scale ratio is odd. This is because the material is always fill up the shape. So we need to adjust the plane's size to make it looks right.</li>
         </ol>
-        <h3>Placing the texts</h3>
+
+        <h3>Adjust the plane scale to fit image size ratio</h3>
+        <ol>
+          <li>Pick the girl-image in the Assets panel to see its width and height. For this girl image, it's 512 x 1024.</li>
+          <img src="imgs/project-a/adjust-size-ratio-01.jpg" />
+          <li>Then we adjust the girl-plane's scale to fit the ratio. You can calculate the ratio directly. For 512 : 1024 is 1:2. So you can set the girl-plane's scale x to 1 and y to 2.</li>
+          <img src="imgs/project-a/adjust-size-ratio-02.jpg" />
+          <li>But sometimes images' size are more complex. So I like to just key in their size (but divided by 1000, otherwise it would be too big). Set x to 0.512 and y to 1.024. The z scale won't matter (unless it's 0, it might cause errors if it's 0).</li>
+          <img src="imgs/project-a/adjust-size-ratio-03.jpg" />
+          <li>Then you can adjust the size using the scale tool. If you scale the width and height in the same time, the ratio will keep correct.</li>
+          <img src="imgs/project-a/adjust-size-ratio-04.jpg" />
+        </ol>
+
+        <h3>Position the girl</h3>
+        <ol>
+        <li>Place the girl beside the snowman. Although we can't see the snowman's position in the editor, but since we know the relationship between the background image and the snowman, we can make a guess in the editor.</li>
+        <img src="imgs/project-a/position-the-girl-01.jpg" />
+        <img src="imgs/project-a/position-the-girl-01-02.gif" />
+        <li>Then we preview the effect on our phone, to see if it's correctly placed. If not, we adjust again, and test on device again. Repeat this progress until the result looks right.</li>
+        <img src="imgs/project-a/position-the-girl-02.jpg" />
+        <img src="imgs/project-a/position-the-girl-02-02.gif" />
+        </ol>
+
+
+        <h3>*Move, Scale, Rotate objects</h3>
+        <p>
+        There is an official guide <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/3D/using-the-manipulators">Using the Manipulators</a> talking about how to edit objects' transform in the scene. And there is another guide <a href="https://sparkar.facebook.com/ar-studio/learn/articles/fundamentals/navigating-the-interface/" target="_blank">Navigating the Spark AR Studio Interface</a> talking how each panel works.
+        </p>
+
+
+        <h3>Adding the texts</h3>
+        <p>
         Placing text is similar, just create material for each image, and place them into the scene. But since there are so many objects, it might be problematic if you have to align them one by one. So here is an additional grouping technique.
+        </p>
         <ol>
-         	<li>Right click on the fixedTargetTracker0, and choose Null Object. A null object is an object has basic properties (position, scale, rotation) but nothing more.</li>
-          <img src="imgs/project-a/a-step-30.png" />
-         	<li>Rename it to text-set, and add all text under its hierarchy.</li>
-          <img src="imgs/project-a/a-step-31.png" />
-         	<li>Adjust the size and the position of all the text objects.</li>
-         	<li>Because all the text objects are set to text-set's child, now you can move, rotate, and scale the text-set object, and the texts' layout will keep the same.</li>
-          <img src="imgs/project-a/a-step-32.png" />
-         	<li>So in this way you don't have to adjust one by one whenever you want to adjust the text's position on the card.</li>
+        <li>Create multiple planes, and also create materials for each text plane. Be sure to rename them or it might be confusing.<li>
+          <img src="imgs/project-a/position-the-girl-02.jpg" />
+        <li>Right click on the fixedTargetTracker0, and choose Null Object. A null object is an object has transform properties (position, scale, rotation) but nothing else.</li>
+        <img src="imgs/project-a/adding-text-01.jpg" />
+        <li>Rename it to text-set, and put all text planes under its hierarchy.</li>
+        <img src="imgs/project-a/adding-text-02.jpg" />
+        <li>Adjust the size and the position of each text plane. Layout them as you like.</li>
+        <img src="imgs/project-a/adding-text-03.gif" />
+        <li>Since all the text planes are put inside text-set, now you can move, rotate, and scale the whole text-set object together.</li>
+        <img src="imgs/project-a/adding-text-04.jpg" />
+        <li>So in this way you don't have to adjust one by one whenever you want to adjust the text's position on the card.</li>
+        <img src="imgs/project-a/adding-text-05.gif" />
         </ol>
-        <h2>Add animation with Patch Editor</h2>
-        Patch Editor is the most popular feature in Spark AR Studio. We can animate the values of a object to create animations. Here we are going to use this tool to make animations for our person and text.
+
+
+        <h2>Animating with Patch Editor</h2>
+        <p>
+        Patch Editor is the most popular feature in Spark AR Studio. We can animate the values of objects to create animations. Here we are going to use this tool to make animations for our girl-plane and texts.
+        </p>
+
         <h3>Test with a loop animation</h3>
         <ol>
-         	<li>Let's animate the person first. Pick person-plane, and beside its Scale property, you can see a small "→" arrow. Properties have this arrow means its value can be set through Patch Editor.</li>
-          <img src="imgs/project-a/a-step-33.png" />
-         	<li>Click the arrow, and the Patch Editor panel should showed up. And with a yellow box inside, which is the property patch we just added by clicking the scale arrow.</li>
-          <img src="imgs/project-a/a-step-34.png" />
-         	<li>Right click on the Patch Editor panel, or click the right bottom "+ Add Patch" button can add new patches. You can find patches you need by browsing the categories or type keywords to search.</li>
-          <img src="imgs/project-a/a-step-35.png" />
-         	<li>For now, add a "Transition" patch and a "Loop Animation" patch.</li>
-          <img src="imgs/project-a/a-step-36.png" />
-         	<li>Set the Start values to 0, 0, 0, and the End values to 1.33723, 2.67447, 1 (which is the value of your person-plane's current scale values).</li>
-          <img src="imgs/project-a/a-step-37.png" />
-         	<li>Each patch has inputs and outputs. The arrows on the left side are inputs, right side are outputs.</li>
-          <img src="imgs/project-a/a-step-40.png" />
-         	<li>You can connect inputs to outputs by clicking the output arrow and hold the mouse button, dragging to other patch's input arrow.</li>
-         	<li>Connect the Loop Animation's progress output to Transform's progress input; Transform's Value output to person-plane's 3D Scale input.</li>
-          <img src="imgs/project-a/a-step-41.png" />
-         	<li>Now you should see the person-plane is scaling up and down in a loop.</li>
-          <img src="imgs/project-a/a-step-41.png" />
-         	<li>You can change the Curve value of the Transition patch. This defines the feeling of the animation. This kind of curve is usually seen in computer animation softwares. If you're not familiar with those curve names, you could check this web: <a href="https://easings.net/">https://easings.net/</a></li>
-          <img src="imgs/project-a/a-step-42.png" />
-        </ol>
-        <h3>Setup on-tracked action with animation</h3>
-        The loop patch is nice for previewing animations. But instead of a loop animation, we actually want a one-time animation when the effect is tracking the card.
-        <ol>
-         	<li>Delete the loop animation patch. And add an Animation patch instead. And connect the progress line.</li>
-          <img src="imgs/project-a/a-step-43.png" />
-         	<li>We won't see any animations for now, because it needs a "Play Animation" trigger. (And that's why I usually start setting up animation with a loop animation patch to tune to animation)</li>
-          <li>Drag the fixedTargetTracker0 to the Patch Editor panel. The system will create 3 patches for you.</li>
-          <img src="imgs/project-a/a-step-44.png" />
-          <li>Connect the "Found" output of fixedTargetTracker0 patch to "Play" input of Animation patch.</li>
-          <img src="imgs/project-a/a-step-45.png" />
-         	<li>The system will automatically add a pulse patch to convert the values to meet the patches' needs.</li>
-         	<li>Now you can try the effect on your phone. You should be able to see the person image scales up when the tracking triggered.</li>
+        <li>Let's animate the person first. Pick girl-plane, and beside its Scale property, you can see a small "→" arrow. Properties have this arrow means its value can be set through Patch Editor.</li>
+        <img src="imgs/project-a/test-with-loop-01.jpg" />
+        <li>Click the arrow, and the Patch Editor panel will showed up with a yellow box inside, which is the property patch we just clicked.</li>
+        <img src="imgs/project-a/test-with-loop-02.jpg" />
+        <li>Right click on the Patch Editor panel, or click the right bottom "+ Add Patch" button can add new patches. You can find the patch you need by browsing the categories or type keywords to search.</li>
+        <img src="imgs/project-a/test-with-loop-03.jpg" />
+        <li>For now, add a "Transition" patch and a "Loop Animation" patch.</li>
+        <img src="imgs/project-a/test-with-loop-04-1.jpg" />
+        <img src="imgs/project-a/test-with-loop-04-2.jpg" />
+        <img src="imgs/project-a/test-with-loop-04-3.jpg" />
+        <li>Set the Transition patch's Start values to 0, 0, 0, and the End values to your girl-plane's current scale values. (for me it's 1.61809, 3.23619, 1)</li>
+        <img src="imgs/project-a/test-with-loop-05.jpg" />
+        <li>Each patch has inputs and outputs. The arrows on the left side are inputs, right side are outputs.</li>
+        <img src="imgs/project-a/test-with-loop-06.jpg" />
+        <li>You can connect inputs to outputs by left click and hold the output arrow, and drag to other patch's input arrow.</li>
 
+        <li>Connect the Loop Animation's progress output to Transform's progress input; Transform's Value output to girl-plane's 3D Scale input.</li>
+        <img src="imgs/project-a/test-with-loop-08.gif" />
+        <li>Now you should see the person-plane is scaling up and down in a loop.</li>
+        <img src="imgs/project-a/test-with-loop-09.gif" />
+        <li>You can change the Curve value of the Transition patch to set the animation's feeling. Pick one you like the most.</li>
+        <img src="imgs/project-a/test-with-loop-10.jpg" />
         </ol>
-        <h3>Queueing animations</h3>
-        The setting of the text animations are the same. But if you want to make an animation queue to make something like a typing text effect, you can use the Delay patch and the OnComplete output.
+
+
+        <h3>*Animation Curves</h3>
+        <p>
+        The Curve in the Transition patch is commonly used in computer graphics area. It's also called easing types. If you're not familiar with those curve names, you could check what they do on <a target="_blank" href="https://easings.net/">easings.net</a>
+        </p>
+
+
+        <h2>Setup on-tracked action with animation</h2>
+        <p>
+        The loop patch is nice for previewing animations. But instead of a loop animation, we actually want a one-time animation when the card is being detected. So now we're going to replace the Loop Animation patch.
+        </p>
         <ol>
-         	<li>Setup the text animations. The setting of each text's animation is the same as above.</li>
-          <li>You can connect the Completed output of one Animation patch to another Animation patch's Play input. By doing this, the animations will triggered one by one, instead of everything animating together.</li>
-          <img src="imgs/project-a/a-step-47.png" />
-         	<li>You can add an additional Delay patch to setup the delay time before next Animation triggers.</li>
-         	<li>If it feels a bit complicated, please open the sample project to check the patch details.</li>
+        <li>Delete the loop animation patch. And add an Animation patch instead. And connect the progress line.</li>
+        <img src="imgs/project-a/setup-on-track-event-01.jpg" />
+        <li>We won't see any animations for now, because it needs a trigger signal connect to "Play Animation".</li>
+        <li>Drag the fixedTargetTracker0 to the Patch Editor panel. The system will create 3 patches for you.</li>
+        <img src="imgs/project-a/setup-on-track-event-03.gif" />
+        <li>Connect the "Found" output of fixedTargetTracker0 patch to "Play" input of Animation patch.</li>
+        <li>The system will automatically add a pulse patch to convert the value type to fit the patches' needs.</li>
+        <img src="imgs/project-a/setup-on-track-event-05.jpg" />
+        <li>Now you can try the effect on your phone. You should be able to see the girl scales up when the tracking triggered.</li>
         </ol>
-        <ul>
-         	<li>You can also open the Patch Editor panel by clicking View → Show/Hide Patch Editor, instead of click the object's property arrow.</li>
-        </ul>
-        <h2>Add snow effect</h2>
+
+
+
+        <h2>Queueing animations</h2>
+        <p>
+        The setting of the text animations are the same. But if you want to make an animation queue to make something like a typing text effect, you can use the OnComplete output and the Delay patch.
+        </p>
+
+        <ol>
+        <li>Setup the text animations. The setting of each text's animation is the same as above.</li>
+        <img src="imgs/project-a/queuing-animations-01.jpg" />
+        <li>You can connect the Completed output of one Animation patch to another Animation patch's Play input. By doing this, the animations will triggered one by one, instead of everything animating together.</li>
+        <img src="imgs/project-a/queuing-animations-02.jpg" />
+        <li>You can add an additional Delay patch to setup the delay time before next Animation triggers.</li>
+        <img src="imgs/project-a/queuing-animations-03.jpg" />
+        <li>If it feels a bit complicated, please open the sample project to check the patch details.You can open the Patch Editor panel by clicking View → Show/Hide Patch Editor if the Patch Editor is not shown by default.</li>
+        <img src="imgs/project-a/queuing-animations-04.jpg" />
+        </ol>
+
+
+        <h2>Add Snow Particle Effect</h2>
+        <p>
         In order to create the snow effect, we need to use the Particle System. Particle System is a common feature in 3d softwares for creating non-solid objects, like fire, water, smoke ... etc. Spark AR Studio also has Particle System.
+        </p>
+
         <ol>
-         	<li>Create a new material for the particle system. Set shader type to Flat. Set the texture to snow. Set Blend Mode to Add. Check on Alpha Test.</li>
-
-         	<li>Create a new Particle System object by right click → Add → Particle System.</li>
-          <img src="imgs/project-a/a-step-50.png" />
-         	<li>Setup the Emitter section. Set Type to Plane. Set Size to 0.3, 0.3 (this option will showed up after you set Type to Plane). Speed to 0.03, 60.</li>
-          <img src="imgs/project-a/a-step-53.png" />
-         	<li>Set the Material to snow particle.</li>
-          <img src="imgs/project-a/a-step-54.png" />
-         	<li>Toggle the Particle section. Set Scale to 0.003, 60. Lifespan to 2, 60. Spin to 0, 180. Tilt to 0, 180.</li>
-          <img src="imgs/project-a/a-step-56.png" />
-         	<li>Rotate the Particle System object and position it above the person. Make the snow floating down instead of floating up.</li>
-          <img src="imgs/project-a/a-step-57.png" />
+        <li>Create a new material for the particle system.</li>
+        <img src="imgs/project-a/add-particle-01.jpg" />
+        <li>Set shader type to Flat. Set the texture to snow. Set Blend Mode to Add. Check on Alpha Test.</li>
+        <img src="imgs/project-a/add-particle-02.jpg" />
+        <li>Create a new Particle System object by right click → Add → Particle System.</li>
+        <img src="imgs/project-a/add-particle-03.jpg" />
+        <li>Setup the Emitter section. Set Type to Plane. Set Size to 0.3, 0.3 (this option will showed up after you set Type to Plane). Speed to 0.03, 60.</li>
+        <img src="imgs/project-a/add-particle-04.jpg" />
+        <li>Toggle the Particle section. Set Scale to 0.003, 60. Lifespan to 2, 60. Spin to 0, 180. Tilt to 0, 180.</li>
+        <img src="imgs/project-a/add-particle-05.jpg" />
+        <li>Set the Material to snow particle.</li>
+        <img src="imgs/project-a/add-particle-06.jpg" />
+        <li>Rotate the Particle System object and position it above the person. Make the snow floating down instead of floatingup.</li>
+        <img src="imgs/project-a/add-particle-07.jpg" />
         </ol>
-        You can adjust and play with those parameters by yourself, to make the snow fit your need. Tuning particle effect is a work of art, which can not be covered in this tutorial. Please check official Particle System tutorial for further information.
 
-        <a href="https://sparkar.facebook.com/ar-studio/learn/tutorials/adding-particle-systems/#applying-a-material">https://sparkar.facebook.com/ar-studio/learn/tutorials/adding-particle-systems/#applying-a-material</a>
+        <h2>*Design your own Particle Effect</h2>
+        <p>
+        Design and create a particle system visual is all about tuning the parameters. You can try play with the values and see what happens, and that is the only way to learn Particle Systems.
 
-        And the project is all done! You should be able to see the result like this.
+        If you are interested you could also check the official tutorial: <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/tutorials/adding-particle-systems/"> Adding and Editing Particle Systems</a>
+        </p>
+
+        <p>
+        And now the project is all done. Conguatulations!
+
+        You should be able to see the result like this:
+        </p>
 
         <div class="video-area">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/0EZRWoaOwHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
