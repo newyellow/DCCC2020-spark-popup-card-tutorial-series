@@ -94,7 +94,6 @@
           <img src="imgs/project-a/test-the-tracker-image-04.jpg" />
          	<li>After the uploading process is done, you can see a notification on your phone's Facebook/Instagram app.</li>
           <img src="imgs/project-a/test-the-tracker-image-05.jpg" />
-          <img src="imgs/project-a/test-the-tracker-image-05-02.jpg" />
          	<li>Tap the notification, and it will open the device's camera to let you test the effect. Aim your phone to the card, and you should able to see the rectangle on the background of the card. You can move around to see if the rectangle is stick to the background.</li>
           <img src="imgs/project-a/test-the-tracker-image-06.gif" />
           <li>If you do see the rectangle, that means the tracking function is working well. Now we can prepare the augmented content.</li>
@@ -113,13 +112,13 @@
           The tracking quality is decided by the image design. So if you would like to design your own tracking image, you could check the official guideline: <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/world-effects/best-practice-for-target-tracking/">Best Practice for Target Tracking </a>
         </p>
 
-        <h2>Materials in 3d</h2>
-        <h3>Create material for each image</h3>
+        <h2>Setup augmented content</h2>
+        <h3>Materials in 3d</h3>
         <p>
-          In 3d softwares, the image itself cannot be placed directly into the scene. You first need to define its "shape" (which usually called "mesh"), and then define how the shape looks like through "Material". You can setup things like color, opacity, reflectness of the surface ... etc.
-
-        So if you want to put any images into a 3d scene, you first need to create a material, and pick the texture as the color image, then put this material onto a 3d object.
-
+        In 3d softwares, the image itself cannot be placed directly into the scene. You first need to define its "shape" (which usually called "mesh"), and then define how the shape looks like through "Material". You can setup things like color, opacity, reflectness of the surface ... etc.<br />
+        <br />
+        So if you want to put any images into a 3d scene, you first need to create a material, and pick the texture as the color image, then put this material onto a 3d object.<br />
+        <br />
         Don't worry about the 3d object. During these series of tutorial, we will only use the build-in Plane object (which is simply a rectangle).
         </p>
 
@@ -160,8 +159,8 @@
         <ol>
         <li>Place the girl beside the snowman. Although we can't see the snowman's position in the editor, but since we know the relationship between the background image and the snowman, we can make a guess in the editor.</li>
         <img src="imgs/project-a/position-the-girl-01.jpg" />
-        <img src="imgs/project-a/position-the-girl-01-02.gif" />
         <li>Then we preview the effect on our phone, to see if it's correctly placed. If not, we adjust again, and test on device again. Repeat this progress until the result looks right.</li>
+        <img src="imgs/project-a/position-the-girl-01-02.gif" />
         <img src="imgs/project-a/position-the-girl-02.jpg" />
         <img src="imgs/project-a/position-the-girl-02-02.gif" />
         </ol>
@@ -178,18 +177,17 @@
         Placing text is similar, just create material for each image, and place them into the scene. But since there are so many objects, it might be problematic if you have to align them one by one. So here is an additional grouping technique.
         </p>
         <ol>
-        <li>Create multiple planes, and also create materials for each text plane. Be sure to rename them or it might be confusing.<li>
-          <img src="imgs/project-a/position-the-girl-02.jpg" />
-        <li>Right click on the fixedTargetTracker0, and choose Null Object. A null object is an object has transform properties (position, scale, rotation) but nothing else.</li>
+        <li>Create multiple planes, and also create materials for each text plane. Be sure to rename them or it might be confusing.</li>
         <img src="imgs/project-a/adding-text-01.jpg" />
-        <li>Rename it to text-set, and put all text planes under its hierarchy.</li>
+        <li>Right click on the fixedTargetTracker0, and choose Null Object. A null object is an object has transform properties (position, scale, rotation) but nothing else.</li>
         <img src="imgs/project-a/adding-text-02.jpg" />
-        <li>Adjust the size and the position of each text plane. Layout them as you like.</li>
+        <li>Rename it to text-set, and put all text planes under its hierarchy.</li>
         <img src="imgs/project-a/adding-text-03.gif" />
-        <li>Since all the text planes are put inside text-set, now you can move, rotate, and scale the whole text-set object together.</li>
+        <li>Adjust the size and the position of each text plane. Layout them as you like.</li>
         <img src="imgs/project-a/adding-text-04.jpg" />
-        <li>So in this way you don't have to adjust one by one whenever you want to adjust the text's position on the card.</li>
+        <li>Since all the text planes are put inside text-set, now you can move, rotate, and scale the whole text-set object together.</li>
         <img src="imgs/project-a/adding-text-05.gif" />
+        <li>So in this way you don't have to adjust one by one whenever you want to adjust the text's position on the card.</li>
         </ol>
 
 
@@ -245,6 +243,7 @@
         <li>The system will automatically add a pulse patch to convert the value type to fit the patches' needs.</li>
         <img src="imgs/project-a/setup-on-track-event-05.jpg" />
         <li>Now you can try the effect on your phone. You should be able to see the girl scales up when the tracking triggered.</li>
+        <img src="imgs/project-a/setup-on-track-event-06.gif" />
         </ol>
 
 
@@ -257,7 +256,7 @@
         <ol>
         <li>Setup the text animations. The setting of each text's animation is the same as above.</li>
         <img src="imgs/project-a/queuing-animations-01.jpg" />
-        <li>You can connect the Completed output of one Animation patch to another Animation patch's Play input. By doing this, the animations will triggered one by one, instead of everything animating together.</li>
+        <li>You can connect the Completed output of one Animation patch to another Animation patch's Play input. By doing this,</li> the animations will triggered one by one, instead of everything animating together.
         <img src="imgs/project-a/queuing-animations-02.jpg" />
         <li>You can add an additional Delay patch to setup the delay time before next Animation triggers.</li>
         <img src="imgs/project-a/queuing-animations-03.jpg" />
@@ -304,6 +303,7 @@
         <div class="video-area">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/0EZRWoaOwHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+
       </article>
     </div>
   </body>
