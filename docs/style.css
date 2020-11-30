@@ -142,3 +142,50 @@ a.text-info.active:visited {
 article#main img.center {
     margin: auto;
 }
+
+#mobile-nav {
+    display: none;
+}
+
+#mobile-spacer {
+    display: none;
+}
+
+@media only screen and (max-width: 801px) {
+    #main-menu {
+        display: none;
+    }
+
+    #main-nav-spacer {
+        display: none;
+    }
+
+    #main-section {
+        width: 100%;
+    }
+
+    #mobile-nav {
+        background-color: #f8f9fa;
+        display: block;
+        position: fixed;
+        top: 0px;
+        width: 100vw;
+        height: 40px;
+        font-size: 0.6em;
+
+        box-sizing: border-box;
+        line-height: 40px;
+        vertical-align: middle;
+    }
+
+    #mobile-spacer {
+        display: block;
+        width: 100vw;
+        height: 60px;
+    }
+}
+
+span.hamburger {
+    color: green;
+    margin: 0px 20px 0px 10px;
+}
