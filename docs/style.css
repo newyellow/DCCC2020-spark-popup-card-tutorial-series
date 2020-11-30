@@ -113,12 +113,13 @@ li + li {
     margin-top: 12px;
 }
 
-li + img {
-    padding-top: 10px;
-    padding-bottom: 30px;
+p + img, li + img {
+    padding-top: 20px;
+    padding-bottom: 40px;
 }
 
 p {
+    text-align: justify;
     padding: 10px;
 }
 
