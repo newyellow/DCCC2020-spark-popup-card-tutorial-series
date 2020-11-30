@@ -50,7 +50,7 @@
           <li>It is strongly recommended that you take the Snowman tutorial before starting this one. The Snowman tutorial provides a very detailed walk-through of the basic functions that will not be covered here.</li>
         </ul>
 
-
+        <a name="set-up-tracking"></a>
         <h2>Set Up Tracking</h2>
 
         <p>For this step, you need to:</p>
@@ -69,10 +69,12 @@
 
         <p>These steps have been covered in the Snowman. If you’re not familiar with them, please refer to the Snowman tutorial.</p>
 
+        <a name="setting-up-room-space"></a>
         <h2>Setting Up Room Space</h2>
 
         <p>For this project, we want to create a “see-through window” experience for the user to get a feel of the interior space. Therefore, we need to build a room space.</p>
 
+        <a name="place-a-reference-image"></a>
         <h3>Place a Reference Image</h3>
         <p>To match the virtual room size with the paper model, we can use a reference image as a guidance when creating the space.</p>
         <ol>
@@ -84,6 +86,7 @@
           <img src="imgs/project-b/02--place-reference-image-03.jpg" />
         </ol>
 
+        <a name="set-up-the-walls"></a>
         <h3>Set Up the Walls</h3>
         <ol>
           <li>Create a material named “wall-mat” and select “wood-wall-texture”.</li>
@@ -94,6 +97,7 @@
           <img src="imgs/project-b/03--setup-the-walls-03.jpg" />
         </ol>
 
+        <a name="install-furniture"></a>
         <h2>Install Furniture</h2>
 
         <ol>
@@ -106,13 +110,14 @@
           <li>To solve this issue, we need to grasp a better understanding of Material and Layer.</li>
         </ol>
 
-
+        <a name="the-transparent-issue"></a>
         <h2>The transparent issue</h2>
 
         <p>It's kind of weird that the transparent part of an image would block the images behind it. This is due to Spark AR’s treatment of images with transparent and semi-transparent images. But it's not really the faut of the Spark team; it's a common occurrence issue in real-time rendering.<br />
         <br />
         There are two ways to fix this problem in Spark AR, each with its pros and cons.</p>
 
+        <a name="fixing-by-alpha-test"></a>
         <h3>Fixing by using Alpha Test</h3>
         <p>In Spark AR, even if part of the image is totally transparent (0% opacity), it does not mean “none” or “nothing” in 3D. The shape will remain visible. You can see the outline of the shape being a rectangle when selected.</p>
         <img src="imgs/project-b/05--fixing-alpha-test-01.jpg" />
@@ -134,7 +139,7 @@
 
         <p>Therefore, we need another fix for such issues.</p>
 
-
+        <a name="fixing-by-setting-the-layers"></a>
         <h3>Fixing by setting the layers</h3>
 
         <p>Layer defines the rendering order of each object. If the object is closer to the camera, the order of its layer should be above other things further back. For now, we will use the layer setting to fix the transparency issues of the sofa shadow and window reflection light.</p>
@@ -155,7 +160,7 @@
           <img src="imgs/project-b/06--layers-07.jpg" />
         </ol>
 
-
+        <a name="opacity-and-blend-mode"></a>
         <h3>*Opacity and Blend Mode</h3>
 
         <p>You can play around with the material's Blending Modes settings. This defines how the image interacts with the image “behind” it. For my project, I chose "Multiply" for the shadow material and "Add" for the light.</p>
@@ -174,7 +179,7 @@
         <a target="_blank" href="https://github.com/positlabs/spark-blend-modes">https://github.com/positlabs/spark-blend-modes</a>
 
 
-
+        <a name="animated-fire"></a>
         <h2>Animated Fire</h2>
 
         <p>You can also create animated images using the image sequence. We have here a fire sequence for practice.</p>
@@ -194,11 +199,12 @@
           <img src="imgs/project-b/08--animated-fire-06.jpg" />
         </ol>
 
-
+        <a name="setting-up-the-lights"></a>
         <h2>Setting Up the Lights</h2>
 
         <p>As fire is burning inside the house, the lights should flicker. Let's set up some lights instead of using the default lighting.</p>
 
+        <a name="adding-lights-into-the-scene"></a>
         <h3>Adding Lights into the Scene</h3>
 
         <ol>
@@ -215,7 +221,7 @@
           <img src="imgs/project-b/09--add-light-into-scene-05.jpg" />
         </ol>
 
-
+        <a name="animating-the-light-intensity"></a>
         <h3>Animating the Light Intensity</h3>
 
         <ol>
@@ -229,11 +235,12 @@
           <img src="imgs/project-b/10--animating-light-04.jpg" />
         </ol>
 
+        <a name="light-types"></a>
         <h3>*Light Types</h3>
 
         <p>If you want to find out more about different lighting types, you can check the official guide: <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/lights/lights-available">Lights in Spark AR Studio</a></p>
 
-
+        <a name="test-the-room"></a>
         <h2>Test the Room</h2>
 
         <p>Now the room is ready for you to test with your device. It should look something like this:</p>
@@ -242,13 +249,14 @@
 
         <p>Oops! The whole wall is transparent, while what we want is a see-through-window experience. So, we now need to set up the mask.</p>
 
-
+        <a name="setting-up-the-mask"></a>
         <h2>Setting Up the Mask</h2>
 
         <p>In augmented reality rendering, virtual objects are always rendered in front of the camera image. This is because our device cameras only capture 2D images from the real world, which lacks information on depth. To make virtual objects render behind real-world images, we need masks.</p>
 
         <p>In Spark AR Studio, a mask can be created through transparent materials with proper layer settings.</p>
 
+        <a name="set-up-walls-mask"></a>
         <h3>Set Up Walls Mask</h3>
 
         <ol>
@@ -270,7 +278,7 @@
           <img src="imgs/project-b/12--setup-wall-mask-08.gif" />
         </ol>
 
-
+        <a name="set-up-window-mask"></a>
         <h3>Set Up Window Mask</h3>
 
         <ol>

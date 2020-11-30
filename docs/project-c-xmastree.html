@@ -51,7 +51,7 @@
         <ul class="warning"><li>It is strongly recommended that you watch the Snowman tutorial before starting this one. The Snowman tutorial provides a very detailed walk-through of the basic functions that will not be covered here.</li></ul>
 
 
-
+        <a name="set-up-tracking"></a>
         <h2>Set Up Tracking</h2>
 
         <p>For this step, you need to do the following:</p>
@@ -67,13 +67,14 @@
         <img src="imgs/project-c/01--setup-tracking-01.jpg" />
         <p>If you’re unfamiliar with these steps, please refer to Project A (Snowman) for a more detailed step-by-step tutorial.</p>
 
-
+        <a name="set-up-the-object"></a>
         <h2>Set Up the Object</h2>
 
         <p>The scene setup for this project is slightly different from the previous two. In Projects A and B, the images are parallel to the tracking image. However, in this project, the tracking image is the floor, so the images need to stand perpendicularly on the tracking image.<br />
         <br />
         Furthermore, since you can't rotate the fixedTargetTracker in Spark AR Studio, the editing might be a bit strange. But don’t worry, you’ll get used to it!</p>
 
+        <a name="create-a-two-sided-plane"></a>
         <h3>Create a Two-Sided Plane</h3>
 
         <ol>
@@ -93,6 +94,7 @@
         <img src="imgs/project-c/02--create-two-sided-plane-06.gif" />
         </ol>
 
+        <a name="materials-double-sided-setting"></a>
         <h3>*Material's Double-Sided Setting</h3>
 
         <p>There's an easier way to create a double-sided plane. You can check the “double-sided” option in the material setting.</p>
@@ -107,6 +109,7 @@
         <br />
         So, if the object's material type is standard, don't use the double-sided option. Instead, duplicate the plane. However, if your object's material type is flat, which means it doesn’t interact with the lights, opt for the double-sided option.</p>
 
+        <a name="composing-the-chair"></a>
         <h3>Composing the Chair</h3>
 
         <ol>
@@ -122,6 +125,7 @@
           <img src="imgs/project-c/04--composite-the-chair-05.jpg" />
         </ol>
 
+        <a name="placing-the-star"></a>
         <h3>Placing the Star</h3>
 
         <ol>
@@ -133,6 +137,7 @@
           <img src="imgs/project-c/05--placing-the-star-03.jpg" />
         </ol>
 
+        <a name="make-it-snow"></a>
         <h3>Make It Snow</h3>
 
         <ol>
@@ -142,6 +147,7 @@
           <img src="imgs/project-c/06--make-it-snow-02.jpg" />
         </ol>
 
+        <a name="make-the-star-glow"></a>
         <h3>Make the Star Glow</h3>
 
         <ul>
@@ -149,10 +155,12 @@
           <img src="imgs/project-c/07--make-the-star-glow-01.jpg" />
         </ul>
 
+        <a name="creating-the-illusion"></a>
         <h2>Creating the Illusion</h2>
 
         <p>As mentioned in Project B (Woodhouse), the virtual objects are always rendered in front of real-world images. So, if we want to make it seem like snow is really falling around the paper tree, we can use the masking technique.</p>
 
+        <a name="create-masks-for-the-tree"></a>
         <h3>Create Masks for the Tree</h3>
 
         <ol>
@@ -168,6 +176,7 @@
           <li>The tree’s masking position does not need to be perfect since it only covers the snowflakes. The edge of the mask will not be obvious.</li>
         </ol>
 
+        <a name="about-the-trail-and-error"></a>
         <h3>*About the Trial-and-Error Positioning Technique</h3>
 
         <p>It might seem silly to rely on trial-and-error methods for positioning., i.e., the tree mask in this project and the girl image in Snowman. However, this technique actually brings forth more possibilities for AR projects.<br />
@@ -176,7 +185,7 @@
         <br />
         With the positioning technique, however, we don't need the tracking technology. instead, we can build an AR effect on anything using an image as a tracking target if we can spot an appropriate way to place and image beside the target. As in this project, we don't really track the tree; instead, we use the floor image for tracking.</p>
 
-
+        <a name="additional-details"></a>
         <h2>Additional Details</h2>
 
         <p>There are some additional things we could work on to improve the effect. However, since the techniques have already been covered in the previous tutorials, I will simply list them below. If you want to  find out more details, you could initiate the sample project.</p>

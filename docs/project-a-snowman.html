@@ -49,7 +49,10 @@
         Please download the assets and the sample project here: <a href="http://newyellow.github.io/DCCC2020-spark-popup-card-tutorial-series/download/Project%20A%20-%20Snowman.zip">Project A - Snowman.zip</a>
         </p>
 
+        <a name="preparing-the-project"></a>
         <h2>Preparing the Project</h2>
+
+        <a name="create-new-project"></a>
         <h3>Create New Project</h3>
         <ol>
          	<li>Open Spark AR Studio and select “Create New” → “New Project”.</li>
@@ -61,6 +64,8 @@
          	<li>If the fixedTargetTracker0 is not on your Scene panel, you can add it manually by right clicking the Scene panel and selecting “Add” → “Fixed Target Tracker”.</li>
           <img src="imgs/project-a/create-new-project-04.jpg" />
         </ol>
+
+        <a name="import-assets-from-computer"></a>
         <h3>Import Assets from Computer</h3>
         <ol>
           <li>On the Assets panel, click on “Add Asset” → “Import from Computer” and select all the downloaded assets.</li>
@@ -70,7 +75,10 @@
           <img src="imgs/project-a/import-from-computer-03.jpg" />
         </ol>
 
+        <a name="set-up-image-tracking"></a>
         <h2>Set Up Image Tracking</h2>
+
+        <a name="set-up-tracking-target-image"></a>
         <h3>Set Up Tracking Target Image</h3>
         <ol>
          	<li>Select fixedTargetTracker0 and you will see some options on the Properties panel on the right.</li>
@@ -81,6 +89,7 @@
           <img src="imgs/project-a/setup-the-tracking-target-image-03.jpg" />
         </ol>
 
+        <a name="test-the-tracker-image"></a>
         <h3>Test the Tracker Image</h3>
         <p>
           Not every image is good for tracking, so it's better to test the image tracking quality before we really go hands-on on the project.
@@ -100,6 +109,7 @@
           <li>If you do see a rectangle, that means the tracking function is working. Now we can prepare the augmented content.</li>
         </ol>
 
+        <a name="test-the-effect-with-the-spark-ar-player"></a>
         <h3>*Test the Effect with the Spark AR Player App</h3>
         <p>
           If your internet is down or if you feel the results on your phone does not look the same as it does on the Spark AR Studio on your computer, try the Spark AR Player app for previewing. You can install your AR effects on your phone through a cable using the Spark AR Player.<br />
@@ -107,12 +117,16 @@
           For more information, please check the official guides:<a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/tutorials/previewing-and-testing/">Previewing and Testing Effects</a> and <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/mirroring/ar-player">Mirroring Effects to AR Player</a>
         </p>
 
+        <a name="best-practice-tracker-image"></a>
         <h3>*Best Practice for the Tracker Image</h3>
         <p>
           The tracking quality is determined by the image design. If you would like to design your own tracking image, check out the official guideline: <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/world-effects/best-practice-for-target-tracking/">Best Practice for Target Tracking </a>
         </p>
 
+        <a name="set-up-augmented-content"></a>
         <h2>Set Up Augmented Content</h2>
+
+        <a name="materials-in-3d"></a>
         <h3>Materials in 3D</h3>
         <p>
         In 3D softwares, the image itself cannot be placed directly onto the scene. You will first need to define its “shape”—usually called “mesh”—and then define how the shape looks  via “Material”. You can set up things like color, opacity, reflectiveness of the surface, etc.<br />
@@ -122,6 +136,7 @@
         Don't worry about 3D object for now. During these tutorials, we will only use the built-in Plane object, which is simply a rectangle.
         </p>
 
+        <a name="adding-the-girl-into-the-scene"></a>
         <h3>Adding the Girl into the Scene</h3>
           <ol>
         <li>Create a material for the image of a girl image. Click “Add Asset” → “Material” on the Assets panel.</li>
@@ -143,6 +158,7 @@
         <li>Now the plane has become the image you set. But the scale ratio is odd. This is because the material always fills the shape. So, we need to adjust the plane's size to make it look right.</li>
         </ol>
 
+        <a name="adjust-plane-scale-to-fit-image-ratio"></a>
         <h3>Adjust Plane Scale to Fit Image Size Ratio</h3>
         <ol>
           <li>Select the girl-image in the Assets panel to see its width and height. This one is 512 x 1024.</li>
@@ -155,6 +171,7 @@
           <img src="imgs/project-a/adjust-size-ratio-04.jpg" />
         </ol>
 
+        <a name="position-the-girl"></a>
         <h3>Position the Girl</h3>
         <ol>
         <li>Place the girl beside the snowman. Though we can't see the snowman's position in the editor, we know the relationship between the background image and the snowman. Therefore, we can make an educated guess in the editor.</li>
@@ -165,7 +182,7 @@
         <img src="imgs/project-a/position-the-girl-02-02.gif" />
         </ol>
 
-
+        <a name="move-scale-rotate-objects"></a>
         <h3>*Move, Scale, Rotate objects</h3>
         <p>
         This official guide explains how to edit objects in the scene. If you are not familiar with 3D softwares,  check these official guides:<br />
@@ -173,7 +190,7 @@
          <a href="https://sparkar.facebook.com/ar-studio/learn/articles/fundamentals/navigating-the-interface/" target="_blank">Navigating the Spark AR Studio Interface</a>
         </p>
 
-
+        <a name="adding-texts"></a>
         <h3>Adding Texts</h3>
         <p>
         Similarly, place texts by simply creating a material for each image and place them in the scene. Since there are so many objects, it might be problematic aligning them one by one. So here is an additional grouping technique.
@@ -192,12 +209,13 @@
         <li>This way, you don't have to adjust them individually whenever you want to adjust the text's positioning on the card.</li>
         </ol>
 
-
+        <a name="animating-with-patch-editor"></a>
         <h2>Animating with Patch Editor</h2>
         <p>
         Patch Editor is the most popular feature in Spark AR Studio. We can animate object values to create animations. We will now use this tool to make animations for our girl-plane and texts.
         </p>
 
+        <a name="test-with-loop-animation"></a>
         <h3>Test with Loop Animation</h3>
         <ol>
         <li>Let's animate the person first. Select girl-plane and find the small “→” arrow beside its Scale property. Properties with this arrow means its value can be set through the Patch Editor.</li>
@@ -224,13 +242,13 @@
         <img src="imgs/project-a/test-with-loop-10.jpg" />
         </ol>
 
-
+        <a name="animation-curves"></a>
         <h3>*Animation Curves</h3>
         <p>
         The curve in the transition patch is commonly used in the field of computer graphics. It's also called an easing type. If you're not familiar with the curve names,  check the following website to find out what they do: <a target="_blank" href="https://easings.net/">easings.net</a>
         </p>
 
-
+        <a name="set-up-on-track-action"></a>
         <h2>Set Up On-Track Action with Animation</h2>
         <p>
         The loop patch is good for previewing animations. However, instead of a loop animation, we actually want a one-time animation when the card is being detected. So, we will now replace the loop animation patch.
@@ -248,8 +266,7 @@
         <img src="imgs/project-a/setup-on-track-event-06.gif" />
         </ol>
 
-
-
+        <a name="queueing-animations"></a>
         <h2>Queueing Animations</h2>
         <p>
         The setting of the text animations is the same. However, if you want to make an animation queue to produce something like a typing text effect, you can use the OnComplete output and Delay patch.
@@ -266,7 +283,7 @@
         <img src="imgs/project-a/queuing-animations-04.jpg" />
         </ol>
 
-
+        <a name="create-the-snow-effect"></a>
         <h2>Create the Snow Effect</h2>
         <p>
         In order to create the snow effect, we need to use the particle system, a common feature in 3D softwares for creating non-solid objects like fire, water, smoke, etc. Spark AR Studio also has a particle system.
@@ -289,6 +306,7 @@
         <img src="imgs/project-a/add-particle-07.jpg" />
         </ol>
 
+        <a name="design-your-own-particle-effect"></a>
         <h2>*Design Your Own Particle Effect</h2>
         <p>
         Designing and creating a particle system visual effect is all about tuning the parameters. You can play with the values and see what happens. That is the only way to master the particle system.<br />
