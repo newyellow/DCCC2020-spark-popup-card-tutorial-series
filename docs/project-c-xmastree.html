@@ -172,6 +172,7 @@
           As you rotate the plane, you might notice that the back of the plane is transparent. This is because the built-in plane is one-sided. As a result, we need to create another plane for the back.</li>
         <img src="imgs/project-c/02--create-two-sided-plane-01-01.jpg" />
         <img src="imgs/project-c/02--create-two-sided-plane-01-02.gif" />
+        <br />
         <li>Create another plane for the back (or right-click on the plane and select “Duplicate”).</li>
         <img src="imgs/project-c/02--create-two-sided-plane-02.jpg" />
         <li>Create a chair-side-B material for the back plane and use chair-side-B image as texture.</li>
@@ -188,11 +189,11 @@
 
         <p>There's an easier way to create a double-sided plane. You can check the “double-sided” option in the material setting.</p>
 
-        <img src="imgs/project-c/03--material-double-sided-01.jpg" />
+        <img class="center" src="imgs/project-c/03--material-double-sided-01.jpg" />
 
         <p>However, with this method, the direction of light for the second side will be incorrect and it will feel like that side is not interacting with the lights.</p>
 
-        <img src="imgs/project-c/03--material-double-sided-01.gif" />
+        <img class="center" src="imgs/project-c/03--material-double-sided-01.gif" />
 
         <p>This is the result of the "Light Normal" information in 3D models. Light normal is a direction value that defines how the 3D surface interacts with lights and is defined by vertices, which are the four corners of the plane. The “double-sided” function generates a second surface with the same vertices, so the light normal will be the same as the first surface, which is unrealistic in 3D environments.<br />
         <br />
@@ -220,8 +221,7 @@
         <ol>
           <li>Create a 3D star using the two-sided placement technique in the same manner as composing the chair.</li>
           <li>Place the star on the tree. Well, we can't see where the tree is, but we know the relationship between the tracked image and the paper tree. So, we can make quite a good guess.</li>
-          <img src="imgs/project-c/05--placing-the-star-02-1.jpg" />
-          <img src="imgs/project-c/05--placing-the-star-02-2.jpg" />
+          <img src="imgs/project-c/05--placing-the-star-combine.jpg" />
           <li>Test the effect on your device. If the star's positioning is off, make adjustments in the editor and try again. Repeat this until it looks right to you.</li>
           <img src="imgs/project-c/05--placing-the-star-03.jpg" />
         </ol>
@@ -260,8 +260,7 @@
           <li>These steps are similar to the window masking tip mentioned in Project B. For more details, you can refer to that section.</li>
           <img src="imgs/project-c/08--create-mask-for-tree-03.jpg" />
           <li>Place the two tree-mask objects using the same technique as placing the star, test on your device, and adjust positioning in the editor until the result is satisfactory.</li>
-          <img src="imgs/project-c/08--create-mask-for-tree-04-1.jpg" />
-          <img src="imgs/project-c/08--create-mask-for-tree-04-2.jpg" />
+          <img src="imgs/project-c/08--create-mask-for-tree-04-combine.jpg" />
           <li>The tree’s masking position does not need to be perfect since it only covers the snowflakes. The edge of the mask will not be obvious.</li>
         </ol>
 

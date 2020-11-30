@@ -64,7 +64,7 @@ body {
 }
 
 article#main {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
   padding: 60px;
   background-color: white;
@@ -137,4 +137,8 @@ a.text-info.active:link {
 
 a.text-info.active:visited {
     color: yellow !important;
+}
+
+article#main img.center {
+    margin: auto;
 }
