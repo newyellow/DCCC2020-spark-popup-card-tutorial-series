@@ -3,7 +3,7 @@ body {
   margin: 0px;
   padding: 0px;
   background: rgb(220,255,251);
- background: linear-gradient(120deg, rgba(220,255,251,1) 0%, rgba(145,210,255,1) 32%, rgba(145,151,255,1) 100%);
+  background: linear-gradient(120deg, rgba(220,255,251,1) 0%, rgba(145,210,255,1) 32%, rgba(145,151,255,1) 100%);
 }
 
 #main-menu {
@@ -49,6 +49,9 @@ article#main {
   background-color: white;
 
   color: #333;
+  font-size: 1.2em;
+  letter-spacing: 1.2;
+  line-height: 1.5;
 }
 
 article#main img {
