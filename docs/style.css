@@ -120,7 +120,7 @@ p + img, li + img {
 
 p {
     text-align: justify;
-    padding: 10px;
+    padding: 10px 0px;
 }
 
 a.text-info.active:hover {
@@ -182,6 +182,29 @@ article#main img.center {
         display: block;
         width: 100vw;
         height: 60px;
+    }
+
+    article#main {
+        padding: 5vw;
+        font-size: 0.8em;
+    }
+
+    article h2 {
+      margin: 30px 0px 30px 0px;
+      font-size: 1.6em;
+    }
+
+    article h2:first-of-type {
+      margin-top: 0px;
+    }
+
+    article h3 {
+      margin: 30px 0px 20px 0px;
+      font-size: 1.2em;
+    }
+
+    article ol, article ul {
+        margin: 10px 0px;
     }
 }
 
