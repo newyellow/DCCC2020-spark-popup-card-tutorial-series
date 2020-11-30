@@ -3,16 +3,33 @@ body {
   margin: 0px;
   padding: 0px;
   background: rgb(220,255,251);
-  background: linear-gradient(120deg, rgba(220,255,251,1) 0%, rgba(145,210,255,1) 32%, rgba(145,151,255,1) 100%);
+
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 1.2;
+  font-size: 1.1em;
 }
 
 #main-menu {
-  width: 400px;
-  min-height: 100vh;
+  background: linear-gradient(120deg, rgba(220,255,251,1) 0%, rgba(145,210,255,1) 32%, rgba(145,151,255,1) 100%);
 
-  float: left;
+  width: 400px;
+  height: 100vh;
+
   box-sizing: border-box;
   padding: 30px;
+
+  position: fixed;
+  left: 0px;
+}
+
+#main-nav-spacer
+{
+    width: 400px;
+    min-height: 100vh;
+    height: 100%;
+
+    float: left;
 }
 
 #main-section {
@@ -49,9 +66,6 @@ article#main {
   background-color: white;
 
   color: #333;
-  font-size: 1.2em;
-  letter-spacing: 1.2;
-  line-height: 1.5;
 }
 
 article#main img {
@@ -82,3 +96,5 @@ article .warning {
   margin: 20px 0px;
   color: darkred;
 }
+
+.nav-fold

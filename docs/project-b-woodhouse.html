@@ -7,21 +7,110 @@
     <script type="text/javascript" src="menu.js"></script>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="src/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="src/bootstrap.min.css">
+    <script src="src/bootstrap.bundle.min.js"></script>
+
 
   </head>
 
-  <body>
-    <div id="main-menu">
-      <ul>
-        <li><a href="index.html">Intro Page</a></li>
-        <li><a href="paper-prepare.html">General Card Preparation</a></li>
-        <li><a href="project-a-snowman.html">Project A - Snowman</a></li>
-        <li><a href="project-b-woodhouse.html">Project B - Wood house</a></li>
-        <li><a href="project-c-xmastree.html">Project C - Xmas Tree</a></li>
-      </ul>
-    </div>
+  <body style="position: relative;" data-spy="scroll" data-target="#tutorial-project-b" data-offset="0">
+      <div id="main-menu" class="overflow-auto">
+          <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Intro Page</a>
+            <a class="navbar-brand" href="paper-prepare.html">General Card Preparation</a>
+            <a class="navbar-brand collapsed" style="cursor:pointer" data-toggle="collapse" data-target="#tutorial-project-a" aria-expanded="false" aria-controls="tutorial-project-a">Project A - Snowman</a>
+            <nav id="tutorial-project-a" class="navbar navbar-light bg-light nav-pills collapse">
+                <a class="nav-link font-weight-bold" href="project-a-snowman.html">Project Description</a>
+                <a class="nav-link font-weight-bold" href="project-a-snowman.html#preparing-the-project">Preparing the Project</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-a-snowman.html#create-new-project">Create New Project</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#import-assets-from-computer">Import Assets from Computer</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-a-snowman.html#set-up-image-tracking">Set Up Image Tracking</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-a-snowman.html#set-up-tracking-target-image">Set Up Tracking Target Image</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#test-the-tracker-image">Test the Tracker Image</a>
+                    <a class="nav-link ml-3 text-info" href="project-a-snowman.html#test-the-effect-with-the-spark-ar-player">*Test the Effect with the Spark AR Player App</a>
+                    <a class="nav-link ml-3 text-info" href="project-a-snowman.html#best-practice-tracker-image">*Best Practice for the Tracker Image</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-a-snowman.html#set-up-augmented-content">Set Up Augmented Content</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-a-snowman.html#materials-in-3d">Materials in 3D</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#adding-the-girl-into-the-scene">Adding the Girl into the Scene</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#adjust-plane-scale-to-fit-image-ratio">Adjust Plane Scale to Fit Image Size Ratio</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#position-the-girl">Position the Girl</a>
+                    <a class="nav-link ml-3 text-info" href="project-a-snowman.html#move-scale-rotate-objects">*Move, Scale, Rotate objects</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#adding-texts">Adding Texts</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-a-snowman.html#animating-with-patch-editor">Animating with Patch Editor</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-a-snowman.html#test-with-loop-animation">Test with Loop Animation</a>
+                    <a class="nav-link ml-3 text-info" href="project-a-snowman.html#animation-curves">*Animation Curves</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#set-up-on-track-action">Set Up On-Track Action with Animation</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#queueing-animations">Queueing Animations</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-a-snowman.html#create-the-snow-effect">Create the Snow Effect</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3 text-info" href="project-a-snowman.html#design-your-own-particle-effect">*Design Your Own Particle Effect</a>
+                </nav>
+            </nav>
+            <a class="navbar-brand" data-toggle="collapse" style="cursor:pointer" data-target="#tutorial-project-b" aria-expanded="false" aria-controls="tutorial-project-b">Project B - Wood house</a>
+            <nav id="tutorial-project-b" class="navbar navbar-light bg-light nav-pills collapse show">
+                <a class="nav-link font-weight-bold" href="#project-description">Project Description</a>
+                <a class="nav-link font-weight-bold" href="#set-up-tracking">Set Up Tracking</a>
+                <a class="nav-link font-weight-bold" href="#setting-up-room-space">Setting Up Room Space</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#place-a-reference-image">Place a Reference Image</a>
+                    <a class="nav-link ml-3" href="#set-up-the-walls">Set Up the Walls</a>
+                    <a class="nav-link ml-3" href="#install-furniture">Install Furniture</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#the-transparent-issue">The Transparent Issue</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#fixing-by-alpha-test">Fixing by using Alpha Test</a>
+                    <a class="nav-link ml-3" href="#fixing-by-setting-the-layers">Fixing by setting the layers</a>
+                    <a class="nav-link ml-3 text-info" href="#opacity-and-blend-mode">*Opacity and Blend Mode</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#animated-fire">Animated Fire</a>
+                <a class="nav-link font-weight-bold" href="#setting-up-the-lights">Setting Up the Lights</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#adding-lights-into-the-scene">Adding Lights into the Scene</a>
+                    <a class="nav-link ml-3" href="#animating-the-light-intensity">Animating the Light Intensity</a>
+                    <a class="nav-link ml-3 text-info" href="#light-types">*Light Types</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#test-the-room">Test the Room</a>
+                <a class="nav-link font-weight-bold" href="#setting-up-the-mask">Setting Up the Mask</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#set-up-walls-mask">Set Up Walls Mask</a>
+                    <a class="nav-link ml-3" href="#set-up-window-mask">Set Up Window Mask</a>
+                </nav>
+            </a>
+            </nav>
+            <a class="navbar-brand" data-toggle="collapse" style="cursor:pointer" data-target="#tutorial-project-c" aria-expanded="false" aria-controls="tutorial-project-c">Project C - Xmas Tree</a>
+            <nav id="tutorial-project-c" class="navbar navbar-light bg-light nav-pills collapse">
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html">Project Description</a>
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#set-up-tracking">Set Up Tracking</a>
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#set-up-the-object">Set Up the Object</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#create-a-two-sided-plane">Create a Two-Sided Plane</a>
+                    <a class="nav-link ml-3 text-info" href="project-c-xmastree.html#materials-double-sided-setting">*Material's Double-Sided Setting</a>
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#composing-the-chair">Composing the Chair</a>
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#placing-the-star">Placing the Star</a>
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#make-it-snow">Make It Snow</a>
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#make-the-star-glow">Make the Star Glow</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#creating-the-illusion">Creating the Illusion</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#create-masks-for-the-tree">Create Masks for the Tree</a>
+                    <a class="nav-link ml-3 text-info" href="project-c-xmastree.html#about-the-trail-and-error">*About the Trial-and-Error Positioning Technique</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#additional-details">Additional Details</a>
+            </nav>
+        </nav>
+      </div>
+
+      <div id="main-nav-spacer">
+      </div>
 
     <div id="main-section">
 
@@ -31,7 +120,7 @@
       </div>
 
       <article id="main">
-        <h2>
+        <h2 id="project-description">
           Project Description
         </h2>
         <p>
@@ -50,8 +139,8 @@
           <li>It is strongly recommended that you take the Snowman tutorial before starting this one. The Snowman tutorial provides a very detailed walk-through of the basic functions that will not be covered here.</li>
         </ul>
 
-        <a name="set-up-tracking"></a>
-        <h2>Set Up Tracking</h2>
+        
+        <h2 id="set-up-tracking">Set Up Tracking</h2>
 
         <p>For this step, you need to:</p>
         <ol>
@@ -69,13 +158,13 @@
 
         <p>These steps have been covered in the Snowman. If you’re not familiar with them, please refer to the Snowman tutorial.</p>
 
-        <a name="setting-up-room-space"></a>
-        <h2>Setting Up Room Space</h2>
+        
+        <h2 id="setting-up-room-space">Setting Up Room Space</h2>
 
         <p>For this project, we want to create a “see-through window” experience for the user to get a feel of the interior space. Therefore, we need to build a room space.</p>
 
-        <a name="place-a-reference-image"></a>
-        <h3>Place a Reference Image</h3>
+        
+        <h3 id="place-a-reference-image">Place a Reference Image</h3>
         <p>To match the virtual room size with the paper model, we can use a reference image as a guidance when creating the space.</p>
         <ol>
           <li>Add a Plane on the tracker and set its material using the whole-building image.</li>
@@ -86,8 +175,8 @@
           <img src="imgs/project-b/02--place-reference-image-03.jpg" />
         </ol>
 
-        <a name="set-up-the-walls"></a>
-        <h3>Set Up the Walls</h3>
+        
+        <h3 id="set-up-the-walls">Set Up the Walls</h3>
         <ol>
           <li>Create a material named “wall-mat” and select “wood-wall-texture”.</li>
           <img src="imgs/project-b/03--setup-the-walls-01.jpg" />
@@ -97,8 +186,8 @@
           <img src="imgs/project-b/03--setup-the-walls-03.jpg" />
         </ol>
 
-        <a name="install-furniture"></a>
-        <h2>Install Furniture</h2>
+        
+        <h2 id="install-furniture">Install Furniture</h2>
 
         <ol>
           <li>There are some images you can use as furniture. Create materials for each and position them wherever you like.</li>
@@ -110,15 +199,15 @@
           <li>To solve this issue, we need to grasp a better understanding of Material and Layer.</li>
         </ol>
 
-        <a name="the-transparent-issue"></a>
-        <h2>The transparent issue</h2>
+        
+        <h2 id="the-transparent-issue">The Transparent Issue</h2>
 
         <p>It's kind of weird that the transparent part of an image would block the images behind it. This is due to Spark AR’s treatment of images with transparent and semi-transparent images. But it's not really the faut of the Spark team; it's a common occurrence issue in real-time rendering.<br />
         <br />
         There are two ways to fix this problem in Spark AR, each with its pros and cons.</p>
 
-        <a name="fixing-by-alpha-test"></a>
-        <h3>Fixing by using Alpha Test</h3>
+        
+        <h3 id="fixing-by-alpha-test">Fixing by using Alpha Test</h3>
         <p>In Spark AR, even if part of the image is totally transparent (0% opacity), it does not mean “none” or “nothing” in 3D. The shape will remain visible. You can see the outline of the shape being a rectangle when selected.</p>
         <img src="imgs/project-b/05--fixing-alpha-test-01.jpg" />
 
@@ -139,8 +228,8 @@
 
         <p>Therefore, we need another fix for such issues.</p>
 
-        <a name="fixing-by-setting-the-layers"></a>
-        <h3>Fixing by setting the layers</h3>
+        
+        <h3 id="fixing-by-setting-the-layers">Fixing by setting the layers</h3>
 
         <p>Layer defines the rendering order of each object. If the object is closer to the camera, the order of its layer should be above other things further back. For now, we will use the layer setting to fix the transparency issues of the sofa shadow and window reflection light.</p>
 
@@ -160,8 +249,8 @@
           <img src="imgs/project-b/06--layers-07.jpg" />
         </ol>
 
-        <a name="opacity-and-blend-mode"></a>
-        <h3>*Opacity and Blend Mode</h3>
+        
+        <h3 id="opacity-and-blend-mode">*Opacity and Blend Mode</h3>
 
         <p>You can play around with the material's Blending Modes settings. This defines how the image interacts with the image “behind” it. For my project, I chose "Multiply" for the shadow material and "Add" for the light.</p>
 
@@ -179,8 +268,8 @@
         <a target="_blank" href="https://github.com/positlabs/spark-blend-modes">https://github.com/positlabs/spark-blend-modes</a>
 
 
-        <a name="animated-fire"></a>
-        <h2>Animated Fire</h2>
+        
+        <h2 id="animated-fire">Animated Fire</h2>
 
         <p>You can also create animated images using the image sequence. We have here a fire sequence for practice.</p>
 
@@ -199,13 +288,13 @@
           <img src="imgs/project-b/08--animated-fire-06.jpg" />
         </ol>
 
-        <a name="setting-up-the-lights"></a>
-        <h2>Setting Up the Lights</h2>
+        
+        <h2 id="setting-up-the-lights">Setting Up the Lights</h2>
 
         <p>As fire is burning inside the house, the lights should flicker. Let's set up some lights instead of using the default lighting.</p>
 
-        <a name="adding-lights-into-the-scene"></a>
-        <h3>Adding Lights into the Scene</h3>
+        
+        <h3 id="adding-lights-into-the-scene">Adding Lights into the Scene</h3>
 
         <ol>
           <li>Delete the default directionalLight0 (this object is automatically generated when the project is created).</li>
@@ -221,8 +310,8 @@
           <img src="imgs/project-b/09--add-light-into-scene-05.jpg" />
         </ol>
 
-        <a name="animating-the-light-intensity"></a>
-        <h3>Animating the Light Intensity</h3>
+        
+        <h3 id="animating-the-light-intensity">Animating the Light Intensity</h3>
 
         <ol>
           <li>Click on the arrow beside Intensity value To display Patch Editor panel. Add a transition patch and a loop animation patch. This is similar to the animation section in Project A (Snowman).</li>
@@ -235,13 +324,13 @@
           <img src="imgs/project-b/10--animating-light-04.jpg" />
         </ol>
 
-        <a name="light-types"></a>
-        <h3>*Light Types</h3>
+        
+        <h3 id="light-types">*Light Types</h3>
 
         <p>If you want to find out more about different lighting types, you can check the official guide: <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/lights/lights-available">Lights in Spark AR Studio</a></p>
 
-        <a name="test-the-room"></a>
-        <h2>Test the Room</h2>
+        
+        <h2 id="test-the-room">Test the Room</h2>
 
         <p>Now the room is ready for you to test with your device. It should look something like this:</p>
 
@@ -249,15 +338,15 @@
 
         <p>Oops! The whole wall is transparent, while what we want is a see-through-window experience. So, we now need to set up the mask.</p>
 
-        <a name="setting-up-the-mask"></a>
-        <h2>Setting Up the Mask</h2>
+        
+        <h2 id="setting-up-the-mask">Setting Up the Mask</h2>
 
         <p>In augmented reality rendering, virtual objects are always rendered in front of the camera image. This is because our device cameras only capture 2D images from the real world, which lacks information on depth. To make virtual objects render behind real-world images, we need masks.</p>
 
         <p>In Spark AR Studio, a mask can be created through transparent materials with proper layer settings.</p>
 
-        <a name="set-up-walls-mask"></a>
-        <h3>Set Up Walls Mask</h3>
+        
+        <h3 id="set-up-walls-mask">Set Up Walls Mask</h3>
 
         <ol>
           <li>Create a plane named “mask-plane” and create a material named “mask-mat”.</li>
@@ -278,8 +367,8 @@
           <img src="imgs/project-b/12--setup-wall-mask-08.gif" />
         </ol>
 
-        <a name="set-up-window-mask"></a>
-        <h3>Set Up Window Mask</h3>
+        
+        <h3 id="set-up-window-mask">Set Up Window Mask</h3>
 
         <ol>
           <li>The window mask is slightly different. Instead of masking the entire rectangle, we use an image here to define the masking shape.</li>
@@ -313,5 +402,14 @@
 
       </article>
     </div>
+    <script type="text/javascript">
+    $(window).ready(function(){
+        $('body').scrollspy({ target: '#tutorial-project-b' });
+    });
+
+
+
+
+    </script>
   </body>
 </html>

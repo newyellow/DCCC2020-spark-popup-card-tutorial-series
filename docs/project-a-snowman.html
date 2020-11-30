@@ -4,23 +4,110 @@
     <title>It's Now Winter -- Spark Pop-up Card Tutorial Series</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="menu.js"></script>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="src/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="src/bootstrap.min.css">
+    <script src="src/bootstrap.bundle.min.js"></script>
 
   </head>
 
-  <body>
-    <div id="main-menu">
-      <ul>
-        <li><a href="index.html">Intro Page</a></li>
-        <li><a href="paper-prepare.html">General Card Preparation</a></li>
-        <li><a href="project-a-snowman.html">Project A - Snowman</a></li>
-        <li><a href="project-b-woodhouse.html">Project B - Wood house</a></li>
-        <li><a href="project-c-xmastree.html">Project C - Xmas Tree</a></li>
-      </ul>
+  <body style="position: relative;" data-spy="scroll" data-target="#tutorial-project-a" data-offset="0">
+      <div id="main-menu" class="overflow-auto">
+          <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Intro Page</a>
+            <a class="navbar-brand" href="paper-prepare.html">General Card Preparation</a>
+            <a class="navbar-brand collapsed" style="cursor:pointer" data-toggle="collapse" data-target="#tutorial-project-a" aria-expanded="false" aria-controls="tutorial-project-a">Project A - Snowman</a>
+            <nav id="tutorial-project-a" class="navbar navbar-light bg-light nav-pills collapse show">
+                <a class="nav-link font-weight-bold" href="#project-description">Project Description</a>
+                <a class="nav-link font-weight-bold" href="#preparing-the-project">Preparing the Project</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#create-new-project">Create New Project</a>
+                    <a class="nav-link ml-3" href="#import-assets-from-computer">Import Assets from Computer</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#set-up-image-tracking">Set Up Image Tracking</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#set-up-tracking-target-image">Set Up Tracking Target Image</a>
+                    <a class="nav-link ml-3" href="#test-the-tracker-image">Test the Tracker Image</a>
+                    <a class="nav-link ml-3 text-info" href="#test-the-effect-with-the-spark-ar-player">*Test the Effect with the Spark AR Player App</a>
+                    <a class="nav-link ml-3 text-info" href="#best-practice-tracker-image">*Best Practice for the Tracker Image</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#set-up-augmented-content">Set Up Augmented Content</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#materials-in-3d">Materials in 3D</a>
+                    <a class="nav-link ml-3" href="#adding-the-girl-into-the-scene">Adding the Girl into the Scene</a>
+                    <a class="nav-link ml-3" href="#adjust-plane-scale-to-fit-image-ratio">Adjust Plane Scale to Fit Image Size Ratio</a>
+                    <a class="nav-link ml-3" href="#position-the-girl">Position the Girl</a>
+                    <a class="nav-link ml-3 text-info" href="#move-scale-rotate-objects">*Move, Scale, Rotate objects</a>
+                    <a class="nav-link ml-3" href="#adding-texts">Adding Texts</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#animating-with-patch-editor">Animating with Patch Editor</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#test-with-loop-animation">Test with Loop Animation</a>
+                    <a class="nav-link ml-3 text-info" href="#animation-curves">*Animation Curves</a>
+                    <a class="nav-link ml-3" href="#set-up-on-track-action">Set Up On-Track Action with Animation</a>
+                    <a class="nav-link ml-3" href="#queueing-animations">Queueing Animations</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#create-the-snow-effect">Create the Snow Effect</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3 text-info" href="#design-your-own-particle-effect">*Design Your Own Particle Effect</a>
+                </nav>
+            </nav>
+            <a class="navbar-brand" data-toggle="collapse" style="cursor:pointer" data-target="#tutorial-project-b" aria-expanded="false" aria-controls="tutorial-project-b">Project B - Wood house</a>
+            <nav id="tutorial-project-b" class="navbar navbar-light bg-light nav-pills collapse">
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html">Project Description</a>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#set-up-tracking">Set Up Tracking</a>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#setting-up-room-space">Setting Up Room Space</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#place-a-reference-image">Place a Reference Image</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#set-up-the-walls">Set Up the Walls</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#install-furniture">Install Furniture</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#the-transparent-issue">The Transparent Issue</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#fixing-by-alpha-test">Fixing by using Alpha Test</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#fixing-by-setting-the-layers">Fixing by setting the layers</a>
+                    <a class="nav-link ml-3 text-info" href="project-b-woodhouse.html#opacity-and-blend-mode">*Opacity and Blend Mode</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#animated-fire">Animated Fire</a>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#setting-up-the-lights">Setting Up the Lights</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#adding-lights-into-the-scene">Adding Lights into the Scene</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#animating-the-light-intensity">Animating the Light Intensity</a>
+                    <a class="nav-link ml-3 text-info" href="project-b-woodhouse.html#light-types">*Light Types</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#test-the-room">Test the Room</a>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#setting-up-the-mask">Setting Up the Mask</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#set-up-walls-mask">Set Up Walls Mask</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#set-up-window-mask">Set Up Window Mask</a>
+                </nav>
+            </a>
+            </nav>
+            <a class="navbar-brand" data-toggle="collapse" style="cursor:pointer" data-target="#tutorial-project-c" aria-expanded="false" aria-controls="tutorial-project-c">Project C - Xmas Tree</a>
+            <nav id="tutorial-project-c" class="navbar navbar-light bg-light nav-pills collapse">
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html">Project Description</a>
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#set-up-tracking">Set Up Tracking</a>
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#set-up-the-object">Set Up the Object</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#create-a-two-sided-plane">Create a Two-Sided Plane</a>
+                    <a class="nav-link ml-3 text-info" href="project-c-xmastree.html#materials-double-sided-setting">*Material's Double-Sided Setting</a>
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#composing-the-chair">Composing the Chair</a>
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#placing-the-star">Placing the Star</a>
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#make-it-snow">Make It Snow</a>
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#make-the-star-glow">Make the Star Glow</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#creating-the-illusion">Creating the Illusion</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#create-masks-for-the-tree">Create Masks for the Tree</a>
+                    <a class="nav-link ml-3 text-info" href="project-c-xmastree.html#about-the-trail-and-error">*About the Trial-and-Error Positioning Technique</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#additional-details">Additional Details</a>
+            </nav>
+        </nav>
+      </div>
+
+    <div id="main-nav-spacer">
     </div>
 
     <div id="main-section">
@@ -30,8 +117,8 @@
           </div>
       </div>
 
-      <article id="main">
-        <h2>
+      <article id="main" data-spy="scroll" data-target="#nav-target">
+        <h2 id="project-description">
           Project Description
         </h2>
         <p>
@@ -49,11 +136,11 @@
         Please download the assets and the sample project here: <a href="http://newyellow.github.io/DCCC2020-spark-popup-card-tutorial-series/download/Project%20A%20-%20Snowman.zip">Project A - Snowman.zip</a>
         </p>
 
-        <a name="preparing-the-project"></a>
-        <h2>Preparing the Project</h2>
 
-        <a name="create-new-project"></a>
-        <h3>Create New Project</h3>
+        <h2 id="preparing-the-project">Preparing the Project</h2>
+
+
+        <h3 id="create-new-project">Create New Project</h3>
         <ol>
          	<li>Open Spark AR Studio and select “Create New” → “New Project”.</li>
           <img src="imgs/project-a/create-new-project-01.jpg" />
@@ -65,8 +152,8 @@
           <img src="imgs/project-a/create-new-project-04.jpg" />
         </ol>
 
-        <a name="import-assets-from-computer"></a>
-        <h3>Import Assets from Computer</h3>
+
+        <h3 id="import-assets-from-computer">Import Assets from Computer</h3>
         <ol>
           <li>On the Assets panel, click on “Add Asset” → “Import from Computer” and select all the downloaded assets.</li>
           <img src="imgs/project-a/import-from-computer-01.jpg" />
@@ -75,11 +162,11 @@
           <img src="imgs/project-a/import-from-computer-03.jpg" />
         </ol>
 
-        <a name="set-up-image-tracking"></a>
-        <h2>Set Up Image Tracking</h2>
 
-        <a name="set-up-tracking-target-image"></a>
-        <h3>Set Up Tracking Target Image</h3>
+        <h2 id="set-up-image-tracking">Set Up Image Tracking</h2>
+
+
+        <h3 id="set-up-tracking-target-image">Set Up Tracking Target Image</h3>
         <ol>
          	<li>Select fixedTargetTracker0 and you will see some options on the Properties panel on the right.</li>
           <img src="imgs/project-a/setup-the-tracking-target-image-01.jpg" />
@@ -89,8 +176,8 @@
           <img src="imgs/project-a/setup-the-tracking-target-image-03.jpg" />
         </ol>
 
-        <a name="test-the-tracker-image"></a>
-        <h3>Test the Tracker Image</h3>
+
+        <h3 id="test-the-tracker-image">Test the Tracker Image</h3>
         <p>
           Not every image is good for tracking, so it's better to test the image tracking quality before we really go hands-on on the project.
         </p>
@@ -109,25 +196,25 @@
           <li>If you do see a rectangle, that means the tracking function is working. Now we can prepare the augmented content.</li>
         </ol>
 
-        <a name="test-the-effect-with-the-spark-ar-player"></a>
-        <h3>*Test the Effect with the Spark AR Player App</h3>
+
+        <h3 id="test-the-effect-with-the-spark-ar-player">*Test the Effect with the Spark AR Player App</h3>
         <p>
           If your internet is down or if you feel the results on your phone does not look the same as it does on the Spark AR Studio on your computer, try the Spark AR Player app for previewing. You can install your AR effects on your phone through a cable using the Spark AR Player.<br />
           <br />
           For more information, please check the official guides:<a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/tutorials/previewing-and-testing/">Previewing and Testing Effects</a> and <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/mirroring/ar-player">Mirroring Effects to AR Player</a>
         </p>
 
-        <a name="best-practice-tracker-image"></a>
-        <h3>*Best Practice for the Tracker Image</h3>
+
+        <h3 id="best-practice-tracker-image">*Best Practice for the Tracker Image</h3>
         <p>
           The tracking quality is determined by the image design. If you would like to design your own tracking image, check out the official guideline: <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/world-effects/best-practice-for-target-tracking/">Best Practice for Target Tracking </a>
         </p>
 
-        <a name="set-up-augmented-content"></a>
-        <h2>Set Up Augmented Content</h2>
 
-        <a name="materials-in-3d"></a>
-        <h3>Materials in 3D</h3>
+        <h2 id="set-up-augmented-content">Set Up Augmented Content</h2>
+
+
+        <h3 id="materials-in-3d">Materials in 3D</h3>
         <p>
         In 3D softwares, the image itself cannot be placed directly onto the scene. You will first need to define its “shape”—usually called “mesh”—and then define how the shape looks  via “Material”. You can set up things like color, opacity, reflectiveness of the surface, etc.<br />
         <br />
@@ -136,8 +223,8 @@
         Don't worry about 3D object for now. During these tutorials, we will only use the built-in Plane object, which is simply a rectangle.
         </p>
 
-        <a name="adding-the-girl-into-the-scene"></a>
-        <h3>Adding the Girl into the Scene</h3>
+
+        <h3 id="adding-the-girl-into-the-scene">Adding the Girl into the Scene</h3>
           <ol>
         <li>Create a material for the image of a girl image. Click “Add Asset” → “Material” on the Assets panel.</li>
         <img src="imgs/project-a/adding-girl-into-scene-01.jpg" />
@@ -158,8 +245,8 @@
         <li>Now the plane has become the image you set. But the scale ratio is odd. This is because the material always fills the shape. So, we need to adjust the plane's size to make it look right.</li>
         </ol>
 
-        <a name="adjust-plane-scale-to-fit-image-ratio"></a>
-        <h3>Adjust Plane Scale to Fit Image Size Ratio</h3>
+
+        <h3 id="adjust-plane-scale-to-fit-image-ratio">Adjust Plane Scale to Fit Image Size Ratio</h3>
         <ol>
           <li>Select the girl-image in the Assets panel to see its width and height. This one is 512 x 1024.</li>
           <img src="imgs/project-a/adjust-size-ratio-01.jpg" />
@@ -171,8 +258,8 @@
           <img src="imgs/project-a/adjust-size-ratio-04.jpg" />
         </ol>
 
-        <a name="position-the-girl"></a>
-        <h3>Position the Girl</h3>
+
+        <h3 id="position-the-girl">Position the Girl</h3>
         <ol>
         <li>Place the girl beside the snowman. Though we can't see the snowman's position in the editor, we know the relationship between the background image and the snowman. Therefore, we can make an educated guess in the editor.</li>
         <img src="imgs/project-a/position-the-girl-01.jpg" />
@@ -182,16 +269,16 @@
         <img src="imgs/project-a/position-the-girl-02-02.gif" />
         </ol>
 
-        <a name="move-scale-rotate-objects"></a>
-        <h3>*Move, Scale, Rotate objects</h3>
+
+        <h3 id="move-scale-rotate-objects">*Move, Scale, Rotate objects</h3>
         <p>
         This official guide explains how to edit objects in the scene. If you are not familiar with 3D softwares,  check these official guides:<br />
          <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/3D/using-the-manipulators">Using the Manipulators</a><br />
          <a href="https://sparkar.facebook.com/ar-studio/learn/articles/fundamentals/navigating-the-interface/" target="_blank">Navigating the Spark AR Studio Interface</a>
         </p>
 
-        <a name="adding-texts"></a>
-        <h3>Adding Texts</h3>
+
+        <h3 id="adding-texts">Adding Texts</h3>
         <p>
         Similarly, place texts by simply creating a material for each image and place them in the scene. Since there are so many objects, it might be problematic aligning them one by one. So here is an additional grouping technique.
         </p>
@@ -209,14 +296,14 @@
         <li>This way, you don't have to adjust them individually whenever you want to adjust the text's positioning on the card.</li>
         </ol>
 
-        <a name="animating-with-patch-editor"></a>
-        <h2>Animating with Patch Editor</h2>
+
+        <h2 id="animating-with-patch-editor">Animating with Patch Editor</h2>
         <p>
         Patch Editor is the most popular feature in Spark AR Studio. We can animate object values to create animations. We will now use this tool to make animations for our girl-plane and texts.
         </p>
 
-        <a name="test-with-loop-animation"></a>
-        <h3>Test with Loop Animation</h3>
+
+        <h3 id="test-with-loop-animation">Test with Loop Animation</h3>
         <ol>
         <li>Let's animate the person first. Select girl-plane and find the small “→” arrow beside its Scale property. Properties with this arrow means its value can be set through the Patch Editor.</li>
         <img src="imgs/project-a/test-with-loop-01.jpg" />
@@ -242,14 +329,14 @@
         <img src="imgs/project-a/test-with-loop-10.jpg" />
         </ol>
 
-        <a name="animation-curves"></a>
-        <h3>*Animation Curves</h3>
+
+        <h3 id="animation-curves">*Animation Curves</h3>
         <p>
         The curve in the transition patch is commonly used in the field of computer graphics. It's also called an easing type. If you're not familiar with the curve names,  check the following website to find out what they do: <a target="_blank" href="https://easings.net/">easings.net</a>
         </p>
 
-        <a name="set-up-on-track-action"></a>
-        <h2>Set Up On-Track Action with Animation</h2>
+
+        <h2 id="set-up-on-track-action">Set Up On-Track Action with Animation</h2>
         <p>
         The loop patch is good for previewing animations. However, instead of a loop animation, we actually want a one-time animation when the card is being detected. So, we will now replace the loop animation patch.
         </p>
@@ -266,8 +353,8 @@
         <img src="imgs/project-a/setup-on-track-event-06.gif" />
         </ol>
 
-        <a name="queueing-animations"></a>
-        <h2>Queueing Animations</h2>
+
+        <h2 id="queueing-animations">Queueing Animations</h2>
         <p>
         The setting of the text animations is the same. However, if you want to make an animation queue to produce something like a typing text effect, you can use the OnComplete output and Delay patch.
         </p>
@@ -283,8 +370,8 @@
         <img src="imgs/project-a/queuing-animations-04.jpg" />
         </ol>
 
-        <a name="create-the-snow-effect"></a>
-        <h2>Create the Snow Effect</h2>
+
+        <h2 id="create-the-snow-effect">Create the Snow Effect</h2>
         <p>
         In order to create the snow effect, we need to use the particle system, a common feature in 3D softwares for creating non-solid objects like fire, water, smoke, etc. Spark AR Studio also has a particle system.
         </p>
@@ -306,8 +393,8 @@
         <img src="imgs/project-a/add-particle-07.jpg" />
         </ol>
 
-        <a name="design-your-own-particle-effect"></a>
-        <h2>*Design Your Own Particle Effect</h2>
+
+        <h2 id="design-your-own-particle-effect">*Design Your Own Particle Effect</h2>
         <p>
         Designing and creating a particle system visual effect is all about tuning the parameters. You can play with the values and see what happens. That is the only way to master the particle system.<br />
         <br />
@@ -323,8 +410,16 @@
         <div class="video-area">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/0EZRWoaOwHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-
       </article>
     </div>
+    <script type="text/javascript">
+    $(window).ready(function(){
+        $('body').scrollspy({ target: '#tutorial-project-a' });
+    });
+
+
+
+
+    </script>
   </body>
 </html>
