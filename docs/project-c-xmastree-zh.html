@@ -136,180 +136,181 @@
       </div>
 
       <article id="main">
-        <h2 id="project-description">Project Description</h2>
+        <h2 id="project-description">專案簡介</h2>
 
-        <p>For this project, we will build a 3D bench using only 2D planes, putting a glowing star on the tree and creating 3D masking for the tree.</p>
+        <p>在這個專案裡，我們會使用 Spark AR 內建的 Plane 來拼裝 3D 的長椅，並且在立體卡片的樹上放一個閃耀的星星</p>
         <div class="video-area">
           <iframe width="640" height="480" src="https://www.youtube.com/embed/AsuSw531yxc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <p>This project is kind of a practice project for the series. The techniques we will be using in this project have already been covered in the previous projects, but with more complexity.<br />
+        <p>
+          這個專案有點像是最後集大成、練習用的專案。比起前練兩個專案，這個專案裡面並沒有什麼新的技巧，只是整體稍微再複雜些<br />
         <br />
-        The best way to master something is through practice. From working on the 3D bench, you will get an idea of the 3D modeling process, making it easier for you to learn 3D modeling in the future.<br />
-        <br />
-        By practicing the masking technique again, you will have a better understanding of how and when you can use the masking technique, which will be very handy in your future AR projects.</p>
+          要練習製作濾鏡，最好的方法就是實際動手操作。使用 Plane 拼裝長椅的過程，其實就跟一般 3D 建模的流程很像，是所有 3D 軟體操作的基礎。所以在練習完這個專案以後，如果未來想要再學其他的 3D 軟體，也會比較容易上手<br />
+        </p>
 
 
-        <h2>Assets for this Project</h2>
+        <h2>素材下載</h2>
 
-        <p>You can download all the assets here: <a target="_blank" href="download/ProjectC-XmasTree.zip">Project C - Xmas Tree</a></p>
+        <p>本篇專案會用到的素材、卡片模板、以及已經完成的範例專案下載：<a target="_blank" href="download/ProjectC-XmasTree.zip">Project C - Xmas Tree</a></p>
 
-        <ul class="warning"><li>It is strongly recommended that you watch the Snowman tutorial before starting this one. The Snowman tutorial provides a very detailed walk-through of the basic functions that will not be covered here.</li></ul>
+        <ul class="warning"><li>如果你對 Spark AR 並不熟，而且還沒看過雪人卡片教學的話，強烈建議先看雪人卡片的教學。雪人卡片教學裡面有一些基礎的操作，在本篇教學中並不會提到</li></ul>
 
 
 
-        <h2 id="set-up-tracking">Set Up Tracking</h2>
+        <h2 id="set-up-tracking">設定圖片辨識</h2>
 
-        <p>For this step, you need to do the following:</p>
+        <p>在這個部分，需要進行以下步驟：</p>
 
         <ol>
-          <li>Create a new project.</li>
-          <li>Add fixedTargetTracker to the scene.</li>
-          <li>Import the images.</li>
-          <li>Change fixedTargetTracker image to floor-tracker-image.</li>
+          <li>開啟新專案</li>
+          <li>把 fixedTargetTracker 物件加入場景中</li>
+          <li>匯入圖片素材</li>
+          <li>把 fixedTargetTracker 的辨識圖指定為 floor-tracker-image</li>
         </ol>
 
-        <p>After you’re done, the project will look like this:</p>
+        <p>以上步驟都完成後，畫面應該會如下圖：</p>
         <img src="imgs/project-c/01--setup-tracking-01.jpg" />
-        <p>If you’re unfamiliar with these steps, please refer to Project A (Snowman) for a more detailed step-by-step tutorial.</p>
+        <p>如果你對以上這些步驟的操作不熟悉的話，可以去看專案Ａ雪人的教學，裡面有更詳細的步驟</p>
 
 
-        <h2 id="set-up-the-object">Set Up the Object</h2>
+        <h2 id="set-up-the-object">設定場景物件</h2>
 
-        <p>The scene setup for this project is slightly different from the previous two. In Projects A and B, the images are parallel to the tracking image. However, in this project, the tracking image is the floor, so the images need to stand perpendicularly on the tracking image.<br />
+        <p>這次的場景設定跟之前有點不一樣。在之前兩個專案裡，場景中的圖片（女孩、家具等）都是與辨識圖平行，而這個專案裡，辨識圖代表的是地板，所以場景中的物件都要和辨識圖垂直<br />
         <br />
-        Furthermore, since you can't rotate the fixedTargetTracker in Spark AR Studio, the editing might be a bit strange. But don’t worry, you’ll get used to it!</p>
+        但由於在 Spark AR 內我們沒辦法旋轉辨識圖，所以我們只好讓所有物件都旋轉 90 度 ... 這會讓場景編輯時候的操作感覺有點怪怪的，不過別擔心，應該很快就可以習慣了！</p>
 
 
-        <h3 id="create-a-two-sided-plane">Create a Two-Sided Plane</h3>
+        <h3 id="create-a-two-sided-plane">建立雙面的 Plane</h3>
 
         <ol>
-        <li>Create a chair-side-body-A material for the chair-side-body-A image and put it on a plane. Make sure you check the “Alpha Test”. Since we are going to transform planes into a 3D object (rather, something that feels like a 3D model), we need to activate this option.<br />
+        <li>建立 chair-side-body-A 物件，並且材質使用 chair-side-body-A 當作貼圖。記得要勾選 “Alpha Test”，因為我們將要把這個 Plane 拼成一個長椅（會讓他感覺像是一個 3D 模型），所以我們需要讓他把透明的部分給切掉<br />
           <br />
-          As you rotate the plane, you might notice that the back of the plane is transparent. This is because the built-in plane is one-sided. As a result, we need to create another plane for the back.</li>
+          當你旋轉這個 Plane 的時候，你可能會注意到這個 Plane 的背面透明的。這是因為 Spark AR 內建的 Plane 是單面的（許多即時渲染的引擎也是如此，例如 Unity 3D）。所以我們需要建立另一個背面的 Plane
+        </li>
         <img src="imgs/project-c/02--create-two-sided-plane-01-01.jpg" />
         <img src="imgs/project-c/02--create-two-sided-plane-01-02.gif" />
         <br />
-        <li>Create another plane for the back (or right-click on the plane and select “Duplicate”).</li>
+        <li>點右鍵建立另一個 Plane（或著在 Plane 上按右鍵選 “Duplicate”）</li>
         <img src="imgs/project-c/02--create-two-sided-plane-02.jpg" />
-        <li>Create a chair-side-B material for the back plane and use chair-side-B image as texture.</li>
+        <li>建立另一個 chair-side-B 材質給背面，貼圖選擇 chair-side-B，這張是給另一面使用的貼圖（有左右翻轉過）</li>
         <img src="imgs/project-c/02--create-two-sided-plane-03.jpg" />
-        <li>Set the back plane's rotation values to 0, 180, 0.</li>
-        <li>It’s suggested that you group these two planes for easier movement, rotation, scaling. You can do so by creating a “Null Object” and place both planes under its hierarchy.</li>
+        <li>把背面這個 Plane 的旋轉值 Rotation 設為 0, 180, 0</li>
+        <li>建議可以把這兩個 Plane 設為一個群組，這樣就可以同時移動、旋轉、縮放這兩個 Plane，感覺就像一張雙面的 Plane 一樣。群組的方法是：按右鍵新增 “Null Object” 並把兩個 Plane 都設為子物件</li>
         <img src="imgs/project-c/02--create-two-sided-plane-05.jpg" />
-        <li>You can now rotate the object, with it appearing to be a two-sided plane.</li>
+        <li>完成後，可以旋轉看看，看起來就會像是一個雙面的 Plane</li>
         <img src="imgs/project-c/02--create-two-sided-plane-06.gif" />
         </ol>
 
 
-        <h3 id="materials-double-sided-setting">*Material's Double-Sided Setting</h3>
+        <h3 id="materials-double-sided-setting">*材質的 Double-Sided（雙面）選項</h3>
 
-        <p>There's an easier way to create a double-sided plane. You can check the “double-sided” option in the material setting.</p>
+        <p>其實要製作雙面的 Plane 有一個更簡單的方法，就是勾選材質裡面的 “double-sided” 選項</p>
 
         <img class="center" src="imgs/project-c/03--material-double-sided-01.jpg" />
 
-        <p>However, with this method, the direction of light for the second side will be incorrect and it will feel like that side is not interacting with the lights.</p>
+        <p>但是使用這個方法，物件對光源的反應是不正確的，透過材質選項產生的那一面感覺起來會不受光影響（即使照到光也暗暗的）</p>
 
         <img class="center" src="imgs/project-c/03--material-double-sided-01.gif" />
 
-        <p>This is the result of the "Light Normal" information in 3D models. Light normal is a direction value that defines how the 3D surface interacts with lights and is defined by vertices, which are the four corners of the plane. The “double-sided” function generates a second surface with the same vertices, so the light normal will be the same as the first surface, which is unrealistic in 3D environments.<br />
+        <p>這是因為 3D 裡面的 "Light Normal"（光線法向量）的資訊的關係。3D 物件裡的每一個三角面都有一個法向量資訊（通常我們就稱為 Normal），這個 Normal 決定了這個三角面會受到哪一個角度的光源影響。而透過 “double-sided” 選項產生出來的這個面，和原來的 3D 物件共用同樣的 Normal 資訊，所以對光源的反應看起來才會怪怪的<br />
         <br />
-        So, if the object's material type is standard, don't use the double-sided option. Instead, duplicate the plane. However, if your object's material type is flat, which means it doesn’t interact with the lights, opt for the double-sided option.</p>
+        所以說，如果你想要製作的雙面物件，是會受到光影響的話（材質是使用 Standard 材質），就不要使用這個 double-sided 選項。但如果你的這個物件是使用 Flat 材質（不受光影響的材質類型），就可以使用 double-sided 選項</p>
 
 
-        <h3 id="composing-the-chair">Composing the Chair</h3>
+        <h3 id="composing-the-chair">組裝長椅</h3>
 
         <ol>
-          <li>Duplicate the chair-sided object and place it on the other side.</li>
+          <li>複製一個 chair-sided 物件，並放到另一邊，看你的長椅想要多長</li>
           <img src="imgs/project-c/04--composite-the-chair-01.jpg" />
-          <li>Create a wood stick object in the same way the two-sided chair side was created. Don’t forget to group them.</li>
+          <li>建立一個 wood stick 物件，同樣依照上面的方法，把這片木頭設定成雙面的。記得把兩片 Plane 群組在一起比較方便後續操作</li>
           <img src="imgs/project-c/04--composite-the-chair-02.jpg" />
-          <li>Duplicate the wood stick object and position them to your liking. A 3D bench is then completed!</li>
+          <li>複製 wood stick 物件，並依你的喜好，把它們拼起來，長椅就完成了！</li>
           <img src="imgs/project-c/04--composite-the-chair-03.jpg" />
-          <li>If you remembered to group the objects, you will be able to move, rotate, and scale the entire bench at once.</li>
+          <li>你可以再把整個長椅的所有物件都群組起來，這樣就可以對整張椅子做移動、旋轉、縮放</li>
           <img src="imgs/project-c/04--composite-the-chair-04.gif" />
-          <li>There's an additional chair-shadow texture you can use to simulate a real shadow, making the chair more realistic when viewing in AR.</li>
+          <li>另外還有一張長椅的陰影貼圖 chair-shadow 可以用來製作陰影，這樣到時候在看濾鏡的時候，椅子看起來會更真實</li>
           <img src="imgs/project-c/04--composite-the-chair-05.jpg" />
         </ol>
 
 
-        <h3 id="placing-the-star">Placing the Star</h3>
+        <h3 id="placing-the-star">放置星星</h3>
 
         <ol>
-          <li>Create a 3D star using the two-sided placement technique in the same manner as composing the chair.</li>
-          <li>Place the star on the tree. Well, we can't see where the tree is, but we know the relationship between the tracked image and the paper tree. So, we can make quite a good guess.</li>
+          <li>用上面的方法來製作一片雙面的星星物件</li>
+          <li>把這個星星物件放到樹上的位置。雖然從 Spark AR 編輯器裡面看不到樹的位置，但我們可以看著卡片大概猜一下，看看實際卡片上的樹，位於辨識圖的哪個位置</li>
           <img src="imgs/project-c/05--placing-the-star-combine.jpg" />
-          <li>Test the effect on your device. If the star's positioning is off, make adjustments in the editor and try again. Repeat this until it looks right to you.</li>
+          <li>把濾鏡傳送到手機測試看看，如果星星的位置不太正確，就重複調整，直到看起來感覺真的像是放到樹上為止</li>
           <img src="imgs/project-c/05--placing-the-star-03.jpg" />
         </ol>
 
 
-        <h3 id="make-it-snow">Make It Snow</h3>
+        <h3 id="make-it-snow">下雪</h3>
 
         <ol>
-          <li>Create a particle system for the snow effect. The steps are introduced in Project A (Snowman); please refer to it for more detailed directions.</li>
+          <li>建立一個 Particle System 物件並設定參數，讓他看起來像是下雪。詳細的操作步驟在雪人專案裡面有，可以參考雪人專案裡面的教學內容</li>
           <img src="imgs/project-c/06--make-it-snow-01.jpg" />
-          <li>Generate heavier snow by increasing the birthrate and lifespan values. This is important if the next step is creating a masking for the tree. The final outcome will look nicer if the tree is surrounded by snow.</li>
+          <li>調高 birthrate（產生粒子的數量）和 lifespan（粒子的存活時間）來讓雪下得更大些。之所以要這麼做，是因為接下來我們要製作聖誕樹的遮罩，雪大一點比較看得出遮罩的效果，會更有空間感</li>
           <img src="imgs/project-c/06--make-it-snow-02.jpg" />
         </ol>
 
         <a name=""></a>
-        <h3 id="make-the-star-glow">Make the Star Glow</h3>
+        <h3 id="make-the-star-glow">讓星星發光</h3>
 
         <ul>
-          <li>You can also add another particle system for the star using the glow-particle image to create a glowing effect.</li>
+          <li>用類似的方式製作一個 Particle System 物件，並使用 glow-particle 這張圖作為粒子的材質貼圖</li>
           <img src="imgs/project-c/07--make-the-star-glow-01.jpg" />
         </ul>
 
         <a name=""></a>
-        <h2 id="creating-the-illusion">Creating the Illusion</h2>
+        <h2 id="creating-the-illusion">營造空間感</h2>
 
-        <p>As mentioned in Project B (Woodhouse), the virtual objects are always rendered in front of real-world images. So, if we want to make it seem like snow is really falling around the paper tree, we can use the masking technique.</p>
+        <p>就像木屋專案裡提到的，在 AR 裡影像會顯示在前方，所以如果我們要讓飄雪，看起來像是真的環繞著立體卡片，我們就需要用到遮罩的技巧</p>
 
         <a name=""></a>
-        <h3 id="create-masks-for-the-tree">Create Masks for the Tree</h3>
+        <h3 id="create-masks-for-the-tree">製作樹木遮罩</h3>
 
         <ol>
-          <li>Create a tree-mask material with tree-mask image. Set opacity to 1 and alpha test cutoff to 0.</li>
+          <li>使用 tree-mask 這張圖建立 tree-mask 材質，把 Opacity 設為 1、Alpha Test Cutoff 設為 0</li>
           <img src="imgs/project-c/08--create-mask-for-tree-01.jpg" />
-          <li>Create a layer for the tree-mask object and arrange its order to the last.</li>
+          <li>建立兩個 tree-mask 物件，並且新建立一個 tree-mask 圖層，把圖層排序放到最底下</li>
           <img src="imgs/project-c/08--create-mask-for-tree-02.jpg" />
-          <li>These steps are similar to the window masking tip mentioned in Project B. For more details, you can refer to that section.</li>
+          <li>這些步驟跟木屋專案裡面，製作窗戶遮罩的部分差不多。如果想看更詳細的步驟，可以到木屋專案的頁面查看</li>
           <img src="imgs/project-c/08--create-mask-for-tree-03.jpg" />
-          <li>Place the two tree-mask objects using the same technique as placing the star, test on your device, and adjust positioning in the editor until the result is satisfactory.</li>
+          <li>把這兩個 tree-mask 物件放到跟實際卡片上的樹一樣的位置，技巧就跟放星星的方式一樣，透過不斷在手機測試、調整位置的方法</li>
           <img src="imgs/project-c/08--create-mask-for-tree-04-combine.jpg" />
-          <li>The tree’s masking position does not need to be perfect since it only covers the snowflakes. The edge of the mask will not be obvious.</li>
+          <li>樹的遮罩位置並不需要非常完美，因為這個專案裡面，會被遮罩遮住的只有雪花。由於雪花一直在飄動，所以遮罩的邊緣看起來並不明顯</li>
         </ol>
 
         <a name=""></a>
-        <h3 id="about-the-trail-and-error">*About the Trial-and-Error Positioning Technique</h3>
+        <h3 id="about-the-trail-and-error">*關於「測試、調整」位置的方法</h3>
 
-        <p>It might seem silly to rely on trial-and-error methods for positioning., i.e., the tree mask in this project and the girl image in Snowman. However, this technique actually brings forth more possibilities for AR projects.<br />
+        <p>在這個系列教學裡，我們經常用這種不斷測試、調整位置的做法，例如這裏設定樹的遮罩、或是雪人專案裡設定女孩位置的方法。有人可能會覺得這樣的方法很土法煉鋼、感覺有點遜。但事實上，這樣的方法為 AR 創造的更多的可能性！<br />
         <br />
-        Generally, if we want to create AR effect on objects, we rely heavily on the tracking technology. For example, if we want a face-tracking AR, the system needs to be equipped with the face-tracking technology (which Spark AR has and performs very well at). So, if we want to create an AR effect on cans or even statues, we might need a “can-tracking” or “statue-tracking” feature to do that.<br />
+        通常在製作 AR 的專案時，我們是非常依賴「辨識系統」的功能。例如我們想要做一個「臉部特效濾鏡」，我們會需要系統具備「臉部辨識」的功能（而這正是 Spark AR 特別厲害的）。所以如果我們今天想要針對某一個「罐裝飲料」、或甚至是「雕像」來製作濾鏡，我們就會需要「罐裝飲料」或是「雕像」形狀的辨識功能。如果是這樣的話，那辨識系統永遠不可能滿足所有的需求（至少目前為止的科技是如此）<br />
         <br />
-        With the positioning technique, however, we don't need the tracking technology. instead, we can build an AR effect on anything using an image as a tracking target if we can spot an appropriate way to place and image beside the target. As in this project, we don't really track the tree; instead, we use the floor image for tracking.</p>
+        而使用這種測試、調整的擺放技巧，我們就不必依賴辨識系統，而可以透過單純一張平面辨識圖，來實現更多種 AR 效果。例如說，如果我們要對一個雕像製作濾鏡，我們可以在雕像旁邊貼一張海報之類的作為辨識圖，就可以透過測試、調整的擺放技巧，來對雕像製作 AR 效果。就像這個聖誕樹專案，我們不真的辨識卡片立體的部分（樹），而是辨識地板的圖</p>
 
 
-        <h2 id="additional-details">Additional Details</h2>
+        <h2 id="additional-details">一些額外的效果</h2>
 
-        <p>There are some additional things we could work on to improve the effect. However, since the techniques have already been covered in the previous tutorials, I will simply list them below. If you want to  find out more details, you could initiate the sample project.</p>
+        <p>除了本篇教學有說到的內容外，這次的範例專案裡還另外做了一些效果，讓整體更豐富。如果你有興趣的話，可以打開範例專案看看，或是可以試著自己做做看。在此條列這些效果供參考：</p>
 
         <ul>
-          <li>You can place text on the card. And by applying a shadow texture, you can make the texts appear to float on the card.</li>
+          <li>可以放一些文字在卡片上，並且可以加上陰影（也有準備陰影用的圖），這樣在看 AR 的時候，看起來會更有真實感</li>
           <img src="imgs/project-c/09--additional-setup-01.jpg" />
-          <li>You can create animation when tracking is on. For example, the chair becoming bigger, the star popping up, and the text floating.</li>
+          <li>可以製作一些動畫，並且設定成辨識到卡片時觸發。例如：讓椅子由小變大、星星蹦出來、文字浮起來等</li>
           <img src="imgs/project-c/09--additional-setup-02-1.gif" />
           <img src="imgs/project-c/09--additional-setup-02-2.jpg" />
-          <li>There are separate snow textures for each part of the bench. This is to create the animation of “snow slowly piling up” on the bench.</li>
+          <li>我另外還幫長椅的各個部位（扶手、木條）另外各畫了一張「堆雪」層，可以用來製作「雪慢慢堆積起來」的動畫效果（透過把透明度漸漸調高）</li>
           <img src="imgs/project-c/09--additional-setup-03.gif" />
-          <li>Aligning the animated glow plane with the star will make the star appear to be glowing.</li>
+          <li>有一張星星用的光暈圖片，設定為 Additive 並且跟星星放在一起，可以讓星星看起來有發光的光暈的感覺</li>
           <img src="imgs/project-c/09--additional-setup-04.gif" />
         </ul>
 
         <p>
-        The project is now done. Congratulations!<br />
+        做到這邊，專案就大功告成囉！<br />
         <br />
-        You should be able to see a result as demonstrated in the video below:</p>
+        如果都有依照上面的教學做的話，最後應該可以看到這樣的效果：</p>
 
         <div class="video-area">
           <iframe width="640" height="480" src="https://www.youtube.com/embed/AsuSw531yxc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
