@@ -13,115 +13,123 @@
   </head>
 
   <body style="position: relative;" data-spy="scroll" data-target="#tutorial-project-a" data-offset="0">
-      <div id="mobile-spacer">
-      </div>
+    <div id="mobile-spacer">
+    </div>
 
-      <div id="mobile-nav">
-          <nav class="navbar navbar-light bg-light" data-toggle="collapse" data-target="#mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav-toggle">
-              <a><span class="hamburger">☰</span> It's Now Winter @ 2020 DCCC</a>
-          </nav>
-          <nav id="mobile-nav-toggle" class="navbar navbar-light bg-light collapse">
-              <a class="nav-link font-weight-bold" style="width: 100%" href="index.html">Intro Page</a>
-              <a class="nav-link font-weight-bold" style="width: 100%" href="paper-prepare.html">General Card Preparation</a>
-              <a class="nav-link font-weight-bold" style="width: 100%" href="project-a-snowman.html">Project A - Snowman</a>
-              <a class="nav-link font-weight-bold" style="width: 100%" href="project-b-woodhouse.html">Project B - Woodhouse</a>
-              <a class="nav-link font-weight-bold" style="width: 100%" href="project-c-xmastree.html">Project C - Xmas Tree</a>
-          </nav>
-      </div>
-
-      <div id="main-menu" class="overflow-auto">
-          <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">Intro Page</a>
-            <a class="navbar-brand" href="paper-prepare.html">General Card Preparation</a>
-            <a class="navbar-brand collapsed" style="cursor:pointer" data-toggle="collapse" data-target="#tutorial-project-a" aria-expanded="false" aria-controls="tutorial-project-a">Project A - Snowman</a>
-            <nav id="tutorial-project-a" class="navbar navbar-light bg-light nav-pills collapse show">
-                <a class="nav-link font-weight-bold" href="#project-description">Project Description</a>
-                <a class="nav-link font-weight-bold" href="#preparing-the-project">Preparing the Project</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3" href="#create-new-project">Create New Project</a>
-                    <a class="nav-link ml-3" href="#import-assets-from-computer">Import Assets from Computer</a>
-                </nav>
-                <a class="nav-link font-weight-bold" href="#set-up-image-tracking">Set Up Image Tracking</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3" href="#set-up-tracking-target-image">Set Up Tracking Target Image</a>
-                    <a class="nav-link ml-3" href="#test-the-tracker-image">Test the Tracker Image</a>
-                    <a class="nav-link ml-3 text-info" href="#test-the-effect-with-the-spark-ar-player">*Test the Effect with the Spark AR Player App</a>
-                    <a class="nav-link ml-3 text-info" href="#best-practice-tracker-image">*Best Practice for the Tracker Image</a>
-                </nav>
-                <a class="nav-link font-weight-bold" href="#set-up-augmented-content">Set Up Augmented Content</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3" href="#materials-in-3d">Materials in 3D</a>
-                    <a class="nav-link ml-3" href="#adding-the-girl-into-the-scene">Adding the Girl into the Scene</a>
-                    <a class="nav-link ml-3" href="#adjust-plane-scale-to-fit-image-ratio">Adjust Plane Scale to Fit Image Size Ratio</a>
-                    <a class="nav-link ml-3" href="#position-the-girl">Position the Girl</a>
-                    <a class="nav-link ml-3 text-info" href="#move-scale-rotate-objects">*Move, Scale, Rotate objects</a>
-                    <a class="nav-link ml-3" href="#adding-texts">Adding Texts</a>
-                </nav>
-                <a class="nav-link font-weight-bold" href="#animating-with-patch-editor">Animating with Patch Editor</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3" href="#test-with-loop-animation">Test with Loop Animation</a>
-                    <a class="nav-link ml-3 text-info" href="#animation-curves">*Animation Curves</a>
-                    <a class="nav-link ml-3" href="#set-up-on-track-action">Set Up On-Track Action with Animation</a>
-                    <a class="nav-link ml-3" href="#queueing-animations">Queueing Animations</a>
-                </nav>
-                <a class="nav-link font-weight-bold" href="#create-the-snow-effect">Create the Snow Effect</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3 text-info" href="#design-your-own-particle-effect">*Design Your Own Particle Effect</a>
-                </nav>
-            </nav>
-            <a class="navbar-brand" data-toggle="collapse" style="cursor:pointer" data-target="#tutorial-project-b" aria-expanded="false" aria-controls="tutorial-project-b">Project B - Wood house</a>
-            <nav id="tutorial-project-b" class="navbar navbar-light bg-light nav-pills collapse">
-                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html">Project Description</a>
-                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#set-up-tracking">Set Up Tracking</a>
-                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#setting-up-room-space">Setting Up Room Space</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3" href="project-b-woodhouse.html#place-a-reference-image">Place a Reference Image</a>
-                    <a class="nav-link ml-3" href="project-b-woodhouse.html#set-up-the-walls">Set Up the Walls</a>
-                    <a class="nav-link ml-3" href="project-b-woodhouse.html#install-furniture">Install Furniture</a>
-                </nav>
-                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#the-transparent-issue">The Transparent Issue</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3" href="project-b-woodhouse.html#fixing-by-alpha-test">Fixing by using Alpha Test</a>
-                    <a class="nav-link ml-3" href="project-b-woodhouse.html#fixing-by-setting-the-layers">Fixing by setting the layers</a>
-                    <a class="nav-link ml-3 text-info" href="project-b-woodhouse.html#opacity-and-blend-mode">*Opacity and Blend Mode</a>
-                </nav>
-                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#animated-fire">Animated Fire</a>
-                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#setting-up-the-lights">Setting Up the Lights</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3" href="project-b-woodhouse.html#adding-lights-into-the-scene">Adding Lights into the Scene</a>
-                    <a class="nav-link ml-3" href="project-b-woodhouse.html#animating-the-light-intensity">Animating the Light Intensity</a>
-                    <a class="nav-link ml-3 text-info" href="project-b-woodhouse.html#light-types">*Light Types</a>
-                </nav>
-                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#test-the-room">Test the Room</a>
-                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#setting-up-the-mask">Setting Up the Mask</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3" href="project-b-woodhouse.html#set-up-walls-mask">Set Up Walls Mask</a>
-                    <a class="nav-link ml-3" href="project-b-woodhouse.html#set-up-window-mask">Set Up Window Mask</a>
-                </nav>
-            </a>
-            </nav>
-            <a class="navbar-brand" data-toggle="collapse" style="cursor:pointer" data-target="#tutorial-project-c" aria-expanded="false" aria-controls="tutorial-project-c">Project C - Xmas Tree</a>
-            <nav id="tutorial-project-c" class="navbar navbar-light bg-light nav-pills collapse">
-                <a class="nav-link font-weight-bold" href="project-c-xmastree.html">Project Description</a>
-                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#set-up-tracking">Set Up Tracking</a>
-                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#set-up-the-object">Set Up the Object</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3" href="project-c-xmastree.html#create-a-two-sided-plane">Create a Two-Sided Plane</a>
-                    <a class="nav-link ml-3 text-info" href="project-c-xmastree.html#materials-double-sided-setting">*Material's Double-Sided Setting</a>
-                    <a class="nav-link ml-3" href="project-c-xmastree.html#composing-the-chair">Composing the Chair</a>
-                    <a class="nav-link ml-3" href="project-c-xmastree.html#placing-the-star">Placing the Star</a>
-                    <a class="nav-link ml-3" href="project-c-xmastree.html#make-it-snow">Make It Snow</a>
-                    <a class="nav-link ml-3" href="project-c-xmastree.html#make-the-star-glow">Make the Star Glow</a>
-                </nav>
-                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#creating-the-illusion">Creating the Illusion</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3" href="project-c-xmastree.html#create-masks-for-the-tree">Create Masks for the Tree</a>
-                    <a class="nav-link ml-3 text-info" href="project-c-xmastree.html#about-the-trail-and-error">*About the Trial-and-Error Positioning Technique</a>
-                </nav>
-                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#additional-details">Additional Details</a>
-            </nav>
+    <div id="mobile-nav">
+        <nav class="navbar navbar-light bg-light" data-toggle="collapse" data-target="#mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav-toggle">
+            <a><span class="hamburger">☰</span> It's Now Winter @ 2020 DCCC</a>
+            <div class="navbar lan-switch-mobile">
+              <a href="project-a-snowman.html">ENG</a>
+              <a href="project-a-snowman-zh.html">中文</a>
+            </div>
         </nav>
-      </div>
+        <nav id="mobile-nav-toggle" class="navbar navbar-light bg-light collapse">
+            <a class="nav-link font-weight-bold" style="width: 100%" href="index-zh.html">計畫簡介</a>
+            <a class="nav-link font-weight-bold" style="width: 100%" href="paper-prepare-zh.html">卡片製作相關</a>
+            <a class="nav-link font-weight-bold" style="width: 100%" href="">專案 A - 雪人</a>
+            <a class="nav-link font-weight-bold" style="width: 100%" href="project-b-woodhouse-zh.html">專案 B - 木屋</a>
+            <a class="nav-link font-weight-bold" style="width: 100%" href="project-c-xmastree-zh.html">Project C - Xmas Tree</a>
+        </nav>
+    </div>
+
+    <div id="main-menu" class="overflow-auto">
+        <div class="navbar lan-switch">
+          <a href="project-a-snowman.html">ENG</a>
+          <a href="project-a-snowman-zh.html">中文</a>
+        </div>
+        <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="index-zh.html">計畫簡介</a>
+          <a class="navbar-brand" href="paper-prepare-zh.html">卡片製作相關</a>
+          <a class="navbar-brand collapsed" style="cursor:pointer" data-toggle="collapse" data-target="#tutorial-project-a" aria-expanded="false" aria-controls="tutorial-project-a">Project A - 雪人</a>
+          <nav id="tutorial-project-a" class="navbar navbar-light bg-light nav-pills collapse show">
+              <a class="nav-link font-weight-bold" href="#project-description">專案說明</a>
+              <a class="nav-link font-weight-bold" href="#preparing-the-project">Spark 專案設定</a>
+              <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3" href="#create-new-project">建立新專案</a>
+                  <a class="nav-link ml-3" href="#import-assets-from-computer">匯入檔案素材</a>
+              </nav>
+              <a class="nav-link font-weight-bold" href="#set-up-image-tracking">設定圖片辨識</a>
+              <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3" href="#set-up-tracking-target-image">選擇辨識圖檔</a>
+                  <a class="nav-link ml-3" href="#test-the-tracker-image">測試辨識效果</a>
+                  <a class="nav-link ml-3 text-info" href="#test-the-effect-with-the-spark-ar-player">*Spark 專用的測試 App</a>
+                  <a class="nav-link ml-3 text-info" href="#best-practice-tracker-image">*製作好的辨識圖</a>
+              </nav>
+              <a class="nav-link font-weight-bold" href="#set-up-augmented-content">設定 AR 內容</a>
+              <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3" href="#materials-in-3d">3D 的材質</a>
+                  <a class="nav-link ml-3" href="#adding-the-girl-into-the-scene">把女孩放入場景</a>
+                  <a class="nav-link ml-3" href="#adjust-plane-scale-to-fit-image-ratio">調整圖片比例</a>
+                  <a class="nav-link ml-3" href="#position-the-girl">設定女孩的位置</a>
+                  <a class="nav-link ml-3 text-info" href="#move-scale-rotate-objects">*移動、縮放、旋轉物件</a>
+                  <a class="nav-link ml-3" href="#adding-texts">加入文字</a>
+              </nav>
+              <a class="nav-link font-weight-bold" href="#animating-with-patch-editor">使用 Patch Editor 製作動畫</a>
+              <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3" href="#test-with-loop-animation">用 Loop Animation 測試動畫</a>
+                  <a class="nav-link ml-3 text-info" href="#animation-curves">*動畫曲線 Animation Curves</a>
+                  <a class="nav-link ml-3" href="#set-up-on-track-action">設定動畫觸發時機</a>
+                  <a class="nav-link ml-3" href="#queueing-animations">讓動畫依序播放</a>
+              </nav>
+              <a class="nav-link font-weight-bold" href="#create-the-snow-effect">製作下雪特效</a>
+              <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3 text-info" href="#design-your-own-particle-effect">*關於粒子特效的製作</a>
+              </nav>
+          </nav>
+          <a class="navbar-brand" data-toggle="collapse" style="cursor:pointer" data-target="#tutorial-project-b" aria-expanded="false" aria-controls="tutorial-project-b">Project B - 木屋</a>
+          <nav id="tutorial-project-b" class="navbar navbar-light bg-light nav-pills collapse">
+              <a class="nav-link font-weight-bold" href="project-b-woodhouse-zh.html">專案說明</a>
+              <a class="nav-link font-weight-bold" href="project-b-woodhouse-zh.html#set-up-tracking">設定圖片辨識</a>
+              <a class="nav-link font-weight-bold" href="project-b-woodhouse-zh.html#setting-up-room-space">製作木屋房間</a>
+              <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3" href="project-b-woodhouse-zh.html#place-a-reference-image">使用參考圖</a>
+                  <a class="nav-link ml-3" href="project-b-woodhouse-zh.html#set-up-the-walls">製作牆壁</a>
+                  <a class="nav-link ml-3" href="project-b-woodhouse-zh.html#install-furniture">放入家具</a>
+              </nav>
+              <a class="nav-link font-weight-bold" href="project-b-woodhouse-zh.html#the-transparent-issue">半透明的問題</a>
+              <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3" href="project-b-woodhouse-zh.html#fixing-by-alpha-test">使用 Alpha Test</a>
+                  <a class="nav-link ml-3" href="project-b-woodhouse-zh.html#fixing-by-setting-the-layers">使用圖層設定</a>
+                  <a class="nav-link ml-3 text-info" href="project-b-woodhouse-zh.html#opacity-and-blend-mode">*透明度與混合模式</a>
+              </nav>
+              <a class="nav-link font-weight-bold" href="project-b-woodhouse-zh.html#animated-fire">動畫火焰</a>
+              <a class="nav-link font-weight-bold" href="project-b-woodhouse-zh.html#setting-up-the-lights">設定光源</a>
+              <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3" href="project-b-woodhouse-zh.html#adding-lights-into-the-scene">在場景內加入燈光</a>
+                  <a class="nav-link ml-3" href="project-b-woodhouse-zh.html#animating-the-light-intensity">設定光源動畫</a>
+                  <a class="nav-link ml-3 text-info" href="project-b-woodhouse-zh.html#light-types">*光源的類型</a>
+              </nav>
+              <a class="nav-link font-weight-bold" href="project-b-woodhouse-zh.html#test-the-room">測試房間效果</a>
+              <a class="nav-link font-weight-bold" href="project-b-woodhouse-zh.html#setting-up-the-mask">設定遮罩</a>
+              <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3" href="project-b-woodhouse-zh.html#set-up-walls-mask">製作牆壁遮罩</a>
+                  <a class="nav-link ml-3" href="project-b-woodhouse-zh.html#set-up-window-mask">設定窗戶遮罩</a>
+              </nav>
+          </a>
+          </nav>
+          <a class="navbar-brand" data-toggle="collapse" style="cursor:pointer" data-target="#tutorial-project-c" aria-expanded="false" aria-controls="tutorial-project-c">Project C - 小樹</a>
+          <nav id="tutorial-project-c" class="navbar navbar-light bg-light nav-pills collapse">
+              <a class="nav-link font-weight-bold" href="project-c-xmastree-zh.html">專案說明</a>
+              <a class="nav-link font-weight-bold" href="project-c-xmastree-zh.html#set-up-tracking">設定圖片辨識</a>
+              <a class="nav-link font-weight-bold" href="project-c-xmastree-zh.html#set-up-the-object">設定場景物件</a>
+              <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3" href="project-c-xmastree-zh.html#create-a-two-sided-plane">建立雙面的 Plane</a>
+                  <a class="nav-link ml-3 text-info" href="project-c-xmastree-zh.html#materials-double-sided-setting">*材質的 Double-Sided（雙面）選項</a>
+                  <a class="nav-link ml-3" href="project-c-xmastree-zh.html#composing-the-chair">組裝長椅</a>
+                  <a class="nav-link ml-3" href="project-c-xmastree-zh.html#placing-the-star">在樹上放置星星</a>
+                  <a class="nav-link ml-3" href="project-c-xmastree-zh.html#make-it-snow">下雪</a>
+                  <a class="nav-link ml-3" href="project-c-xmastree-zh.html#make-the-star-glow">讓星星發光</a>
+              </nav>
+              <a class="nav-link font-weight-bold" href="project-c-xmastree-zh.html#creating-the-illusion">營造空間感</a>
+              <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3" href="project-c-xmastree-zh.html#create-masks-for-the-tree">製作樹木遮罩</a>
+                  <a class="nav-link ml-3 text-info" href="project-c-xmastree-zh.html#about-the-trail-and-error">*關於「測試、調整」位置的方法</a>
+              </nav>
+              <a class="nav-link font-weight-bold" href="project-c-xmastree-zh.html#additional-details">一些額外的細節製作</a>
+          </nav>
+      </nav>
+    </div>
 
     <div id="main-nav-spacer">
     </div>
@@ -135,10 +143,10 @@
 
       <article id="main" data-spy="scroll" data-target="#nav-target">
         <h2 id="project-description">
-          教學專案簡介
+          專案簡介
         </h2>
         <p>
-          在這個專案裡，我們會練習使用 Spark AR 的圖形辨識（Image Tracking）功能。當相機拍到我們設定好的圖案，會播放一些動畫。
+          在這個專案裡，我們會製作一張 AR 雪人立體卡片，當相機拍到卡片的圖案以後，會跳出一些動畫。我們會使用到 Spark AR 的圖形辨識（Image Tracking）功能，並且會練習基本的 Spark AR 操作。
         </p>
         <div class="video-area">
           <iframe width="640" height="480" src="https://www.youtube.com/embed/0EZRWoaOwHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -153,7 +161,7 @@
         </p>
 
 
-        <h2 id="preparing-the-project">Spark 專案準備</h2>
+        <h2 id="preparing-the-project">Spark 專案設定</h2>
 
 
         <h3 id="create-new-project">建立新專案</h3>
@@ -169,7 +177,7 @@
         </ol>
 
 
-        <h3 id="import-assets-from-computer">從電腦內匯入素材</h3>
+        <h3 id="import-assets-from-computer">匯入檔案素材</h3>
         <ol>
           <li>在 Assets（素材）視窗，點下方的 “Add Asset” → “Import from Computer” 然後選擇下載好的素材</li>
           <img src="imgs/project-a/import-from-computer-01.jpg" />
@@ -179,10 +187,10 @@
         </ol>
 
 
-        <h2 id="set-up-image-tracking">設定圖片辨識功能</h2>
+        <h2 id="set-up-image-tracking">設定圖片辨識</h2>
 
 
-        <h3 id="set-up-tracking-target-image">設定辨識圖</h3>
+        <h3 id="set-up-tracking-target-image">選擇辨識圖檔</h3>
         <ol>
          	<li>選擇 Scene 裡面的 fixedTargetTracker0 物件，然後在右方的 Properties 視窗內可以看到許多選項</li>
           <img src="imgs/project-a/setup-the-tracking-target-image-01.jpg" />
@@ -193,7 +201,7 @@
         </ol>
 
 
-        <h3 id="test-the-tracker-image">測試辨識圖</h3>
+        <h3 id="test-the-tracker-image">測試辨識效果</h3>
         <p>
           並不是每張圖都適合作為辨識圖，因此在我們正式開始製作專案前，最好先測試看看圖片的辨識效果。等確認辨識效果沒問題後，我們再正式開始製作，以免辨識圖需要改，可能也會連帶影響專案的製作內容
         </p>
@@ -213,7 +221,7 @@
         </ol>
 
 
-        <h3 id="test-the-effect-with-the-spark-ar-player">*使用專門的測試 App 來測試濾鏡</h3>
+        <h3 id="test-the-effect-with-the-spark-ar-player">*Spark 專用的測試 App</h3>
         <p>
           有時候會因為網路不順導致上傳濾鏡失敗，或因為手機設備的問題，導致看起來的效果和 Spark AR 編輯器裡面看起來不一樣。如果有遇到這些問題，可以考慮使用專門的測試程式（Spark AR Player）來測試濾鏡。使用 Spark AR Player 就可以不透過網路，而是透過手機連接線來把濾鏡安裝到手機上。<br />
           <br />
@@ -230,7 +238,7 @@
         <h2 id="set-up-augmented-content">設定 AR 內容</h2>
 
 
-        <h3 id="materials-in-3d">3D 的「材質」</h3>
+        <h3 id="materials-in-3d">3D 的材質</h3>
         <p>
         在 3D 軟體裡面，圖片本身並沒有辦法直接顯示出來。你必須要先定義物件的「3D 形狀」（通常稱為 Mesh），然後再透過「材質」（Material）來定義這個形狀外觀，例如顏色、反光光澤、透明度、表面的粗糙感等<br />
         <br />
@@ -263,7 +271,7 @@
         </ol>
 
 
-        <h3 id="adjust-plane-scale-to-fit-image-ratio">調整物件形狀以符合圖片比例</h3>
+        <h3 id="adjust-plane-scale-to-fit-image-ratio">調整圖片比例</h3>
         <ol>
           <li>點選 Assets 視窗的 girl-image，右邊可以看到這張圖的寬度（width）和高度（height）的資訊，像這張圖是 512 x 1024</li>
           <img src="imgs/project-a/adjust-size-ratio-01.jpg" />
@@ -315,13 +323,13 @@
         </ol>
 
 
-        <h2 id="animating-with-patch-editor">使用 Patch Editor 來做動畫</h2>
+        <h2 id="animating-with-patch-editor">使用 Patch Editor 製作動畫</h2>
         <p>
         Patch Editor（或簡稱為 Patch）是 Spark AR 最棒的功能，透過 Patch 我們可以讓任何物件的數值動態改變。接著我們會用 Patch 來對 girl-plane 和文字物件做動畫
         </p>
 
 
-        <h3 id="test-with-loop-animation">試做 Loop 動畫</h3>
+        <h3 id="test-with-loop-animation">用 Loop Animation 測試動畫</h3>
         <ol>
         <li>我們先來做 girl-plane 的動畫。點選 girl-plane 然後注意看，右邊的 Scale 數值的旁邊，有一個 “→” 箭頭的圖案。如果數值旁邊有這個圖案，表示這個數值可以透過 Patch Editor 來設定</li>
         <img src="imgs/project-a/test-with-loop-01.jpg" />
@@ -354,7 +362,7 @@
         </p>
 
 
-        <h2 id="set-up-on-track-action">讓動畫在辨識到圖片時觸發</h2>
+        <h2 id="set-up-on-track-action">設定動畫觸發時機</h2>
         <p>
         在製作動畫時，使用 Loop Animation Patch 來預覽很方便，但實際上我們想要的是，讓卡片的圖案被辨識到後，啟動動畫，然後只播一次就好，不要重複輪播。因此現在我們要改用其他的 Patch
         </p>
@@ -372,7 +380,7 @@
         </ol>
 
 
-        <h2 id="queueing-animations">設定動畫順序</h2>
+        <h2 id="queueing-animations">讓動畫依序播放</h2>
         <p>
         接著我們要來幫文字加入動畫，基本上概念和剛剛設定的女孩圖片動畫差不多。但在這邊，我們會使用動畫的 OnComplete 輸出和 Delay Patch 來設定動畫的先後順序，幫文字加入類似打字機的效果
         </p>
@@ -412,7 +420,7 @@
         </ol>
 
 
-        <h2 id="design-your-own-particle-effect">*設計自己的粒子特效</h2>
+        <h2 id="design-your-own-particle-effect">*關於粒子特效的製作</h2>
         <p>
         設計粒子特效，就是透過調整各種不同的數值來達成，因此，學習粒子特效最好的方法，就是實際調調看這些數值，看看效果如何變化<br />
         <br />
@@ -420,7 +428,7 @@
         </p>
 
         <p>
-        做到這裡，這個專案就完成了！Yay！！<br />
+        做到這裡，這個專案就大功告成囉！<br />
         如果一切設定都沒問題的話，在手機上測試時，應該可以看到這樣的成果：
         </p>
 
