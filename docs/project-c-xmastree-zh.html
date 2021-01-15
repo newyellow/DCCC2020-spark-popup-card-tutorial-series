@@ -1,0 +1,330 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>It's Now Winter -- Spark Pop-up Card Tutorial Series</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Bootstrap -->
+    <script src="src/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="src/bootstrap.min.css">
+    <script src="src/bootstrap.bundle.min.js"></script>
+
+
+  </head>
+
+  <body style="position: relative;" data-spy="scroll" data-target="#tutorial-project-c" data-offset="0">
+
+      <div id="mobile-spacer">
+      </div>
+
+      <div id="mobile-nav">
+          <nav class="navbar navbar-light bg-light" data-toggle="collapse" data-target="#mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav-toggle">
+              <a><span class="hamburger">☰</span> It's Now Winter @ 2020 DCCC</a>
+          </nav>
+          <nav id="mobile-nav-toggle" class="navbar navbar-light bg-light collapse">
+              <a class="nav-link font-weight-bold" style="width: 100%" href="index.html">Intro Page</a>
+              <a class="nav-link font-weight-bold" style="width: 100%" href="paper-prepare.html">General Card Preparation</a>
+              <a class="nav-link font-weight-bold" style="width: 100%" href="project-a-snowman.html">Project A - Snowman</a>
+              <a class="nav-link font-weight-bold" style="width: 100%" href="project-b-woodhouse.html">Project B - Woodhouse</a>
+              <a class="nav-link font-weight-bold" style="width: 100%" href="project-c-xmastree.html">Project C - Xmas Tree</a>
+          </nav>
+      </div>
+
+      <div id="main-menu" class="overflow-auto">
+          <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Intro Page</a>
+            <a class="navbar-brand" href="paper-prepare.html">General Card Preparation</a>
+            <a class="navbar-brand collapsed" style="cursor:pointer" data-toggle="collapse" data-target="#tutorial-project-a" aria-expanded="false" aria-controls="tutorial-project-a">Project A - Snowman</a>
+            <nav id="tutorial-project-a" class="navbar navbar-light bg-light nav-pills collapse">
+                <a class="nav-link font-weight-bold" href="project-a-snowman.html">Project Description</a>
+                <a class="nav-link font-weight-bold" href="project-a-snowman.html#preparing-the-project">Preparing the Project</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-a-snowman.html#create-new-project">Create New Project</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#import-assets-from-computer">Import Assets from Computer</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-a-snowman.html#set-up-image-tracking">Set Up Image Tracking</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-a-snowman.html#set-up-tracking-target-image">Set Up Tracking Target Image</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#test-the-tracker-image">Test the Tracker Image</a>
+                    <a class="nav-link ml-3 text-info" href="project-a-snowman.html#test-the-effect-with-the-spark-ar-player">*Test the Effect with the Spark AR Player App</a>
+                    <a class="nav-link ml-3 text-info" href="project-a-snowman.html#best-practice-tracker-image">*Best Practice for the Tracker Image</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-a-snowman.html#set-up-augmented-content">Set Up Augmented Content</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-a-snowman.html#materials-in-3d">Materials in 3D</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#adding-the-girl-into-the-scene">Adding the Girl into the Scene</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#adjust-plane-scale-to-fit-image-ratio">Adjust Plane Scale to Fit Image Size Ratio</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#position-the-girl">Position the Girl</a>
+                    <a class="nav-link ml-3 text-info" href="project-a-snowman.html#move-scale-rotate-objects">*Move, Scale, Rotate objects</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#adding-texts">Adding Texts</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-a-snowman.html#animating-with-patch-editor">Animating with Patch Editor</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-a-snowman.html#test-with-loop-animation">Test with Loop Animation</a>
+                    <a class="nav-link ml-3 text-info" href="project-a-snowman.html#animation-curves">*Animation Curves</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#set-up-on-track-action">Set Up On-Track Action with Animation</a>
+                    <a class="nav-link ml-3" href="project-a-snowman.html#queueing-animations">Queueing Animations</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-a-snowman.html#create-the-snow-effect">Create the Snow Effect</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3 text-info" href="project-a-snowman.html#design-your-own-particle-effect">*Design Your Own Particle Effect</a>
+                </nav>
+            </nav>
+            <a class="navbar-brand" data-toggle="collapse" style="cursor:pointer" data-target="#tutorial-project-b" aria-expanded="false" aria-controls="tutorial-project-b">Project B - Wood house</a>
+            <nav id="tutorial-project-b" class="navbar navbar-light bg-light nav-pills collapse">
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html">Project Description</a>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#set-up-tracking">Set Up Tracking</a>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#setting-up-room-space">Setting Up Room Space</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#place-a-reference-image">Place a Reference Image</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#set-up-the-walls">Set Up the Walls</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#install-furniture">Install Furniture</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#the-transparent-issue">The Transparent Issue</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#fixing-by-alpha-test">Fixing by using Alpha Test</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#fixing-by-setting-the-layers">Fixing by setting the layers</a>
+                    <a class="nav-link ml-3 text-info" href="project-b-woodhouse.html#opacity-and-blend-mode">*Opacity and Blend Mode</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#animated-fire">Animated Fire</a>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#setting-up-the-lights">Setting Up the Lights</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#adding-lights-into-the-scene">Adding Lights into the Scene</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#animating-the-light-intensity">Animating the Light Intensity</a>
+                    <a class="nav-link ml-3 text-info" href="project-b-woodhouse.html#light-types">*Light Types</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#test-the-room">Test the Room</a>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#setting-up-the-mask">Setting Up the Mask</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#set-up-walls-mask">Set Up Walls Mask</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#set-up-window-mask">Set Up Window Mask</a>
+                </nav>
+            </a>
+            </nav>
+            <a class="navbar-brand" data-toggle="collapse" style="cursor:pointer" data-target="#tutorial-project-c" aria-expanded="false" aria-controls="tutorial-project-c">Project C - Xmas Tree</a>
+            <nav id="tutorial-project-c" class="navbar navbar-light bg-light nav-pills collapse show">
+                <a class="nav-link font-weight-bold" href="#project-description">Project Description</a>
+                <a class="nav-link font-weight-bold" href="#set-up-tracking">Set Up Tracking</a>
+                <a class="nav-link font-weight-bold" href="#set-up-the-object">Set Up the Object</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#create-a-two-sided-plane">Create a Two-Sided Plane</a>
+                    <a class="nav-link ml-3 text-info" href="#materials-double-sided-setting">*Material's Double-Sided Setting</a>
+                    <a class="nav-link ml-3" href="#composing-the-chair">Composing the Chair</a>
+                    <a class="nav-link ml-3" href="#placing-the-star">Placing the Star</a>
+                    <a class="nav-link ml-3" href="#make-it-snow">Make It Snow</a>
+                    <a class="nav-link ml-3" href="#make-the-star-glow">Make the Star Glow</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#creating-the-illusion">Creating the Illusion</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#create-masks-for-the-tree">Create Masks for the Tree</a>
+                    <a class="nav-link ml-3 text-info" href="#about-the-trail-and-error">*About the Trial-and-Error Positioning Technique</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#additional-details">Additional Details</a>
+            </nav>
+        </nav>
+      </div>
+
+      <div id="main-nav-spacer">
+      </div>
+
+    <div id="main-section">
+
+      <div id="image-wrapper">
+          <div id="header-image" style="background-image: url(imgs/project-c/cover-c.jpg)">
+          </div>
+      </div>
+
+      <article id="main">
+        <h2 id="project-description">Project Description</h2>
+
+        <p>For this project, we will build a 3D bench using only 2D planes, putting a glowing star on the tree and creating 3D masking for the tree.</p>
+        <div class="video-area">
+          <iframe width="640" height="480" src="https://www.youtube.com/embed/AsuSw531yxc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p>This project is kind of a practice project for the series. The techniques we will be using in this project have already been covered in the previous projects, but with more complexity.<br />
+        <br />
+        The best way to master something is through practice. From working on the 3D bench, you will get an idea of the 3D modeling process, making it easier for you to learn 3D modeling in the future.<br />
+        <br />
+        By practicing the masking technique again, you will have a better understanding of how and when you can use the masking technique, which will be very handy in your future AR projects.</p>
+
+
+        <h2>Assets for this Project</h2>
+
+        <p>You can download all the assets here: <a target="_blank" href="download/ProjectC-XmasTree.zip">Project C - Xmas Tree</a></p>
+
+        <ul class="warning"><li>It is strongly recommended that you watch the Snowman tutorial before starting this one. The Snowman tutorial provides a very detailed walk-through of the basic functions that will not be covered here.</li></ul>
+
+
+
+        <h2 id="set-up-tracking">Set Up Tracking</h2>
+
+        <p>For this step, you need to do the following:</p>
+
+        <ol>
+          <li>Create a new project.</li>
+          <li>Add fixedTargetTracker to the scene.</li>
+          <li>Import the images.</li>
+          <li>Change fixedTargetTracker image to floor-tracker-image.</li>
+        </ol>
+
+        <p>After you’re done, the project will look like this:</p>
+        <img src="imgs/project-c/01--setup-tracking-01.jpg" />
+        <p>If you’re unfamiliar with these steps, please refer to Project A (Snowman) for a more detailed step-by-step tutorial.</p>
+
+
+        <h2 id="set-up-the-object">Set Up the Object</h2>
+
+        <p>The scene setup for this project is slightly different from the previous two. In Projects A and B, the images are parallel to the tracking image. However, in this project, the tracking image is the floor, so the images need to stand perpendicularly on the tracking image.<br />
+        <br />
+        Furthermore, since you can't rotate the fixedTargetTracker in Spark AR Studio, the editing might be a bit strange. But don’t worry, you’ll get used to it!</p>
+
+
+        <h3 id="create-a-two-sided-plane">Create a Two-Sided Plane</h3>
+
+        <ol>
+        <li>Create a chair-side-body-A material for the chair-side-body-A image and put it on a plane. Make sure you check the “Alpha Test”. Since we are going to transform planes into a 3D object (rather, something that feels like a 3D model), we need to activate this option.<br />
+          <br />
+          As you rotate the plane, you might notice that the back of the plane is transparent. This is because the built-in plane is one-sided. As a result, we need to create another plane for the back.</li>
+        <img src="imgs/project-c/02--create-two-sided-plane-01-01.jpg" />
+        <img src="imgs/project-c/02--create-two-sided-plane-01-02.gif" />
+        <br />
+        <li>Create another plane for the back (or right-click on the plane and select “Duplicate”).</li>
+        <img src="imgs/project-c/02--create-two-sided-plane-02.jpg" />
+        <li>Create a chair-side-B material for the back plane and use chair-side-B image as texture.</li>
+        <img src="imgs/project-c/02--create-two-sided-plane-03.jpg" />
+        <li>Set the back plane's rotation values to 0, 180, 0.</li>
+        <li>It’s suggested that you group these two planes for easier movement, rotation, scaling. You can do so by creating a “Null Object” and place both planes under its hierarchy.</li>
+        <img src="imgs/project-c/02--create-two-sided-plane-05.jpg" />
+        <li>You can now rotate the object, with it appearing to be a two-sided plane.</li>
+        <img src="imgs/project-c/02--create-two-sided-plane-06.gif" />
+        </ol>
+
+
+        <h3 id="materials-double-sided-setting">*Material's Double-Sided Setting</h3>
+
+        <p>There's an easier way to create a double-sided plane. You can check the “double-sided” option in the material setting.</p>
+
+        <img class="center" src="imgs/project-c/03--material-double-sided-01.jpg" />
+
+        <p>However, with this method, the direction of light for the second side will be incorrect and it will feel like that side is not interacting with the lights.</p>
+
+        <img class="center" src="imgs/project-c/03--material-double-sided-01.gif" />
+
+        <p>This is the result of the "Light Normal" information in 3D models. Light normal is a direction value that defines how the 3D surface interacts with lights and is defined by vertices, which are the four corners of the plane. The “double-sided” function generates a second surface with the same vertices, so the light normal will be the same as the first surface, which is unrealistic in 3D environments.<br />
+        <br />
+        So, if the object's material type is standard, don't use the double-sided option. Instead, duplicate the plane. However, if your object's material type is flat, which means it doesn’t interact with the lights, opt for the double-sided option.</p>
+
+
+        <h3 id="composing-the-chair">Composing the Chair</h3>
+
+        <ol>
+          <li>Duplicate the chair-sided object and place it on the other side.</li>
+          <img src="imgs/project-c/04--composite-the-chair-01.jpg" />
+          <li>Create a wood stick object in the same way the two-sided chair side was created. Don’t forget to group them.</li>
+          <img src="imgs/project-c/04--composite-the-chair-02.jpg" />
+          <li>Duplicate the wood stick object and position them to your liking. A 3D bench is then completed!</li>
+          <img src="imgs/project-c/04--composite-the-chair-03.jpg" />
+          <li>If you remembered to group the objects, you will be able to move, rotate, and scale the entire bench at once.</li>
+          <img src="imgs/project-c/04--composite-the-chair-04.gif" />
+          <li>There's an additional chair-shadow texture you can use to simulate a real shadow, making the chair more realistic when viewing in AR.</li>
+          <img src="imgs/project-c/04--composite-the-chair-05.jpg" />
+        </ol>
+
+
+        <h3 id="placing-the-star">Placing the Star</h3>
+
+        <ol>
+          <li>Create a 3D star using the two-sided placement technique in the same manner as composing the chair.</li>
+          <li>Place the star on the tree. Well, we can't see where the tree is, but we know the relationship between the tracked image and the paper tree. So, we can make quite a good guess.</li>
+          <img src="imgs/project-c/05--placing-the-star-combine.jpg" />
+          <li>Test the effect on your device. If the star's positioning is off, make adjustments in the editor and try again. Repeat this until it looks right to you.</li>
+          <img src="imgs/project-c/05--placing-the-star-03.jpg" />
+        </ol>
+
+
+        <h3 id="make-it-snow">Make It Snow</h3>
+
+        <ol>
+          <li>Create a particle system for the snow effect. The steps are introduced in Project A (Snowman); please refer to it for more detailed directions.</li>
+          <img src="imgs/project-c/06--make-it-snow-01.jpg" />
+          <li>Generate heavier snow by increasing the birthrate and lifespan values. This is important if the next step is creating a masking for the tree. The final outcome will look nicer if the tree is surrounded by snow.</li>
+          <img src="imgs/project-c/06--make-it-snow-02.jpg" />
+        </ol>
+
+        <a name=""></a>
+        <h3 id="make-the-star-glow">Make the Star Glow</h3>
+
+        <ul>
+          <li>You can also add another particle system for the star using the glow-particle image to create a glowing effect.</li>
+          <img src="imgs/project-c/07--make-the-star-glow-01.jpg" />
+        </ul>
+
+        <a name=""></a>
+        <h2 id="creating-the-illusion">Creating the Illusion</h2>
+
+        <p>As mentioned in Project B (Woodhouse), the virtual objects are always rendered in front of real-world images. So, if we want to make it seem like snow is really falling around the paper tree, we can use the masking technique.</p>
+
+        <a name=""></a>
+        <h3 id="create-masks-for-the-tree">Create Masks for the Tree</h3>
+
+        <ol>
+          <li>Create a tree-mask material with tree-mask image. Set opacity to 1 and alpha test cutoff to 0.</li>
+          <img src="imgs/project-c/08--create-mask-for-tree-01.jpg" />
+          <li>Create a layer for the tree-mask object and arrange its order to the last.</li>
+          <img src="imgs/project-c/08--create-mask-for-tree-02.jpg" />
+          <li>These steps are similar to the window masking tip mentioned in Project B. For more details, you can refer to that section.</li>
+          <img src="imgs/project-c/08--create-mask-for-tree-03.jpg" />
+          <li>Place the two tree-mask objects using the same technique as placing the star, test on your device, and adjust positioning in the editor until the result is satisfactory.</li>
+          <img src="imgs/project-c/08--create-mask-for-tree-04-combine.jpg" />
+          <li>The tree’s masking position does not need to be perfect since it only covers the snowflakes. The edge of the mask will not be obvious.</li>
+        </ol>
+
+        <a name=""></a>
+        <h3 id="about-the-trail-and-error">*About the Trial-and-Error Positioning Technique</h3>
+
+        <p>It might seem silly to rely on trial-and-error methods for positioning., i.e., the tree mask in this project and the girl image in Snowman. However, this technique actually brings forth more possibilities for AR projects.<br />
+        <br />
+        Generally, if we want to create AR effect on objects, we rely heavily on the tracking technology. For example, if we want a face-tracking AR, the system needs to be equipped with the face-tracking technology (which Spark AR has and performs very well at). So, if we want to create an AR effect on cans or even statues, we might need a “can-tracking” or “statue-tracking” feature to do that.<br />
+        <br />
+        With the positioning technique, however, we don't need the tracking technology. instead, we can build an AR effect on anything using an image as a tracking target if we can spot an appropriate way to place and image beside the target. As in this project, we don't really track the tree; instead, we use the floor image for tracking.</p>
+
+
+        <h2 id="additional-details">Additional Details</h2>
+
+        <p>There are some additional things we could work on to improve the effect. However, since the techniques have already been covered in the previous tutorials, I will simply list them below. If you want to  find out more details, you could initiate the sample project.</p>
+
+        <ul>
+          <li>You can place text on the card. And by applying a shadow texture, you can make the texts appear to float on the card.</li>
+          <img src="imgs/project-c/09--additional-setup-01.jpg" />
+          <li>You can create animation when tracking is on. For example, the chair becoming bigger, the star popping up, and the text floating.</li>
+          <img src="imgs/project-c/09--additional-setup-02-1.gif" />
+          <img src="imgs/project-c/09--additional-setup-02-2.jpg" />
+          <li>There are separate snow textures for each part of the bench. This is to create the animation of “snow slowly piling up” on the bench.</li>
+          <img src="imgs/project-c/09--additional-setup-03.gif" />
+          <li>Aligning the animated glow plane with the star will make the star appear to be glowing.</li>
+          <img src="imgs/project-c/09--additional-setup-04.gif" />
+        </ul>
+
+        <p>
+        The project is now done. Congratulations!<br />
+        <br />
+        You should be able to see a result as demonstrated in the video below:</p>
+
+        <div class="video-area">
+          <iframe width="640" height="480" src="https://www.youtube.com/embed/AsuSw531yxc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+      </article>
+    </div>
+    <script type="text/javascript">
+    $(window).ready(function(){
+        $('body').scrollspy({ target: '#tutorial-project-c' });
+    });
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,442 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>It's Now Winter -- Spark Pop-up Card Tutorial Series</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Bootstrap -->
+    <script src="src/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="src/bootstrap.min.css">
+    <script src="src/bootstrap.bundle.min.js"></script>
+
+  </head>
+
+  <body style="position: relative;" data-spy="scroll" data-target="#tutorial-project-a" data-offset="0">
+      <div id="mobile-spacer">
+      </div>
+
+      <div id="mobile-nav">
+          <nav class="navbar navbar-light bg-light" data-toggle="collapse" data-target="#mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav-toggle">
+              <a><span class="hamburger">☰</span> It's Now Winter @ 2020 DCCC</a>
+          </nav>
+          <nav id="mobile-nav-toggle" class="navbar navbar-light bg-light collapse">
+              <a class="nav-link font-weight-bold" style="width: 100%" href="index.html">Intro Page</a>
+              <a class="nav-link font-weight-bold" style="width: 100%" href="paper-prepare.html">General Card Preparation</a>
+              <a class="nav-link font-weight-bold" style="width: 100%" href="project-a-snowman.html">Project A - Snowman</a>
+              <a class="nav-link font-weight-bold" style="width: 100%" href="project-b-woodhouse.html">Project B - Woodhouse</a>
+              <a class="nav-link font-weight-bold" style="width: 100%" href="project-c-xmastree.html">Project C - Xmas Tree</a>
+          </nav>
+      </div>
+
+      <div id="main-menu" class="overflow-auto">
+          <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Intro Page</a>
+            <a class="navbar-brand" href="paper-prepare.html">General Card Preparation</a>
+            <a class="navbar-brand collapsed" style="cursor:pointer" data-toggle="collapse" data-target="#tutorial-project-a" aria-expanded="false" aria-controls="tutorial-project-a">Project A - Snowman</a>
+            <nav id="tutorial-project-a" class="navbar navbar-light bg-light nav-pills collapse show">
+                <a class="nav-link font-weight-bold" href="#project-description">Project Description</a>
+                <a class="nav-link font-weight-bold" href="#preparing-the-project">Preparing the Project</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#create-new-project">Create New Project</a>
+                    <a class="nav-link ml-3" href="#import-assets-from-computer">Import Assets from Computer</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#set-up-image-tracking">Set Up Image Tracking</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#set-up-tracking-target-image">Set Up Tracking Target Image</a>
+                    <a class="nav-link ml-3" href="#test-the-tracker-image">Test the Tracker Image</a>
+                    <a class="nav-link ml-3 text-info" href="#test-the-effect-with-the-spark-ar-player">*Test the Effect with the Spark AR Player App</a>
+                    <a class="nav-link ml-3 text-info" href="#best-practice-tracker-image">*Best Practice for the Tracker Image</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#set-up-augmented-content">Set Up Augmented Content</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#materials-in-3d">Materials in 3D</a>
+                    <a class="nav-link ml-3" href="#adding-the-girl-into-the-scene">Adding the Girl into the Scene</a>
+                    <a class="nav-link ml-3" href="#adjust-plane-scale-to-fit-image-ratio">Adjust Plane Scale to Fit Image Size Ratio</a>
+                    <a class="nav-link ml-3" href="#position-the-girl">Position the Girl</a>
+                    <a class="nav-link ml-3 text-info" href="#move-scale-rotate-objects">*Move, Scale, Rotate objects</a>
+                    <a class="nav-link ml-3" href="#adding-texts">Adding Texts</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#animating-with-patch-editor">Animating with Patch Editor</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="#test-with-loop-animation">Test with Loop Animation</a>
+                    <a class="nav-link ml-3 text-info" href="#animation-curves">*Animation Curves</a>
+                    <a class="nav-link ml-3" href="#set-up-on-track-action">Set Up On-Track Action with Animation</a>
+                    <a class="nav-link ml-3" href="#queueing-animations">Queueing Animations</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="#create-the-snow-effect">Create the Snow Effect</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3 text-info" href="#design-your-own-particle-effect">*Design Your Own Particle Effect</a>
+                </nav>
+            </nav>
+            <a class="navbar-brand" data-toggle="collapse" style="cursor:pointer" data-target="#tutorial-project-b" aria-expanded="false" aria-controls="tutorial-project-b">Project B - Wood house</a>
+            <nav id="tutorial-project-b" class="navbar navbar-light bg-light nav-pills collapse">
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html">Project Description</a>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#set-up-tracking">Set Up Tracking</a>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#setting-up-room-space">Setting Up Room Space</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#place-a-reference-image">Place a Reference Image</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#set-up-the-walls">Set Up the Walls</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#install-furniture">Install Furniture</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#the-transparent-issue">The Transparent Issue</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#fixing-by-alpha-test">Fixing by using Alpha Test</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#fixing-by-setting-the-layers">Fixing by setting the layers</a>
+                    <a class="nav-link ml-3 text-info" href="project-b-woodhouse.html#opacity-and-blend-mode">*Opacity and Blend Mode</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#animated-fire">Animated Fire</a>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#setting-up-the-lights">Setting Up the Lights</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#adding-lights-into-the-scene">Adding Lights into the Scene</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#animating-the-light-intensity">Animating the Light Intensity</a>
+                    <a class="nav-link ml-3 text-info" href="project-b-woodhouse.html#light-types">*Light Types</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#test-the-room">Test the Room</a>
+                <a class="nav-link font-weight-bold" href="project-b-woodhouse.html#setting-up-the-mask">Setting Up the Mask</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#set-up-walls-mask">Set Up Walls Mask</a>
+                    <a class="nav-link ml-3" href="project-b-woodhouse.html#set-up-window-mask">Set Up Window Mask</a>
+                </nav>
+            </a>
+            </nav>
+            <a class="navbar-brand" data-toggle="collapse" style="cursor:pointer" data-target="#tutorial-project-c" aria-expanded="false" aria-controls="tutorial-project-c">Project C - Xmas Tree</a>
+            <nav id="tutorial-project-c" class="navbar navbar-light bg-light nav-pills collapse">
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html">Project Description</a>
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#set-up-tracking">Set Up Tracking</a>
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#set-up-the-object">Set Up the Object</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#create-a-two-sided-plane">Create a Two-Sided Plane</a>
+                    <a class="nav-link ml-3 text-info" href="project-c-xmastree.html#materials-double-sided-setting">*Material's Double-Sided Setting</a>
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#composing-the-chair">Composing the Chair</a>
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#placing-the-star">Placing the Star</a>
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#make-it-snow">Make It Snow</a>
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#make-the-star-glow">Make the Star Glow</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#creating-the-illusion">Creating the Illusion</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3" href="project-c-xmastree.html#create-masks-for-the-tree">Create Masks for the Tree</a>
+                    <a class="nav-link ml-3 text-info" href="project-c-xmastree.html#about-the-trail-and-error">*About the Trial-and-Error Positioning Technique</a>
+                </nav>
+                <a class="nav-link font-weight-bold" href="project-c-xmastree.html#additional-details">Additional Details</a>
+            </nav>
+        </nav>
+      </div>
+
+    <div id="main-nav-spacer">
+    </div>
+
+    <div id="main-section">
+
+      <div id="image-wrapper">
+          <div id="header-image" style="background-image: url(imgs/project-a/cover-a.jpg)">
+          </div>
+      </div>
+
+      <article id="main" data-spy="scroll" data-target="#nav-target">
+        <h2 id="project-description">
+          教學專案簡介
+        </h2>
+        <p>
+          在這個專案裡，我們會練習使用 Spark AR 的圖形辨識（Image Tracking）功能。當相機拍到我們設定好的圖案，會播放一些動畫。
+        </p>
+        <div class="video-area">
+          <iframe width="640" height="480" src="https://www.youtube.com/embed/0EZRWoaOwHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p>
+          這個教學是為了純新手設計的。本篇教學會附上每一個步驟的截圖，即使是從來沒用過 Spark AR 的新手，一定也能跟著本篇完成這個 AR 卡片。完成這張卡片後，應該就能了解大部分 Spark AR 的基本功能。
+        </p>
+
+        <h2>素材下載</h2>
+        <p>
+        本篇專案會用到的素材、卡片模板、以及已經完成的範例專案下載： <a href="download/ProjectA-Snowman.zip">Project A - Snowman.zip</a>
+        </p>
+
+
+        <h2 id="preparing-the-project">Spark 專案準備</h2>
+
+
+        <h3 id="create-new-project">建立新專案</h3>
+        <ol>
+         	<li>打開 Spark AR Studio 並選擇 “Create New” → “New Project”</li>
+          <img src="imgs/project-a/create-new-project-01.jpg" />
+         	<li>選擇圖片辨識 “Target Tracking”.</li>
+          <img src="imgs/project-a/create-new-project-02.jpg" />
+         	<li>現在新的專案已經成功建立了，並且擁有圖片辨識的功能。你應該可以在 Scene（場景）的視窗裡面看到 fixedTargetTracker0 這個物件</li>
+          <img src="imgs/project-a/create-new-project-03.jpg" />
+         	<li>如果你沒有看到 fixedTargetTracker0 這個物件，你也可以用另外的方法加入這個物件。在 Scene 視窗上點滑鼠右鍵，選 “Add” → “Fixed Target Tracker”</li>
+          <img src="imgs/project-a/create-new-project-04.jpg" />
+        </ol>
+
+
+        <h3 id="import-assets-from-computer">從電腦內匯入素材</h3>
+        <ol>
+          <li>在 Assets（素材）視窗，點下方的 “Add Asset” → “Import from Computer” 然後選擇下載好的素材</li>
+          <img src="imgs/project-a/import-from-computer-01.jpg" />
+          <img src="imgs/project-a/import-from-computer-02.jpg" />
+          <li>匯入完成後，便可以在 Assets 視窗內看到一個新的 texture（貼圖）資料夾，裡面有剛剛匯入的圖片</li>
+          <img src="imgs/project-a/import-from-computer-03.jpg" />
+        </ol>
+
+
+        <h2 id="set-up-image-tracking">設定圖片辨識功能</h2>
+
+
+        <h3 id="set-up-tracking-target-image">設定辨識圖</h3>
+        <ol>
+         	<li>選擇 Scene 裡面的 fixedTargetTracker0 物件，然後在右方的 Properties 視窗內可以看到許多選項</li>
+          <img src="imgs/project-a/setup-the-tracking-target-image-01.jpg" />
+         	<li>按一下 “Texture” 旁邊的小箭頭，然後選 “bg-tracking-target” 這個圖片<br /><br /> 如果你沒看到這個選項，那表示你還沒有把圖片匯入專案裡，請重新做一次上方「從電腦匯入素材」的部分</li>
+          <img src="imgs/project-a/setup-the-tracking-target-image-02.jpg" />
+         	<li>設定成功後，畫面中間的圖會變成你選的那張圖。這時候就已經完成圖片辨識的設定了，現在 Spark AR 已經具備辨識這張圖的功能</li>
+          <img src="imgs/project-a/setup-the-tracking-target-image-03.jpg" />
+        </ol>
+
+
+        <h3 id="test-the-tracker-image">測試辨識圖</h3>
+        <p>
+          並不是每張圖都適合作為辨識圖，因此在我們正式開始製作專案前，最好先測試看看圖片的辨識效果。等確認辨識效果沒問題後，我們再正式開始製作，以免辨識圖需要改，可能也會連帶影響專案的製作內容
+        </p>
+        <ol>
+         	<li>在 fixedTargetTracker0 物件上按滑鼠右鍵，選 “Add” → “Plane”，新增一片方塊模型</li>
+          <img src="imgs/project-a/test-the-tracker-image-01.jpg" />
+         	<li>要確認這個新增出來的 plane 的層級是正確的放在 fixedTargetTracker0 底下<br /><br />如果層級關係正確的話，這個物件的名稱在 Scene 視窗內會稍微往右一點，並且在 fixedTargetTracker0 旁邊會有一個小小的三角形符號。如果你新增 plane 後沒有看到這個三角形小符號，你可以拖拉 plane 物件到 fixedTargetTracker0 的名稱上，便可以改變 plane 的層級關係</li>
+          <img src="imgs/project-a/test-the-tracker-image-02.jpg" />
+         	<li>接著我們要來實際測試辨識圖的辨識效果了。Spark AR 雖然有一個 simulator（模擬器視窗），但很可惜並不能用來預覽圖片辨識的結果，所以我們要把這個效果安裝到我們手機裡面，才能做測試</li>
+          <li>選擇左下角的 “Test on the device” 按鈕，然後可以選擇要上傳到 Facebook 或是 Instagram。如果你沒有看到 Facebook 和 Instagram 的按鈕，可以點一下 “Send App” 標題旁邊的小三角形來展開選項</li>
+          <img src="imgs/project-a/test-the-tracker-image-04.jpg" />
+         	<li>等到上傳完成後，手機裡的 Facebook / Instagram 應用程式會跳出新的通知</li>
+          <img src="imgs/project-a/test-the-tracker-image-05.jpg" />
+         	<li>點選通知後，手機就會直接打開攝影機，並開啟剛剛上傳的濾鏡（可能會跳出測試同意的選項，選擇同意就可以了）。接著將你的手機鏡頭對準卡片，如果成功辨識，應該可以在卡片上看到一塊方型的格子圖。你可以試著移動手機的視角，從不同角度拍卡片試試看，看圖片是不是保持在相同的位置</li>
+          <img src="imgs/project-a/test-the-tracker-image-06.gif" />
+          <li>如果你有成功看到方形的圖案，那表示圖片辨識的功能沒問題，那我們就可以正式來製作 AR 的卡片內容了！</li>
+        </ol>
+
+
+        <h3 id="test-the-effect-with-the-spark-ar-player">*使用專門的測試 App 來測試濾鏡</h3>
+        <p>
+          有時候會因為網路不順導致上傳濾鏡失敗，或因為手機設備的問題，導致看起來的效果和 Spark AR 編輯器裡面看起來不一樣。如果有遇到這些問題，可以考慮使用專門的測試程式（Spark AR Player）來測試濾鏡。使用 Spark AR Player 就可以不透過網路，而是透過手機連接線來把濾鏡安裝到手機上。<br />
+          <br />
+          關於 Spark AR Player 詳細的安裝、使用方法，請參考 Facebook 的官方教學：<a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/tutorials/previewing-and-testing/">Previewing and Testing Effects</a> 和 <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/mirroring/ar-player">Mirroring Effects to AR Player</a>
+        </p>
+
+
+        <h3 id="best-practice-tracker-image">*製作好的辨識圖</h3>
+        <p>
+          辨識圖的辨識效果好壞，跟圖片內容的設計有關。如果你有興趣設計自己的辨識圖，可以參考 Facebook 的官方指南：<a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/world-effects/best-practice-for-target-tracking/">Best Practice for Target Tracking </a>
+        </p>
+
+
+        <h2 id="set-up-augmented-content">設定 AR 內容</h2>
+
+
+        <h3 id="materials-in-3d">3D 的「材質」</h3>
+        <p>
+        在 3D 軟體裡面，圖片本身並沒有辦法直接顯示出來。你必須要先定義物件的「3D 形狀」（通常稱為 Mesh），然後再透過「材質」（Material）來定義這個形狀外觀，例如顏色、反光光澤、透明度、表面的粗糙感等<br />
+        <br />
+        所以如果要顯示圖片，也需要透過「材質」。你需要先建立一個新的材質，並把圖片設定成材質的顏色，然後再把這個材質貼到 3D 物件上<br />
+        <br />
+        如果不會製作 3D 也不用擔心，在我們這一系列的教學裡面，我們不需要另外製作 3D 的物件。我們只會使用 Spark AR 內建的 Plane 物件（看起來就像一張方形的圖片，他其實是一個 3D 物件）
+        </p>
+
+
+        <h3 id="adding-the-girl-into-the-scene">把女孩放入場景</h3>
+          <ol>
+        <li>首先我們要建立放置女孩圖片用的材質。點選 Assets 視窗的 “Add Asset” → “Material”</li>
+        <img src="imgs/project-a/adding-girl-into-scene-01.jpg" />
+        <li>把材質重新命名為 “girl-mat”。其實材質的名稱並不會影響我們後續製作的內容，但都給物件正確的命名是一個好習慣，不然製作到後期有很多的物件和材質時，檔案會很亂，到時候就會浪費很多的時間在找東西</li>
+        <img src="imgs/project-a/adding-girl-into-scene-02.jpg" />
+        <li>點選剛建立的材質，右邊的視窗便會顯示許多可以設定的選項。點選 Texture 旁邊的小箭頭，然後選擇女孩的圖片</li>
+        <img src="imgs/project-a/adding-girl-into-scene-03.jpg" />
+        <li>勾選 “Alpha Test” 的選項，這會讓圖片透明的部分正確變成透明的。這個選項和一些圖層的設定有關，詳細的內容我們會在下一個專案裡面說明，在此先勾選就好了</li>
+        <img src="imgs/project-a/adding-girl-into-scene-04.jpg" />
+        <li>材質準備好了，接著來建立形狀。在 fixedTargetTracker0 上按滑鼠右鍵，選 “Add” → “Plane”</li>
+        <img src="imgs/project-a/adding-girl-into-scene-05.jpg" />
+        <li>你可以點兩下剛建立的 plane 來重新命名。在這我把它重新命名為 “girl-plane”</li>
+        <img src="imgs/project-a/adding-girl-into-scene-06.jpg" />
+        <li>現在這塊 girl-plane 和之前我們建立的 plane0 重疊了，我們稍微把 girl-plane 往前移動一點，讓他們分開，這樣才看得出差異</li>
+        <img src="imgs/project-a/adding-girl-into-scene-07.jpg" />
+        <li>點選 girl-plane，然後在右邊找到 “Material” 並點一下旁邊的 “+” 符號，這時你應該可以看到我們剛剛建立好的材質 girl-mat</li>
+        <img src="imgs/project-a/adding-girl-into-scene-08.jpg" />
+        <li>選了 girl-mat 後，這塊 plane 就會變成女孩的樣子了。不過現在這個比例有點怪怪的，這是因為 plane 預設創建出來的時候都是正方形的。所以接著我們就要來調整 plane 的比例</li>
+        <img src="imgs/project-a/adding-girl-into-scene-09.jpg" />
+        </ol>
+
+
+        <h3 id="adjust-plane-scale-to-fit-image-ratio">調整物件形狀以符合圖片比例</h3>
+        <ol>
+          <li>點選 Assets 視窗的 girl-image，右邊可以看到這張圖的寬度（width）和高度（height）的資訊，像這張圖是 512 x 1024</li>
+          <img src="imgs/project-a/adjust-size-ratio-01.jpg" />
+          <li>接著根據圖片的長寬比來設定 girl-plane 的 scale（大小）。如果數字很好計算的話，可以直接算出比例，例如 512:1024 就是 1:2，所以把 girl-plane 的 scale X 設為 1，Y 設為 2</li>
+          <img src="imgs/project-a/adjust-size-ratio-02.jpg" />
+          <li>但有時候圖片的長寬比沒那麼好算，所以我通常會直接把他們的「解析度除以 1000」設定成 scale 的 x y 數值（除以 1000 是因為直接輸入原數值會太大）。以這個 girl-plane 來說，就是 0.512 和 1.024。至於 Z 的數值通常沒有差，但不能是 0，不然可能會出問題</li>
+          <img src="imgs/project-a/adjust-size-ratio-03.jpg" />
+          <li>接著可以使用縮放工具來調整 girl-plane 的大小，只要同時針對 x 和 y 一起縮放，就可以維持正確的比例</li>
+          <img src="imgs/project-a/adjust-size-ratio-04.jpg" />
+        </ol>
+
+
+        <h3 id="position-the-girl">設定女孩的位置</h3>
+        <ol>
+        <li>把女孩放到雪人旁邊。雖然我們從編輯器裡面看不到雪人的位置，但我們可以看著卡片，大概猜一下</li>
+        <img src="imgs/project-a/position-the-girl-01.jpg" />
+        <li>然後把濾鏡放到手機內測試，看看是否放置到正確的位置。如果位置不對的話，就再調整、然後再測試一次，直到位置看起來正確</li>
+        <img src="imgs/project-a/position-the-girl-01-02.gif" />
+        <img src="imgs/project-a/position-the-girl-02.jpg" />
+        <img src="imgs/project-a/position-the-girl-02-02.gif" />
+        </ol>
+
+
+        <h3 id="move-scale-rotate-objects">*移動、縮放、旋轉物件</h3>
+        <p>
+        如果你對 3D 軟體的空間操作不熟悉的話，可以參考這兩篇官方的教學文章：<br />
+        <br />
+         <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/3D/using-the-manipulators">Using the Manipulators</a><br />
+         <a href="https://sparkar.facebook.com/ar-studio/learn/articles/fundamentals/navigating-the-interface/" target="_blank">Navigating the Spark AR Studio Interface</a>
+        </p>
+
+
+        <h3 id="adding-texts">加入文字</h3>
+        <p>
+        就像加入女孩的圖一樣，加入文字的方法，就是為每一個文字建立材質、建立 Plane、然後放到場景裡面。但因為文字物件很多，如果每個物件都分開排的時候，可能會很麻煩（例如：想要修改整體文字的位置，卻得個別調整每個物件）。因此，針對這種情況，我們通常會使用一種群組的技巧
+        </p>
+        <ol>
+        <li>為每個文字物件建立材質和 Plane 物件。建議為每個材質、物件命名，不然很容易搞混（縮圖也長得很像）</li>
+        <img src="imgs/project-a/adding-text-01.jpg" />
+        <li>在 fixedTargetTracker0 上點右鍵，選擇 “Add” → “Null Object”（空物件）。所謂的空物件，就是一個只包含 Trasform（位置、旋轉、大小）資料的物件，除此之外什麼都沒有</li>
+        <img src="imgs/project-a/adding-text-02.jpg" />
+        <li>把這個空物件重新命名為 “text-set” 並且把所有的文字物件都拉進這個空物件底下（要在這個物件的層級裡）</li>
+        <img src="imgs/project-a/adding-text-03.gif" />
+        <li>調整每個文字的大小和位置，把它們排成你想要的樣子</li>
+        <img src="imgs/project-a/adding-text-04.jpg" />
+        <li>因為現在所有文字物件都在 text-set 底下，所以你現在可以直接移動、旋轉、或縮放整個 text-set 物件，文字的排版就會維持原來的樣子</li>
+        <img src="imgs/project-a/adding-text-05.gif" />
+        <li>如果一來，每當你想要移動文字時，就不需要再分別調整每一個文字物件了</li>
+        </ol>
+
+
+        <h2 id="animating-with-patch-editor">使用 Patch Editor 來做動畫</h2>
+        <p>
+        Patch Editor（或簡稱為 Patch）是 Spark AR 最棒的功能，透過 Patch 我們可以讓任何物件的數值動態改變。接著我們會用 Patch 來對 girl-plane 和文字物件做動畫
+        </p>
+
+
+        <h3 id="test-with-loop-animation">試做 Loop 動畫</h3>
+        <ol>
+        <li>我們先來做 girl-plane 的動畫。點選 girl-plane 然後注意看，右邊的 Scale 數值的旁邊，有一個 “→” 箭頭的圖案。如果數值旁邊有這個圖案，表示這個數值可以透過 Patch Editor 來設定</li>
+        <img src="imgs/project-a/test-with-loop-01.jpg" />
+        <li>點一下 Scale 旁邊的這個箭頭，然後底下會出現 Patch Editor 視窗，然後裡面會有一個黃色的方塊，這個方塊裡面的數值就是我們剛剛點選的 girl-plane 的 Scale 的數值</li>
+        <img src="imgs/project-a/test-with-loop-02.jpg" />
+        <li>這個方塊我們稱為 Patch，在 Spark AR 內有很多不同功能的 Patch。我們可以在 Patch Editor 視窗內點滑鼠右鍵，或按視窗右下方的 “+ Add Patch” 來新增 Patch。新增 Patch 可以透過分類來尋找，或是可以直接在搜尋視窗內輸入 Patch 名稱</li>
+        <img src="imgs/project-a/test-with-loop-03.jpg" />
+        <li>在此我們先新增一個 "Transition" Patch 和一個 "Loop Animation" Patch</li>
+        <img src="imgs/project-a/test-with-loop-04-1.jpg" />
+        <img src="imgs/project-a/test-with-loop-04-2.jpg" />
+        <img src="imgs/project-a/test-with-loop-04-3.jpg" />
+        <li>設定 Transition Patch 的 start 數值為 0, 0, 0，然後 end 數值設定成跟 girl-plane's 的 scale 數值一樣。在這個範例裡，數值是 (1.61809, 3.23619, 1)</li>
+        <img src="imgs/project-a/test-with-loop-05.jpg" />
+        <li>每個 Patch 都可以設定輸入（inputs）和輸出（outputs）。每個 Patch 左邊的箭頭是輸入，右邊的箭頭是輸出</li>
+        <img src="imgs/project-a/test-with-loop-06.jpg" />
+        <li>用滑鼠左鍵點選箭頭，然後按住滑鼠左鍵拖拉，可以連接輸出到輸入</li>
+
+        <li>把 Loop Animation 的 progress 連接到 Transform 的 progress；然後把 Transform 的 value 連接到 girl-plane 的 3D scale</li>
+        <img src="imgs/project-a/test-with-loop-08.gif" />
+        <li>如果連接正確的話，應該會看到 person-plane 開始重複變大變小</li>
+        <img src="imgs/project-a/test-with-loop-09.gif" />
+        <li>你可以試設定 Transition Patch 的 curve 數值來改變動畫的感覺，挑一個你最喜歡的吧</li>
+        <img src="imgs/project-a/test-with-loop-10.jpg" />
+        </ol>
+
+
+        <h3 id="animation-curves">*動畫曲線 Animation Curves</h3>
+        <p>
+        在這個 Transform 裡面的 curve（曲線） 是在電腦動畫裡面很常見的東西，有時候也稱為 easing type。如果你對這些 curve 的名稱不熟悉的話，這個網站有各種 curve 的視覺化範例：<a target="_blank" href="https://easings.net/">easings.net</a>
+        </p>
+
+
+        <h2 id="set-up-on-track-action">讓動畫在辨識到圖片時觸發</h2>
+        <p>
+        在製作動畫時，使用 Loop Animation Patch 來預覽很方便，但實際上我們想要的是，讓卡片的圖案被辨識到後，啟動動畫，然後只播一次就好，不要重複輪播。因此現在我們要改用其他的 Patch
+        </p>
+        <ol>
+        <li>把 Loop Animation Patch 刪掉，然後加入一個 Animation Patch，然後一樣把 progress 連起來</li>
+        <img src="imgs/project-a/setup-on-track-event-01.jpg" />
+        <li>你會看到動畫並沒有啟動，這是因為我們需要傳送一個觸發的訊號到 "Play Animation"</li>
+        <li>把 fixedTargetTracker0 拖進 Patch Editor 視窗，系統會自動產生 3 個 Patch</li>
+        <img src="imgs/project-a/setup-on-track-event-03.gif" />
+        <li>把 fixedTargetTracker0 Patch 的 “Found” 數值接到 Animation Patch 的 “Play”</li>
+        <li>系統會自動多加入一個 Pulse Patch 來轉換訊號的型態，以符合不同 Patch 的需求</li>
+        <img src="imgs/project-a/setup-on-track-event-05.jpg" />
+        <li>然後在手機上試試看這個濾鏡，如果成功的話，應該在辨識到卡片的瞬間，會看到女孩的圖蹦出來（縮放的方式出現）</li>
+        <img src="imgs/project-a/setup-on-track-event-06.gif" />
+        </ol>
+
+
+        <h2 id="queueing-animations">設定動畫順序</h2>
+        <p>
+        接著我們要來幫文字加入動畫，基本上概念和剛剛設定的女孩圖片動畫差不多。但在這邊，我們會使用動畫的 OnComplete 輸出和 Delay Patch 來設定動畫的先後順序，幫文字加入類似打字機的效果
+        </p>
+
+        <ol>
+        <li>幫每個文字設定縮放動畫，設定的方式就和上面的女孩動畫一樣（Animation Patch 接到 Transition Patch 再接到文字的 Scale 數值）</li>
+        <img src="imgs/project-a/queuing-animations-01.jpg" />
+        <li>Animation Patch 有一個 completed 輸出，會在動畫播完的時候觸發。我們把一個文字的 completed 接到另一個文字的 Play，這樣的方是就可以設定動畫的順序，讓文字依序出現
+        <img src="imgs/project-a/queuing-animations-02.jpg" />
+        <li>在中間可以多加入一個 Delay Patch 來延遲觸發的時間，時間的單位是秒</li>
+        <img src="imgs/project-a/queuing-animations-03.jpg" />
+        <li>如果你覺得這邊看起來有點複雜的話，可以打開壓縮檔裡面的範例專案來看看 Patch 的設定。如果打開專案後沒有看到 Patch Editor 視窗，你可以從選單 “View” → “Show/Hide Patch Editor” 來打開 Patch Editor 視窗</li>
+        <img src="imgs/project-a/queuing-animations-04.jpg" />
+        </ol>
+
+
+        <h2 id="create-the-snow-effect">製作下雪特效</h2>
+        <p>
+        我們會使用粒子特效（Particle System）來製作下雪的效果，粒子是各種 3D 軟體裡都有的一種功能，專門用來做一些非固態的模擬，像是火焰、煙、水之類的，當然 Spark AR 也有粒子
+        </p>
+
+        <ol>
+        <li>建立一個新的材質，準備給粒子特效使用</li>
+        <img src="imgs/project-a/add-particle-01.jpg" />
+        <li>把材質的 shader type 設定成 flat，texture 設定成 snow，然後 blend mode 設成 add，並且勾選 “Alpha Test”</li>
+        <img src="imgs/project-a/add-particle-02.jpg" />
+        <li>在 Scene 視窗點右鍵選 “Add” → “Particle System” 來加入粒子特效物件</li>
+        <img src="imgs/project-a/add-particle-03.jpg" />
+        <li>接著設定粒子特效物件的數值。在上半部的 emitter 部分，把 type 設為 plane；size 設成 0.3, 0.3（這個選項要先把 type 設為 plane 才會出現）；speed 設為 0.03, 60</li>
+        <img src="imgs/project-a/add-particle-04.jpg" />
+        <li>下半部還有 particle 的部分要設定。把 scale 設為 0.003, 60；lifespan 設為 2, 60；spin 設為 0, 180；tilt 設為 0, 180</li>
+        <img src="imgs/project-a/add-particle-05.jpg" />
+        <li>把 material 設為 snow particle</li>
+        <img src="imgs/project-a/add-particle-06.jpg" />
+        <li>把粒子特效物件放到女孩的上方，然後旋轉一下，讓落雪的方向朝下</li>
+        <img src="imgs/project-a/add-particle-07.jpg" />
+        </ol>
+
+
+        <h2 id="design-your-own-particle-effect">*設計自己的粒子特效</h2>
+        <p>
+        設計粒子特效，就是透過調整各種不同的數值來達成，因此，學習粒子特效最好的方法，就是實際調調看這些數值，看看效果如何變化<br />
+        <br />
+        如果你對粒子特效有興趣，你可以參考這篇官方的粒子特效教學：<a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/tutorials/adding-particle-systems/">Adding and Editing Particle Systems</a>
+        </p>
+
+        <p>
+        做到這裡，這個專案就完成了！Yay！！<br />
+        如果一切設定都沒問題的話，在手機上測試時，應該可以看到這樣的成果：
+        </p>
+
+        <div class="video-area">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/0EZRWoaOwHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </article>
+    </div>
+    <script type="text/javascript">
+    $(window).ready(function(){
+        $('body').scrollspy({ target: '#tutorial-project-a' });
+    });
+
+
+
+
+    </script>
+  </body>
+</html>
