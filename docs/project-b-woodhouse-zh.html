@@ -136,277 +136,277 @@
 
       <article id="main">
         <h2 id="project-description">
-          Project Description
+          專案簡介
         </h2>
         <p>
-        For this project, we are going to build a 3D room and create a “see-through window” experience using the masking trick.
+          在這個專案裡，我們會打造一個 3D 的房間，然後在掃描到卡片的窗戶時，會產生一種「從窗戶外看進去」的 AR 效果。
         </p>
         <div class="video-area">
           <iframe width="640" height="480" src="https://www.youtube.com/embed/D3c6aZadGQI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <p>Through this project, you will learn to use the layer setting in Spark AR, learn the masking technique, and have a better understanding of the materials.</p>
+        <p>透過這個專案，你將會學到 Spark AR 內的圖層設定、更深入了解材質的選項，並且學會如何製作遮罩效果（Masking）。</p>
 
-        <h2>Assets for this Project</h2>
+        <h2>素材下載</h2>
 
-        <p>You can download all the assets here: <a target="_blank" href="download/ProjectB-Woodhouse.zip">Project B - Woodhouse.zip</a></p>
+        <p>本篇專案會用到的素材、卡片模板、以及已經完成的範例專案下載：<a target="_blank" href="download/ProjectB-Woodhouse.zip">Project B - Woodhouse.zip</a></p>
 
         <ul class="warning">
-          <li>It is strongly recommended that you take the Snowman tutorial before starting this one. The Snowman tutorial provides a very detailed walk-through of the basic functions that will not be covered here.</li>
+          <li>如果你對 Spark AR 並不熟，而且還沒看過雪人卡片教學的話，強烈建議先看雪人卡片的教學。雪人卡片教學裡面有一些基礎的操作，在本篇教學中並不會提到。</li>
         </ul>
 
 
-        <h2 id="set-up-tracking">Set Up Tracking</h2>
+        <h2 id="set-up-tracking">設定圖片辨識</h2>
 
-        <p>For this step, you need to:</p>
+        <p>在這個部分，你需要做幾件事：</p>
         <ol>
-          <li>Create a new project</li>
-          <li>Add fixedTargetTracker to the scene (or select Target Tracking while creating project)</li>
-          <li>Import the images</li>
-          <li>Change fixedTargetTracker image to window texture</li>
+          <li>建立新專案</li>
+          <li>在場景中加入 fixTargetTracker（或在開專案時選擇 Target Tracking）</li>
+          <li>匯入專案要使用的圖片素材</li>
+          <li>把 window 的圖片設定成辨識圖</li>
         </ol>
 
         <p>
-          After you’re done, the project will look like this:
+          如果以上步驟都完成了，你應該會看到這個畫面：
         </p>
 
         <img src="imgs/project-b/01--setup-the-tracking-01.jpg" />
 
-        <p>These steps have been covered in the Snowman. If you’re not familiar with them, please refer to the Snowman tutorial.</p>
+        <p>以上這些步驟在雪人教學裡面有詳細的步驟教學，如果你對這些東西不熟的話，可以先去看看雪人教學</p>
 
 
-        <h2 id="setting-up-room-space">Setting Up Room Space</h2>
+        <h2 id="setting-up-room-space">設定房間空間</h2>
 
-        <p>For this project, we want to create a “see-through window” experience for the user to get a feel of the interior space. Therefore, we need to build a room space.</p>
+        <p>在這個專案裡，我們要呈現「從窗外看進去」的效果，因此，我們需要先建立一個窗內的空間</p>
 
 
-        <h3 id="place-a-reference-image">Place a Reference Image</h3>
-        <p>To match the virtual room size with the paper model, we can use a reference image as a guidance when creating the space.</p>
+        <h3 id="place-a-reference-image">使用參考圖</h3>
+        <p>為了讓 AR 出來的空間符合實際卡片的大小，我們可以放一張參考圖來協助我們設定房間的空間大小</p>
         <ol>
-          <li>Add a Plane on the tracker and set its material using the whole-building image.</li>
+          <li>在辨識圖物件底下加入一個 Plane，並且將 whole-building 這張圖設為 Plane 的材質</li>
           <img src="imgs/project-b/02--place-reference-image-01.jpg" />
-          <li>Scale and move the reference image and match the window section with the tracker image.</li>
+          <li>調整一下 whole-building 這個 Plane 的物件大小，讓窗戶的部分符合中間辨識圖的部分</li>
           <img src="imgs/project-b/02--place-reference-image-02.gif" />
-          <li>Set material opacity to 0.6. Now you have a view of the whole building in the editor.</li>
+          <li>把材質的透明度（opacity）設定為 0.6，這樣就可以在編輯器裡看到整棟建築的樣子，這樣待會設定牆壁的時候，就有一個參考的依據</li>
           <img src="imgs/project-b/02--place-reference-image-03.jpg" />
         </ol>
 
 
-        <h3 id="set-up-the-walls">Set Up the Walls</h3>
+        <h3 id="set-up-the-walls">設定牆壁</h3>
         <ol>
-          <li>Create a material named “wall-mat” and select “wood-wall-texture”.</li>
+          <li>創造一個給牆壁使用的材質 “wall-mat”，並以 “wood-wall-texture” 當作材質貼圖</li>
           <img src="imgs/project-b/03--setup-the-walls-01.jpg" />
-          <li>Create five planes and position them into a room behind the reference image.</li>
+          <li>在場景內加入 ５ 個 Plane 並把他們拼成一個立方體的樣子，然後放到參考圖後面</li>
           <img src="imgs/project-b/03--setup-the-walls-02.gif" />
-          <li>Using the reference image, we can match the wall with the building image size. This will make the AR effect more realistic.</li>
+          <li>藉由這張參考圖來設定牆壁，可以讓牆壁的位置和大小更符合實際卡片的樣子，這會讓 AR 的效果看起來比較有真實感</li>
           <img src="imgs/project-b/03--setup-the-walls-03.jpg" />
         </ol>
 
 
-        <h2 id="install-furniture">Install Furniture</h2>
+        <h2 id="install-furniture">放入家具</h2>
 
         <ol>
-          <li>There are some images you can use as furniture. Create materials for each and position them wherever you like.</li>
+          <li>在素材壓縮檔裡面有一些圖可以當作家具，隨意選些喜歡的，然後幫每一張圖建立一個材質，然後放到房間裡面</li>
           <img src="imgs/project-b/04--put-furnitures-01.jpg" />
-          <li>It's kind of like creating layered paper art. The difference of depth (position z) creates parallax effects when you view the effect on your device.</li>
+          <li>這有點像是在製作一層一層的剪紙。家具的深度差異（位置 Z 的差異）可以創造一種視差的效果，在用 AR 觀看的時候可以營造出空間感</li>
           <img src="imgs/project-b/04--put-furnitures-02.gif" />
-          <li>While placing the furniture, you may notice some weird situations where the foreground image cuts out the background image.</li>
+          <li>在放置家具的時候，可能會發現一些奇怪的狀況，像是某些圖明明應該是透明的部分，卻把背景遮掉了</li>
           <img src="imgs/project-b/04--put-furnitures-03.jpg" />
-          <li>To solve this issue, we need to grasp a better understanding of Material and Layer.</li>
+          <li>要解決這個問題，我們需要多了解一點關於 Spark AR 的圖層（Layer）和材質材質的設定</li>
         </ol>
 
 
-        <h2 id="the-transparent-issue">The Transparent Issue</h2>
+        <h2 id="the-transparent-issue">半透明的問題</h2>
 
-        <p>It's kind of weird that the transparent part of an image would block the images behind it. This is due to Spark AR’s treatment of images with transparent and semi-transparent images. But it's not really the fault of the Spark team; it's a common occurrence issue in real-time rendering.<br />
+        <p>一張圖「透明」的部分會遮住背後的東西，這是由於 Spark AR 處理「透明」與「半透明」的方式所導致的結果。但這並不是因為 Spark AR 的系統沒有寫好，這是即時渲染的 3D 引擎中常見的狀況。<br />
         <br />
-        There are two ways to fix this problem in Spark AR, each with its pros and cons.</p>
+        在 Spark AR 裡面要解決這個問題，有兩種方式，各有其優缺點</p>
 
 
-        <h3 id="fixing-by-alpha-test">Fixing by using Alpha Test</h3>
-        <p>In Spark AR, even if part of the image is totally transparent (0% opacity), it does not mean “none” or “nothing” in 3D. The shape will remain visible. You can see the outline of the shape being a rectangle when selected.</p>
+        <h3 id="fixing-by-alpha-test">使用 Alpha Test</h3>
+        <p>在 Spark AR 裡面，即使圖片的某一部分是完全透明的（透明度 Alpha 為 0），這並不表示這個地方是「空」或是「無」的概念，3D 物件的形狀還是會存在，只是他的顏色是「透明色」。就像底下這張圖，你可以看到我們選取物件時，他的邊框仍然是方形的</p>
         <img src="imgs/project-b/05--fixing-alpha-test-01.jpg" />
 
-        <p>Checking “Alpha Test” means that you wish to treat the transparent parts as “none”, so the shape will not be visible. The Alpha Test number refers to the opacity threshold, with 10 meaning parts with opacity under 10% will be treated as non-existent, a.k.a. “"cutout”. This kind of material setting is therefore also known as “cutout materials” in other 3D softwares.</p>
+        <p>在材質裡面有一個 “Alpha Test” 的選項，如果開啟這個選項，表示我們要把「透明」的部分剔除，讓他變成「無」的狀態。就像底下這張圖，當你選取物件的時候，邊框變成了沙發外框的形狀。Alpha Test 的數值代表的是剔除的「閥值」，透明度在這個數值以下的部分會被剔除掉，例如設為 10 表示透明度在 10% 以下的部分會被剔除掉。有些 3D 軟體裡面會稱這種材質為 “cutout” 材質，如其名就像被剪掉一樣的概念。</p>
 
         <img src="imgs/project-b/05--fixing-alpha-test-02.jpg" />
 
         <img src="imgs/project-b/05--fixing-alpha-test-03.jpg" />
 
-        <p>By checking Alpha Test on all materials, this issue on furniture can easily be fixed.</p>
+        <p>以這個專案提供的素材來說，只要開啟 Alpha Test，就可以修正大部分的半透明問題</p>
 
         <img src="imgs/project-b/05--fixing-alpha-test-04.jpg" />
 
-        <p>This is sufficient for the furniture in this project since the images have solid edges and have no semi-transparent parts. This, however, will not work for semi-transparent images such as the sofa's shadow or the window reflection light.</p>
+        <p>在家具的部分，由於圖片大部分都有很稅利的邊緣，而且沒有半透明的部分，因此 Alpha Test 應該符合大部分的使用狀況。但對於有「半透明」的圖，例如沙發的陰影、窗戶的反光等，就沒有辦法使用 Alpha Test。</p>
 
         <img src="imgs/project-b/05--fixing-alpha-test-05-01.jpg" />
         <img src="imgs/project-b/05--fixing-alpha-test-05-02.jpg" />
 
-        <p>Therefore, we need another fix for such issues.</p>
+        <p>因此，我們也需要了解一下另一種解法</p>
 
 
-        <h3 id="fixing-by-setting-the-layers">Fixing by setting the layers</h3>
+        <h3 id="fixing-by-setting-the-layers">使用圖層設定</h3>
 
-        <p>Layer defines the rendering order of each object. If the object is closer to the camera, the order of its layer should be above other things further back. For now, we will use the layer setting to fix the transparency issues of the sofa shadow and window reflection light.</p>
+        <p>圖層（Layer）決定每個物件的渲染（Render）順序。如果物件距離攝影機比較近，該物件的圖層就應該要在比較上面。底下我們會替沙發的陰影和窗戶的反光來設定圖層選項。</p>
 
         <ol>
-          <li>Click on the “Layers” label beside “Scene” to switch to Layers Panel.</li>
+          <li>點選圖層 “Layers” 以切換顯示圖層設定的選項，位置就在場景 “Scene” 旁邊</li>
           <img src="imgs/project-b/06--layers-01.jpg" />
-          <li>Click on the “+ Add Layer” button to add layers. We need four to make the visual right. Double click on the layer's name to rename.</li>
+          <li>按下 “+ Add Layer” 新增圖層，我們一共會需要 4 個圖層。在名稱上點兩下滑鼠左鍵可以設定圖層的名稱</li>
           <img src="imgs/project-b/06--layers-02.jpg" />
-          <li>You set the order of the layers by dragging their names. Rearrange them in the following order: window-light, furniture, shadow, walls.</li>
+          <li>用滑鼠左鍵拖拉圖層的名字可以改變排序，讓他們依照以下的順序排列：window-light、furniture、shadow、walls</li>
           <img src="imgs/project-b/06--layers-03.jpg" />
-          <li>Select “wall plane” and you’ll see the layer setting on the right. Set layer to walls.</li>
+          <li>選擇 “wall plane” 物件，然後在右上方有一個 Layer 的地方可以設定圖層。把圖層設定為 walls</li>
           <img src="imgs/project-b/06--layers-04.jpg" />
-          <li>You can select multiple objects and assign their layers simultaneously.</li>
+          <li>可以一次選多個物件來批次設定圖層</li>
           <img src="imgs/project-b/06--layers-05.jpg" />
-          <li>Assign all wall planes to walls layer, all furniture to furniture layer, sofa shadow to shadow layer, and window light plane to the window-light layer.</li>
-          <li>Now, the shadow and the window reflection light should look right.</li>
+          <li>把所有的牆壁物件的圖層都設為 walls，所有家具圖層設為 furniture，沙發的陰影設定為 shadow，窗戶的反光設定為 window-light</li>
+          <li>現在窗戶的反光和陰影應該都能正確呈現他們半透明的樣子</li>
           <img src="imgs/project-b/06--layers-07.jpg" />
         </ol>
 
 
-        <h3 id="opacity-and-blend-mode">*Opacity and Blend Mode</h3>
+        <h3 id="opacity-and-blend-mode">*透明度與混合模式</h3>
 
-        <p>You can play around with the material's Blending Modes settings. This defines how the image interacts with the image “behind” it. For my project, I chose "Multiply" for the shadow material and "Add" for the light.</p>
+        <p>在材質裡面還有一個混合模式（Blending Mode）可以設定，這個選項定義了這張圖如何和「背後」的影像作用。例如 Multiply 會疊加深色的部分，沙發的陰影就可以設定為 Multiply；而 Additive 則是讓亮的部分更亮，因此窗戶的反光可以設定為 Additive。你可以隨意試試看切換不同的 Blending Mode 來看看效果如何。.</p>
 
         <img src="imgs/project-b/07--blend-mode-opacity-01.jpg" />
 
-        <p>If you think that the shadow is too dark or the light is too bright, you can adjust their opacity value.</p>
+        <p>如果你覺得陰影太暗或是反光太亮，你也可以再調整它的透明度（Opacity）</p>
 
         <img src="imgs/project-b/07--opacity-combine.jpg" />
 
-        <p>You can also try using other blend modes to test the results. To find out more about the blend mode, you can check Adobe's user guide page: <a target="_blank" href="https://helpx.adobe.com/photoshop/using/blending-modes.html">Adobe - Blending Modes</a></p>
+        <p>混合模式是電腦圖學領域常見的一個功能，如果想了解更多，可以參考 Adobe 關於 Blending Mode 的說明：<a target="_blank" href="https://helpx.adobe.com/photoshop/using/blending-modes.html">Adobe - Blending Modes</a></p>
 
-        <p>And if you are not satisfied with build-in blend modes, you could also try positlab's Photoshop blend modes project: <a target="_blank" href="https://github.com/positlabs/spark-blend-modes">https://github.com/positlabs/spark-blend-modes</a></p>
-
-
+        <p>如果你覺得 Spark AR 內建的 Blending Mode 不夠多，你想要更多類似 Photoshop 裡面有的其他 Blending Mode，你可以試試看 Spark AR 圖學高手 positlab 的開源專案 Photoshop blend modes：<a target="_blank" href="https://github.com/positlabs/spark-blend-modes">https://github.com/positlabs/spark-blend-modes</a></p>
 
 
-        <h2 id="animated-fire">Animated Fire</h2>
 
-        <p>You can also create animated images using the image sequence. We have here a fire sequence for practice.</p>
+
+        <h2 id="animated-fire">動畫火焰</h2>
+
+        <p>在 Spark AR 裡面你也可以製作逐格動畫。在這個專案裡，我們準備了火焰的序列圖以供練習</p>
 
         <ol>
-          <li>Click on “Add Asset” in the Assets panel.</li>
+          <li>在 Assets 視窗點選 “Add Asset”</li>
           <img src="imgs/project-b/08--animated-fire-01.jpg" />
-          <li>Choose “Animation Sequence” and a new asset will be created. Rename it to “fire-animation”.</li>
+          <li>選擇 “Animation Sequence” 然後系統就會產生一個新的檔案，把它命名為 “fire-animation”</li>
           <img src="imgs/project-b/08--animated-fire-02.jpg" />
-          <li>Click on “Choose File” in the inspector and select “sequence images”.</li>
+          <li>選取 fire-animation 後，在右邊的視窗點 “Choose File” 並選擇選取火焰的序列圖檔（按住 Shift 多選）</li>
           <img src="imgs/project-b/08--animated-fire-03.jpg" />
-          <li>Now. the texture sequence object fire-[1-3] is created.</li>
+          <li>成功後，會看到系統產生了一個 fire-[1-3] 的序列檔</li>
           <img src="imgs/project-b/08--animated-fire-04.jpg" />
-          <li>Create a material and set the texture to “fire-animation”. Now you can see the fire being animated.</li>
+          <li>建立一個材質，並把圖片設為 “fire-animation”，然後就可以看到會動的火焰囉</li>
           <img src="imgs/project-b/08--animated-fire-05.gif" />
-          <li>You can change the animation speed by altering its FPS value.</li>
+          <li>你可以設定 “fire-animation” 的 FPS 數值來改變序列圖的播放速度</li>
           <img src="imgs/project-b/08--animated-fire-06.jpg" />
         </ol>
 
 
-        <h2 id="setting-up-the-lights">Setting Up the Lights</h2>
+        <h2 id="setting-up-the-lights">設定光源</h2>
 
-        <p>As fire is burning inside the house, the lights should flicker. Let's set up some lights instead of using the default lighting.</p>
+        <p>既然有火在房內燃燒，感覺光應該也要隨著火光閃爍才對。接著我們就要來設定光源的部分</p>
 
 
-        <h3 id="adding-lights-into-the-scene">Adding Lights into the Scene</h3>
+        <h3 id="adding-lights-into-the-scene">在場景內加入燈光</h3>
 
         <ol>
-          <li>Delete the default directionalLight0 (this object is automatically generated when the project is created).</li>
+          <li>刪除系統預設的燈光 directionalLight0 物件（這個物件是在開新專案的時候自動產生的）</li>
           <img src="imgs/project-b/09--add-light-into-scene-01.jpg" />
-          <li>Pick ambientLight0 and set its Intensity value to 30.</li>
+          <li>選 ambientLight0 並把 Intensity（光源強度）設為 30</li>
           <img src="imgs/project-b/09--add-light-into-scene-02.jpg" />
-          <li>Add a “Point Light” object and make sure it is under the fixedTargetTracker0 hierarchy.</li>
+          <li>加入一個 “Point Light”（點光源）物件，並把他設為 fixedTargetTracker0 的子物件</li>
           <img src="imgs/project-b/09--add-light-into-scene-03-1.jpg" />
           <img src="imgs/project-b/09--add-light-into-scene-03-2.jpg" />
-          <li>Place the point light in front of fireplace.</li>
+          <li>把點光源物件的位置移到火爐前面</li>
           <img src="imgs/project-b/09--add-light-into-scene-04.jpg" />
-          <li>Set the light's intensity to 200 (you can set to above 100 by typing in the value) and range to 0.5.</li>
+          <li>把點光源的 intensity 設為 200（用鍵盤輸入數值的話可以超過 100）然後 range（範圍）設成 0.5</li>
           <img src="imgs/project-b/09--add-light-into-scene-05.jpg" />
         </ol>
 
 
-        <h3 id="animating-the-light-intensity">Animating the Light Intensity</h3>
+        <h3 id="animating-the-light-intensity">設定光源動畫</h3>
 
         <ol>
-          <li>Click on the arrow beside Intensity value To display Patch Editor panel. Add a transition patch and a loop animation patch. This is similar to the animation section in Project A (Snowman).</li>
+          <li>點擊燈光 Intensity 旁邊的小箭頭，把 Intensity 的數值 Patch 加入到 Patch Editor 裡。另外加入一個 Transition Patch、一個 Loop Animation Patch。這就跟上一個雪人專案的動畫部分差不多</li>
           <img src="imgs/project-b/10--animating-light-01.jpg" />
-          <li>The default transition patch transforms three values (x, y, z)., but the intensity value only requires one. Click on the transition patch, then click on the Vector3 box and change the value to number.</li>
+          <li>預設的 Transform Patch 一次會對三個數值做變化（x, y, z），但光的強度 Intensity 只有一個數值。點一下 Transition Patch 底下的 Vector3 小方塊，然後把類型改為 Number</li>
           <img src="imgs/project-b/10--animating-light-02.gif" />
-          <li>Connect the inputs and outputs. Play around with different values to find the flickering pattern you like.</li>
+          <li>把這幾個 Patch 接起來，然後可以試試看這種不同的 Curve 和 Intensity 數值，看看怎麼樣比較會有火光閃爍的感覺</li>
           <img src="imgs/project-b/10--animating-light-03.jpg" />
-          <li>You can also animate ambient lights. The loop animation patch can be used for both transition patches should you want to sync their animation.</li>
+          <li>你也可以另外設定 Ambient Light 的光源動畫。因為這兩個光源應該是同步的，所以你可以使用同一個 Loop Animation Patch 來驅動動畫</li>
           <img src="imgs/project-b/10--animating-light-04.jpg" />
         </ol>
 
 
-        <h3 id="light-types">*Light Types</h3>
+        <h3 id="light-types">*燈光的類型</h3>
 
-        <p>If you want to find out more about different lighting types, you can check the official guide: <a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/lights/lights-available">Lights in Spark AR Studio</a></p>
+        <p>如果想要了解不同類型的燈光之間的差異，可以參考官方的教學：<a target="_blank" href="https://sparkar.facebook.com/ar-studio/learn/articles/lights/lights-available">Lights in Spark AR Studio</a></p>
 
 
-        <h2 id="test-the-room">Test the Room</h2>
+        <h2 id="test-the-room">測試房間效果</h2>
 
-        <p>Now the room is ready for you to test with your device. It should look something like this:</p>
+        <p>現在房間已經完成了，可以把濾鏡放到手機裡測試看看。用手機看應該會像這樣：</p>
 
         <img class="center" src="imgs/project-b/11--test-the-room-01.gif" />
 
-        <p>Oops! The whole wall is transparent, while what we want is a see-through-window experience. So, we now need to set up the mask.</p>
+        <p>嗯 ... 感覺好像怪怪的，牆壁感覺好像變成透明的。接下來，我們就要製作遮罩（Mask）來解決這個問題！</p>
 
 
-        <h2 id="setting-up-the-mask">Setting Up the Mask</h2>
+        <h2 id="setting-up-the-mask">設定遮罩</h2>
 
-        <p>In augmented reality rendering, virtual objects are always rendered in front of the camera image. This is because our device cameras only capture 2D images from the real world, which lacks information on depth. To make virtual objects render behind real-world images, we need masks.</p>
+        <p>在 AR 裡面，因為相機通常沒有現實世界中的深度資訊，所以對系統來說，相機拍到的只是一張平平的照片，所以虛擬的 3D 物件總會在畫面的最上層（背景都會被蓋住）。如果想要讓某些現實空間的影像蓋住虛擬影像，就需要使用遮罩</p>
 
-        <p>In Spark AR Studio, a mask can be created through transparent materials with proper layer settings.</p>
+        <p>遮罩不是一個物件，而是一種技巧、概念的稱呼，把某個物件的某部分給遮掉的意思。在 Spark AR 裡面，我們可以透過圖層和材質的設定，來實現遮罩的功能</p>
 
 
-        <h3 id="set-up-walls-mask">Set Up Walls Mask</h3>
+        <h3 id="set-up-walls-mask">製作牆壁遮罩</h3>
 
         <ol>
-          <li>Create a plane named “mask-plane” and create a material named “mask-mat”.</li>
+          <li>建立一個 Plane 並命名為 “mask-plane”，然後也建立一個 “mask-mat” 材質</li>
           <img src="imgs/project-b/12--setup-wall-mask-01.jpg" />
-          <li>Change the shader type to flat and set its opacity to 0.</li>
+          <li>把材質的 Shader Type 設定為 flat，並把 opacity 設成 0</li>
           <img src="imgs/project-b/12--setup-wall-mask-02.jpg" />
-          <li>Select “mask-plane”, click on “layer” on the right, and click on “Create New Layer”.</li>
+          <li>點選 “mask-plane” 並在設定圖層 “layer” 的地方選 “Create New Layer”</li>
           <img src="imgs/project-b/12--setup-wall-mask-03.jpg" />
-          <li>Now, a new layer is created and assigned to the mask-plane.</li>
+          <li>系統在此時會建立一個新圖層，並把這個物件設為這個新的圖層</li>
           <img src="imgs/project-b/12--setup-wall-mask-04.jpg" />
-          <li>Switch to the layer panel by click on “Layer”. Drag the created layer to the bottom (order it to the last).</li>
+          <li>切換到圖層視窗，並把剛剛建立的那個圖層放到最底下</li>
           <img src="imgs/project-b/12--setup-wall-mask-05.jpg" />
-          <li>You can rename the layer to “mask”.</li>
+          <li>把這個圖層命名為 “mask”</li>
           <img src="imgs/project-b/12--setup-wall-mask-06.jpg" />
-          <li>Switch back to the scene panel and you should see the mask-plane become transparent, while making the images behind it disappear.</li>
+          <li>回到場景視窗，應該可以看到 mask-plane 變成透明的了，而且在 mask-plane 背後的部分都會消失不見</li>
           <img src="imgs/project-b/12--setup-wall-mask-07.jpg" />
-          <li>Duplicate the mask-plane and put them beside the fixedTargetTracker. Make sure you leave a space in the center for the window.</li>
+          <li>複製 mask-plane 並把他們放在 fixedTargetTracker 旁邊，只留下中間窗戶的部分，蓋住房子的其他地方</li>
           <img src="imgs/project-b/12--setup-wall-mask-08.gif" />
         </ol>
 
 
-        <h3 id="set-up-window-mask">Set Up Window Mask</h3>
+        <h3 id="set-up-window-mask">設定窗戶的遮罩</h3>
 
         <ol>
-          <li>The window mask is slightly different. Instead of masking the entire rectangle, we use an image here to define the masking shape.</li>
+          <li>窗戶的遮罩有一點不一樣，因為窗戶的形狀是透過圖片設定的，而不是整個方形，所以我們需要在材質的地方做一些額外的設定</li>
           <img src="imgs/project-b/13--setup-window-mask-01.jpg" />
-          <li>Create a new material and rename it to “window-mask-mat”.</li>
+          <li>建立一個材質並命名為 “window-mask-mat”</li>
           <img src="imgs/project-b/13--setup-window-mask-02.jpg" />
-          <li>Create a new plane assign the material to it, and rename it to “window-mask-plane”.</li>
+          <li>建立一個新的 “window-mask-plane” 物件並把材質設為 window-mask-mat</li>
           <img src="imgs/project-b/13--setup-window-mask-03.jpg" />
-          <li>Scale the window-mask-plane to fit the fixedTargetTracker reference. The scale should be 3, 3, 1 for it to fit perfectly.</li>
+          <li>移動並縮放 window-mask-plane 讓它剛剛好符合中間辨識圖的大小。要完美符合的話，可以直接把 Scale 設為 3, 3, 1</li>
           <img src="imgs/project-b/13--setup-window-mask-04.jpg" />
-          <li>Check “Alpha” and set the texture to “window-alpha”.</li>
+          <li>設定材質，把 “Alpha” 部分的圖片設為 “window-alpha”</li>
           <img src="imgs/project-b/13--setup-window-mask-05.jpg" />
-          <li>Check “Alpha Test”.</li>
+          <li>勾選 “Alpha Test”</li>
           <img src="imgs/project-b/13--setup-window-mask-06.jpg" />
-          <li>Now, let’s set up the material (window-mask-mat) to make it a mask. Set opacity to 1 and cutoff (see “Alpha Test” section) to 0.</li>
+          <li>把 Opacity 設成 1，然後 Alpha Test 的 Cutoff 設成 0</li>
           <img src="imgs/project-b/13--setup-window-mask-07.jpg" />
-          <li>Set window-mask-plane's layer to “mask”.</li>
+          <li>把 window-mask-plane 的圖層設為 “mask”</li>
           <img src="imgs/project-b/13--setup-window-mask-08.jpg" />
-          <li>You can see the color change, with the window wall now covering up the background.</li>
-          <li>Test with your device. If done correctly, it should look like this:</li>
+          <li>如果成功的話，應該可以看到窗戶部分的顏色有一些不一樣，窗戶的牆壁部分應該有正確遮住背景</li>
+          <li>把濾鏡傳到手機測試看看，如果設定正確的話，應該會像這樣：</li>
           <img src="imgs/project-b/13--setup-window-mask-10.gif" />
         </ol>
 
-        <p>Now the project is completed. Congratulations!<br />
-        You should be able to see a result as displayed in the video below:</p>
+        <p>製作到這邊，這個專案就完成囉！<br />
+        現在應該能看到像是影片這樣的效果：</p>
 
         <div class="video-area">
           <iframe width="640" height="480" src="https://www.youtube.com/embed/D3c6aZadGQI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
