@@ -171,7 +171,7 @@ article#main img.center {
         top: 0px;
         width: 100vw;
         height: 40px;
-        font-size: 0.6em;
+        font-size: 0.8em;
 
         box-sizing: border-box;
         line-height: 40px;
@@ -238,14 +238,15 @@ article#main img.center {
   float: right;
 }
 
-.lan-switch-mobile a, .lan-switch-mobile a:link, .lan-switch-mobile a:visited{
+.lan-switch-mobile a, .lan-switch-mobile a:link, .lan-switch-mobile a:visited {
   text-align: center;
   width: 80px;
   letter-spacing: 3px;
   border-radius: 10px;
   border: 1px solid #AAA;
-  padding: 0px !important;
+
   margin-left: 10px;
+  min-width: 60px;
 
   text-decoration: none;
   background-color: #FFF;
